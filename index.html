@@ -2199,13 +2199,23 @@
       document.getElementById('status-' + id).textContent = 'Record your voice';
     }
 
+    function cleanReferenceText(rawText) {
+      if (!rawText) return '';
+      return rawText
+        .trim()
+        .replace(/^["'“‘]+|["'”’]+$/g, '')
+        .replace(/[’]/g, "'")
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
     async function submitShadowing(id) {
       const fb = document.getElementById('feedback-' + id);
       fb.className = 'shadow-feedback active';
       fb.innerHTML = `
         <div class="sa-loading">
           <div class="sa-spinner"></div>
-          <span>Đang đánh giá phát âm bằng Azure Speech SDK...</span>
+          <span>Đang đối chiếu phát âm với cụm từ mẫu...</span>
         </div>
       `;
 
@@ -2217,7 +2227,7 @@
 
       const shadowItem = document.getElementById('playback-' + id).closest('.shadow-item');
       const refElem = shadowItem ? shadowItem.querySelector('.shadow-sentence') : null;
-      let referenceText = refElem ? refElem.textContent.replace(/^"|"$/g, '').trim() : '';
+      let referenceText = refElem ? cleanReferenceText(refElem.textContent) : '';
 
       try {
         const result = await SpeechAssessmentEngine.assess({
@@ -2226,7 +2236,7 @@
           language: "en-US"
         });
 
-        renderAssessmentResult(fb, result, id);
+        renderAssessmentResult(fb, result, id, referenceText);
         LMS().event('shadowing_submitted', { id: id, score: result.scores.pronunciation });
       } catch (err) {
         console.error('Assessment Engine Error:', err);
@@ -2244,7 +2254,7 @@
         case 'AUDIO_ERROR':
           return 'Định dạng âm thanh thu âm không hợp lệ.';
         case 'NO_SPEECH':
-          return 'Không nhận diện được giọng nói trong bản thu. Vui lòng phát âm rõ hơn và thử lại.';
+          return 'Không nhận diện được giọng nói trong bản thu. Vui lòng phát âm rõ hơn và đọc đúng câu mẫu.';
         case 'INVALID_REFERENCE':
           return 'Không tìm thấy câu mẫu tham chiếu.';
         default:
@@ -2263,7 +2273,7 @@
       `;
     }
 
-    function renderAssessmentResult(container, result, id) {
+    function renderAssessmentResult(container, result, id, referenceText) {
       const pronScore = result.scores.pronunciation;
       let badgeClass = 'high';
       if (pronScore < 60) badgeClass = 'low';
@@ -2273,9 +2283,19 @@
       if (result.words && result.words.length > 0) {
         wordsHtml = result.words.map(w => {
           let wordClass = 'good';
-          if (w.accuracyScore < 60 || w.errorType !== 'None') wordClass = 'bad';
-          else if (w.accuracyScore < 80) wordClass = 'warning';
-          return `<span class="sa-word ${wordClass}" title="${w.errorType !== 'None' ? w.errorType : ''}">${esc(w.word)}<span class="sa-word-score">${w.accuracyScore}</span></span>`;
+          let label = `${w.accuracyScore}`;
+          if (w.errorType === 'Omission') {
+            wordClass = 'bad';
+            label = 'Bỏ sót';
+          } else if (w.errorType === 'Insertion') {
+            wordClass = 'warning';
+            label = 'Thừa';
+          } else if (w.errorType === 'Mispronunciation' || w.accuracyScore < 60) {
+            wordClass = 'bad';
+          } else if (w.accuracyScore < 80) {
+            wordClass = 'warning';
+          }
+          return `<span class="sa-word ${wordClass}" title="Lỗi: ${w.errorType}">${esc(w.word)}<span class="sa-word-score">${label}</span></span>`;
         }).join(' ');
       } else {
         wordsHtml = `<span>${esc(result.recognizedText || '')}</span>`;
@@ -2287,8 +2307,11 @@
           <div class="sa-overall-row">
             <div>
               <strong style="color:var(--jade-dark);font-size:15px;">Kết quả phát âm (Pronunciation Assessment)</strong>
+              <div style="font-size:13px;color:var(--ink-2);margin-top:4px;">
+                <b>Mẫu yêu cầu:</b> "<i>${esc(referenceText)}</i>"
+              </div>
               <div style="font-size:13px;color:var(--ink-2);margin-top:2px;">
-                Nhận diện: "<i>${esc(result.recognizedText)}</i>"
+                <b>Nói thực tế:</b> "<i>${esc(result.recognizedText)}</i>"
               </div>
             </div>
             <div class="sa-score-badge ${badgeClass}">${pronScore} <span style="font-size:12px;font-weight:600;">/ 100</span></div>
@@ -2296,25 +2319,25 @@
 
           <div class="sa-scores-grid">
             <div class="sa-score-item">
-              <div class="sa-score-label">Accuracy</div>
+              <div class="sa-score-label">Accuracy (Chính xác)</div>
               <div class="sa-score-val">${result.scores.accuracy}</div>
             </div>
             <div class="sa-score-item">
-              <div class="sa-score-label">Fluency</div>
+              <div class="sa-score-label">Fluency (Trôi chảy)</div>
               <div class="sa-score-val">${result.scores.fluency}</div>
             </div>
             <div class="sa-score-item">
-              <div class="sa-score-label">Completeness</div>
+              <div class="sa-score-label">Completeness (Đầy đủ)</div>
               <div class="sa-score-val">${result.scores.completeness}</div>
             </div>
             <div class="sa-score-item">
-              <div class="sa-score-label">Prosody</div>
+              <div class="sa-score-label">Prosody (Ngữ điệu)</div>
               <div class="sa-score-val">${result.scores.prosody}</div>
             </div>
           </div>
 
           <div style="margin-top:10px;">
-            <div class="sa-words-title">Chi tiết từng từ (Word breakdown):</div>
+            <div class="sa-words-title">Chi tiết từng từ (Word breakdown &amp; Lỗi từ):</div>
             <div class="sa-words-wrap">${wordsHtml}</div>
           </div>
         </div>
