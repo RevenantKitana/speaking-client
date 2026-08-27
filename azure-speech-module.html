@@ -23,7 +23,7 @@
       'use strict';
 
       /* ⚙️ CẤU HÌNH URL BACKEND LẤY TOKEN */
-      global.SPEECH_TOKEN_ENDPOINT = global.SPEECH_TOKEN_ENDPOINT || 'https://speech-token-aiducation.onrender.com/api/speech-token';
+      const SPEECH_TOKEN_ENDPOINT = 'https://speech-token-aiducation.onrender.com/api/speech-token';
 
       /* Dynamic SDK Loader & Assurance */
       function ensureSpeechSDKLoaded() {
@@ -65,7 +65,7 @@
         let cachedRegion = null;
         let expiresAt = 0; // Timestamp in ms
 
-        const getEndpoint = () => global.SPEECH_TOKEN_ENDPOINT || '/api/speech-token';
+        const getEndpoint = () => SPEECH_TOKEN_ENDPOINT;
 
         return {
           isValid() {
