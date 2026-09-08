@@ -1,0 +1,4018 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Unit 1 Reading: Identifying the Topic — Simulation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      /* Neutrals · giấy & mực */
+      --cream: #FAF7F0;
+      --cream-2: #F0EADD;
+      --cream-3: #E7DECC;
+      --paper-line: #E5DECF;
+      --paper-line-2: #D6CCB6;
+      --ink: #1A1A1A;
+      --ink-2: #514C44;
+      --ink-3: #7C756A;
+      --ink-faint: #ABA396;
+
+      /* Jade · hành động chính */
+      --jade: #3CA57A;
+      --jade-deep: #2A8167;
+      --jade-dark: #14432F;
+      --jade-text: #1B5E48;
+      --jade-soft: #A9D0BE;
+      --jade-pale: #DCEAE1;
+
+      /* Sage · phụ trợ */
+      --sage: #A8C9B8;
+      --sage-deep: #7CA792;
+      --sage-text: #46685A;
+      --sage-pale: #E1ECE4;
+
+      /* Accent · điểm nhấn ấm */
+      --accent: #E8A24A;
+      --accent-deep: #CE8A33;
+      --accent-text: #8A551A;
+      --accent-pale: #F7E7CD;
+
+      /* Semantic · phản hồi đúng/sai/cảnh báo/info */
+      --correct: #2A8167;
+      --correct-bg: #DCEAE1;
+      --wrong: #A84B2C;
+      --wrong-bg: #F3E2D6;
+      --warning: #C58A2E;
+      --warning-bg: #F5E7CB;
+      --info: #4E7F92;
+      --info-bg: #DCE7EB;
+
+      --white: #FFFFFF;
+      --radius-lg: 22px;
+      --radius: 14px;
+      --radius-sm: 10px;
+      --shadow: 0 10px 30px rgba(43, 43, 40, 0.10);
+      --shadow-lg: 0 16px 40px rgba(20, 67, 47, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 17px;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      padding-bottom: 80px;
+      user-select: none;
+    }
+
+    h1, h2, h3, .display {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-weight: 800;
+      color: var(--jade-dark);
+    }
+
+    /* Bilingual Subtitles - Section 0 Rule 15 */
+    .vi-sub {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-3);
+      margin-top: 2px;
+    }
+
+    .vi-sub-light {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.78);
+      margin-top: 2px;
+    }
+
+    /* Hero Header - Section 4.2 */
+    .hero {
+      position: relative;
+      background: var(--jade-deep);
+      overflow: hidden;
+      padding: 48px 16px 60px;
+      margin-bottom: 24px;
+      border-radius: var(--radius-lg);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: var(--white);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      color: var(--white);
+      font-size: clamp(28px, 5vw, 46px);
+      line-height: 1.15;
+      font-weight: 800;
+    }
+
+    .hero p.sub {
+      color: var(--sage);
+      font-size: 18px;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    .characters {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .char-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 18px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+    }
+
+    .char-name {
+      font-weight: 700;
+      color: var(--white);
+      font-size: 15px;
+    }
+
+    .char-role {
+      font-size: 12px;
+      color: var(--cream-2);
+    }
+
+    .objectives {
+      margin: 24px auto 0;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .obj-pill {
+      background: var(--white);
+      color: var(--jade-dark);
+      border-radius: 14px;
+      padding: 10px 14px;
+      font-size: 13.5px;
+      font-weight: 600;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      box-shadow: var(--shadow);
+      text-align: left;
+    }
+
+    .obj-num {
+      background: var(--jade-deep);
+      color: var(--white);
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* Top Sticky App Header - Section 4.25 */
+    .top-app-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 247, 240, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--paper-line);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+
+    .app-title-area {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .app-badge {
+      background: var(--jade-pale);
+      color: var(--jade-text);
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .app-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .global-timer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--cream-2);
+      border: 1px solid var(--paper-line-2);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-2);
+      transition: all 0.3s;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    .global-timer-badge.warning {
+      background: var(--warning-bg);
+      border-color: var(--warning);
+      color: var(--wrong);
+      animation: pulse 1s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { opacity: 1; }
+      to { opacity: 0.7; }
+    }
+
+    /* Main Container & Layout */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 20px 16px;
+    }
+
+    /* Sequential Steps Navigation Bar - Section 4.5 */
+    .steps-nav {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .steps-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .step-nav-btn {
+      flex: 1;
+      min-width: 130px;
+      min-height: 44px;
+      background: var(--white);
+      border: 1px solid var(--paper-line);
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink-3);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .step-nav-btn:hover:not(:disabled) {
+      background: var(--cream-2);
+      color: var(--ink);
+    }
+
+    .step-nav-btn.active {
+      background: var(--jade-deep) !important;
+      border-color: var(--jade-dark) !important;
+      color: var(--white) !important;
+      box-shadow: 0 4px 12px rgba(42, 129, 103, 0.22);
+      pointer-events: auto !important;
+    }
+
+    .step-nav-btn.completed {
+      background: var(--sage-pale);
+      border-color: var(--sage);
+      color: var(--sage-text);
+    }
+
+    .step-nav-btn.locked {
+      opacity: 0.45;
+      cursor: not-allowed;
+      background: var(--cream-2);
+      border-color: var(--paper-line);
+      color: var(--ink-faint);
+      pointer-events: none;
+    }
+
+    /* Practice Reference Pane - Section 4.8b */
+    .mobile-pane-controls {
+      display: none;
+      margin-bottom: 14px;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: nowrap;
+      background: var(--cream-2);
+      padding: 6px 10px;
+      border-radius: var(--radius);
+      width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .mobile-pane-controls::-webkit-scrollbar {
+      display: none;
+    }
+
+    .mpc-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--jade-dark);
+      flex: 0 0 auto;
+      white-space: nowrap;
+      margin-right: 2px;
+    }
+
+    .mpc-btn {
+      background: var(--white);
+      border: 1.5px solid var(--sage);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--ink-2);
+      min-height: 34px;
+      flex: 1 1 0;
+      white-space: nowrap;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .mpc-btn.active {
+      background: var(--jade-deep);
+      color: var(--white);
+      border-color: var(--jade-deep);
+    }
+
+    .practice-split-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .practice-ref-pane {
+      background: var(--white);
+      border: 2px solid var(--cream-2);
+      border-radius: var(--radius-lg);
+      padding: 14px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pref-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      border-bottom: 1.5px solid var(--cream-2);
+      padding-bottom: 8px;
+    }
+
+    .pref-collapse-btn {
+      flex: 0 0 auto;
+      background: var(--cream-2);
+      border: 1.5px solid var(--paper-line-2);
+      border-radius: 999px;
+      width: 34px;
+      height: 34px;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--ink-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .pref-collapse-btn:hover {
+      background: var(--sage-pale);
+      color: var(--jade-text);
+    }
+
+    .ref-reopen-btn {
+      display: none;
+      background: var(--jade-deep);
+      color: var(--white);
+      border: 0;
+      border-radius: 999px;
+      padding: 9px 16px;
+      font-size: 13.5px;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      margin-bottom: 14px;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .practice-split-container.ref-collapsed .ref-reopen-btn {
+      display: inline-flex;
+    }
+
+    .practice-split-container.ref-collapsed .practice-ref-pane {
+      display: none;
+    }
+
+    .pref-tabs {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .pref-tab {
+      background: var(--cream-2);
+      border: 1.5px solid transparent;
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-2);
+      min-height: 36px;
+      flex: 1;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .pref-tab.active {
+      background: var(--jade-deep);
+      color: var(--white);
+      border-color: var(--jade-deep);
+    }
+
+    .pref-body {
+      flex: 1;
+      overflow-y: auto;
+      max-height: 480px;
+    }
+
+    .pref-view {
+      display: none;
+    }
+
+    .pref-view.active {
+      display: block;
+      animation: fadeIn .25s ease;
+    }
+
+    /* Cards & Sections */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--paper-line);
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .section-header {
+      margin-bottom: 16px;
+    }
+
+    .section-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--jade-deep);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--jade-dark);
+      line-height: 1.3;
+    }
+
+    .instruction-box {
+      background: linear-gradient(135deg, var(--jade-pale), var(--cream));
+      border-left: 5px solid var(--jade-deep);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 2px 8px rgba(42, 129, 103, 0.06);
+      border-top: 1px solid var(--paper-line);
+      border-right: 1px solid var(--paper-line);
+      border-bottom: 1px solid var(--paper-line);
+    }
+
+    .instruction-text {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    .translation-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--jade-pale);
+      border: 1px solid var(--sage);
+      color: var(--jade-dark);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 6px 14px;
+      min-height: 36px;
+      border-radius: 20px;
+      width: fit-content;
+      transition: all 0.2s ease;
+    }
+
+    .translation-btn:hover {
+      background: var(--jade-deep);
+      color: var(--white);
+      border-color: var(--jade-deep);
+      text-decoration: none;
+    }
+
+    .translation-text {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink-3);
+      display: none;
+      margin-top: 4px;
+      padding: 8px 12px;
+      background: var(--cream-2);
+      border-left: 3px solid var(--jade-deep);
+      border-radius: 6px;
+      line-height: 1.5;
+    }
+
+    .translation-text.visible {
+      display: block;
+    }
+
+    .subcard-progress {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--jade-deep);
+      background: var(--jade-pale);
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 0;
+      width: fit-content;
+    }
+
+    /* Sub-card Navigation Bar */
+    .subcard-top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed var(--sage);
+    }
+
+    .subcard-bottom-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--paper-line);
+      flex-wrap: wrap;
+    }
+
+    .btn-subcard-turnback {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--white);
+      border: 1.5px solid var(--sage);
+      color: var(--jade-dark);
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 8px 16px;
+      min-height: 40px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    .btn-subcard-turnback:hover:not(:disabled) {
+      background: var(--jade-pale);
+      border-color: var(--jade-deep);
+      color: var(--jade-dark);
+      transform: translateX(-2px);
+    }
+
+    .btn-subcard-turnback:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      border-color: var(--paper-line);
+      color: var(--ink-3);
+    }
+
+    .btn-subcard-forward {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--jade-pale);
+      border: 1.5px solid var(--jade-deep);
+      color: var(--jade-dark);
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 8px 16px;
+      min-height: 40px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-subcard-forward:hover:not(:disabled) {
+      background: var(--jade-deep);
+      color: var(--white);
+      transform: translateX(2px);
+    }
+
+    .btn-subcard-forward:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      background: var(--cream-2);
+      border-color: var(--paper-line);
+      color: var(--ink-3);
+    }
+
+    .card-step-hidden {
+      display: none !important;
+    }
+
+    .card-step-visible {
+      display: block !important;
+      animation: subcardSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes subcardSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--jade-deep);
+      color: var(--white);
+      box-shadow: 0 4px 14px rgba(42, 129, 103, 0.25);
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: var(--jade-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--cream-2);
+      color: var(--ink);
+      border: 1px solid var(--paper-line-2);
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      background: var(--cream-3);
+    }
+
+    .btn-hint {
+      background: var(--accent-pale);
+      color: var(--accent-text);
+      border: 1px solid var(--accent);
+      font-size: 14px;
+    }
+
+    .btn-hint:hover:not(:disabled) {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    .next-step-bar {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+      margin-top: 24px;
+    }
+
+    .step-lock-hint {
+      font-size: 13.5px;
+      color: var(--wrong);
+      font-weight: 600;
+    }
+
+    /* Paragraph Boxes & Reading Passage - Section 4.10 */
+    .reading-passage {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 20px 22px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--ink);
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .paragraph-block {
+      margin-bottom: 14px;
+    }
+
+    .paragraph-block:last-child {
+      margin-bottom: 0;
+    }
+
+    .para-tag {
+      font-weight: 800;
+      color: var(--jade-deep);
+      font-size: 13px;
+      margin-right: 8px;
+      text-transform: uppercase;
+      background: var(--jade-pale);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    /* Interactive Words */
+    .word-token {
+      display: inline-block;
+      padding: 2px 5px;
+      margin: 1px 1px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .word-token:hover:not(.correct-highlight) {
+      background: var(--sage-pale);
+    }
+
+    .word-token.selected {
+      background: var(--accent);
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    .word-token.correct-highlight {
+      background: var(--correct-bg) !important;
+      color: var(--jade-text) !important;
+      font-weight: 700 !important;
+      border-bottom: 2px solid var(--correct) !important;
+      pointer-events: none !important;
+    }
+
+    /* MCQ Option Grid & Cards - Section 4.6, 4.11 */
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .option-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--white);
+      border: 2px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      min-height: 50px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 16px;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .option-card:hover:not(.correct) {
+      border-color: var(--sage-deep);
+      background: var(--cream);
+    }
+
+    .option-letter {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--cream-2);
+      color: var(--ink-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      flex-shrink: 0;
+      transition: all 0.2s;
+    }
+
+    .option-card.selected {
+      border-color: var(--jade-deep);
+      background: var(--jade-pale);
+    }
+
+    .option-card.selected .option-letter {
+      background: var(--jade-deep);
+      color: var(--white);
+    }
+
+    .option-card.correct {
+      border-color: var(--correct) !important;
+      background: var(--correct-bg) !important;
+      color: var(--jade-dark) !important;
+      font-weight: 600 !important;
+      pointer-events: none !important;
+    }
+
+    .option-card.correct .option-letter {
+      background: var(--correct) !important;
+      color: var(--white) !important;
+    }
+
+    .option-card.wrong {
+      border-color: var(--wrong);
+      background: var(--wrong-bg);
+      color: var(--wrong);
+      animation: shake 0.3s forwards;
+    }
+
+    .option-card.wrong .option-letter {
+      background: var(--wrong);
+      color: var(--white);
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-5px); }
+      40%, 80% { transform: translateX(5px); }
+    }
+
+    /* Feedback & Hint Boxes */
+    .feedback-box {
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      margin-top: 14px;
+      font-size: 15px;
+      line-height: 1.55;
+      display: none;
+    }
+
+    .feedback-box.visible {
+      display: block;
+    }
+
+    .feedback-box.correct {
+      background: var(--correct-bg);
+      color: var(--jade-dark);
+      border: 1px solid var(--sage);
+    }
+
+    .feedback-box.wrong {
+      background: var(--wrong-bg);
+      color: var(--wrong);
+      border: 1px solid var(--wrong);
+    }
+
+    .feedback-box.hint {
+      background: var(--warning-bg);
+      color: var(--ink);
+      border: 1px solid var(--warning);
+    }
+
+    /* Step 1 Visual Prediction Grid */
+    .visual-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .visual-card {
+      background: var(--white);
+      border: 1px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 16px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .visual-icon {
+      font-size: 52px;
+      line-height: 1;
+    }
+
+    .visual-img {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--paper-line);
+    }
+
+    .visual-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .visual-opt-btn {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      min-height: 44px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 14.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+    }
+
+    .visual-opt-btn:hover:not(.correct) {
+      background: var(--cream-2);
+    }
+
+    .visual-opt-btn.correct {
+      background: var(--correct-bg) !important;
+      border-color: var(--correct) !important;
+      color: var(--jade-text) !important;
+      font-weight: 700 !important;
+      pointer-events: none !important;
+    }
+
+    .visual-opt-btn.wrong {
+      background: var(--wrong-bg);
+      border-color: var(--wrong);
+      color: var(--wrong);
+      animation: shake 0.3s;
+    }
+
+    /* Step 1 Categorization - Section 4.17 */
+    .word-bank-area {
+      background: var(--cream-2);
+      border: 2px dashed var(--paper-line-2);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .word-bank-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-3);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .word-chips-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .word-chip {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line-2);
+      min-height: 44px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+    }
+
+    .word-chip:hover {
+      border-color: var(--jade-deep);
+      transform: translateY(-1px);
+    }
+
+    .word-chip.selected {
+      background: var(--accent);
+      color: var(--white);
+      border-color: var(--accent-deep);
+    }
+
+    .word-chip.placed {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .topic-buckets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .topic-bucket {
+      background: var(--white);
+      border: 2px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 16px;
+      min-height: 140px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow);
+    }
+
+    .topic-bucket.active-target {
+      border-color: var(--accent);
+      background: var(--accent-pale);
+    }
+
+    .bucket-header {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--jade-dark);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bucket-slots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      flex-grow: 1;
+      align-content: flex-start;
+    }
+
+    .placed-chip {
+      background: var(--jade-pale);
+      color: var(--jade-text);
+      border: 1px solid var(--sage);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* Step 2 Theory Cards (Trick) */
+    .trick-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .trick-card {
+      background: var(--white);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .trick-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--jade-deep);
+    }
+
+    .trick-card.card-what {
+      background: linear-gradient(145deg, var(--info-bg), var(--white));
+      border-left: 5px solid var(--info);
+    }
+
+    .trick-card.card-why {
+      background: linear-gradient(145deg, var(--jade-pale), var(--white));
+      border-left: 5px solid var(--jade-deep);
+    }
+
+    .trick-card.card-how {
+      background: linear-gradient(145deg, var(--accent-pale), var(--white));
+      border-left: 5px solid var(--accent);
+      grid-column: 1 / -1;
+    }
+
+    .trick-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .card-what .trick-badge {
+      color: var(--info);
+      background: var(--info-bg);
+    }
+
+    .card-why .trick-badge {
+      color: var(--jade-text);
+      background: var(--jade-pale);
+    }
+
+    .card-how .trick-badge {
+      color: var(--accent-text);
+      background: var(--accent-pale);
+    }
+
+    .trick-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .trick-desc {
+      font-size: 15px;
+      color: var(--ink-2);
+      line-height: 1.6;
+    }
+
+    .trick-desc strong {
+      color: var(--jade-dark);
+    }
+
+    /* Step 2 Karaoke Watch & Learn - Section 4.28 */
+    .karaoke-box {
+      background: linear-gradient(145deg, var(--jade-dark), var(--jade-deep));
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .karaoke-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .karaoke-step-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-pale);
+      border: 1px solid var(--accent);
+      color: var(--accent-text);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .btn-step-tab {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: rgba(255, 255, 255, 0.9);
+      padding: 6px 14px;
+      min-height: 36px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-step-tab:hover {
+      background: rgba(255, 255, 255, 0.25);
+      color: var(--white);
+    }
+
+    .btn-step-tab.active {
+      background: var(--accent);
+      border-color: var(--accent-deep);
+      color: var(--white);
+      box-shadow: 0 2px 8px rgba(232, 162, 74, 0.35);
+    }
+
+    .karaoke-text {
+      font-size: 19px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .karaoke-word {
+      padding: 3px 6px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .karaoke-word.active-speech {
+      background: var(--accent);
+      color: var(--white);
+      font-weight: 700;
+      transform: scale(1.08);
+      box-shadow: 0 2px 8px rgba(232, 162, 74, 0.4);
+    }
+
+    .karaoke-word.active-keyword {
+      background: var(--jade);
+      color: var(--white);
+      font-weight: 700;
+      transform: scale(1.08);
+      box-shadow: 0 2px 8px rgba(60, 165, 122, 0.5);
+    }
+
+    .karaoke-step-note {
+      background: rgba(255, 255, 255, 0.15);
+      border-left: 4px solid var(--accent);
+      padding: 14px 18px;
+      border-radius: 8px;
+      font-size: 15.5px;
+      line-height: 1.55;
+      backdrop-filter: blur(4px);
+    }
+
+    /* Matching Grid - Section 4.12 */
+    .matching-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+      align-items: stretch;
+    }
+
+    .matching-column {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .matching-card {
+      background: var(--white);
+      border: 2px solid var(--paper-line);
+      border-radius: 12px;
+      padding: 16px 18px;
+      font-size: 15px;
+      line-height: 1.55;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      color: var(--ink);
+    }
+
+    #matchTopicsCol .matching-card {
+      justify-content: center;
+      text-align: center;
+      font-size: 16.5px;
+      font-weight: 700;
+      color: var(--jade-dark);
+      background: linear-gradient(135deg, var(--jade-pale), var(--white));
+    }
+
+    .matching-card:hover {
+      border-color: var(--jade-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(42, 129, 103, 0.12);
+    }
+
+    .matching-card.selected {
+      border-color: var(--accent);
+      background: var(--accent-pale) !important;
+      box-shadow: 0 0 0 3px rgba(232, 162, 74, 0.25);
+    }
+
+    .matching-card.matched {
+      border-color: var(--correct);
+      background: var(--correct-bg) !important;
+      color: var(--jade-dark);
+      pointer-events: none;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(42, 129, 103, 0.15);
+    }
+
+    .matching-card.wrong {
+      border-color: var(--wrong);
+      background: var(--wrong-bg);
+      animation: shake 0.3s;
+    }
+
+    /* Step 5 Skill Check Gate & Timer - Section 4.26 */
+    .gate-overlay {
+      text-align: center;
+      padding: 36px 20px;
+      background: var(--white);
+      border-radius: var(--radius);
+      border: 1px solid var(--paper-line);
+      box-shadow: var(--shadow);
+    }
+
+    .skillcheck-timer-big {
+      font-size: 44px;
+      font-weight: 800;
+      color: var(--jade-deep);
+      font-family: monospace;
+      margin: 16px 0;
+    }
+
+    .skillcheck-timer-big.danger {
+      color: var(--wrong);
+    }
+
+    .blur-content {
+      filter: blur(8px);
+      pointer-events: none;
+      user-select: none;
+      transition: filter 0.4s ease;
+    }
+
+    .blur-content.unblurred {
+      filter: none;
+      pointer-events: auto;
+      user-select: auto;
+    }
+
+    /* Results Table */
+    .results-table-wrapper {
+      overflow-x: auto;
+      margin-top: 16px;
+    }
+
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+      min-width: 500px;
+    }
+
+    .results-table th,
+    .results-table td {
+      border: 1px solid var(--paper-line);
+      padding: 12px 14px;
+      text-align: left;
+    }
+
+    .results-table th {
+      background: var(--cream-2);
+      font-weight: 700;
+      color: var(--ink-2);
+    }
+
+    /* Lockout Overlay (45m Expiry) */
+    .lockout-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(26, 26, 26, 0.95);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .lockout-card {
+      max-width: 480px;
+      background: var(--ink);
+      border: 1px solid var(--ink-2);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+    }
+
+    .lockout-timer {
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--accent);
+      font-family: monospace;
+      margin: 20px 0;
+    }
+
+    /* Utilities */
+    .hidden {
+      display: none !important;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Breakpoints & Viewport Consistency */
+    @media (min-width: 992px) {
+      .practice-split-container {
+        display: grid;
+        grid-template-columns: minmax(320px, 1fr) minmax(400px, 1.2fr);
+        gap: 20px;
+        align-items: start;
+      }
+      .practice-ref-pane {
+        position: sticky;
+        top: 70px;
+        max-height: calc(100vh - 90px);
+      }
+      .practice-questions-pane {
+        min-width: 0;
+      }
+      .ref-reopen-btn {
+        position: sticky;
+        top: 70px;
+        z-index: 60;
+      }
+      .practice-split-container.ref-collapsed {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .mobile-pane-controls {
+        display: flex;
+        position: sticky;
+        top: 42px;
+        z-index: 85;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+      .practice-ref-pane {
+        position: sticky;
+        top: 84px;
+        z-index: 80;
+        max-height: 38vh;
+        box-shadow: 0 8px 24px rgba(42, 129, 103, 0.15);
+        border-bottom: 3px solid var(--jade-deep);
+      }
+      .pref-body {
+        max-height: calc(38vh - 55px);
+        overflow-y: auto;
+      }
+      .practice-split-container.mode-split .practice-ref-pane {
+        max-height: 38vh;
+      }
+      .practice-split-container.mode-split .pref-body {
+        max-height: calc(38vh - 55px);
+      }
+      .practice-split-container.mode-ref .practice-ref-pane {
+        max-height: 60vh;
+      }
+      .practice-split-container.mode-ref .pref-body {
+        max-height: calc(60vh - 55px);
+      }
+      .practice-split-container.mode-q .practice-ref-pane {
+        max-height: 18vh;
+      }
+      .practice-split-container.mode-q .pref-body {
+        max-height: calc(18vh - 55px);
+      }
+      .ref-reopen-btn {
+        position: sticky;
+        top: 84px;
+        z-index: 80;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px;
+      }
+
+      .container {
+        padding: 14px 12px;
+      }
+
+      .card {
+        padding: 18px 16px;
+        border-radius: 12px;
+        margin-bottom: 18px;
+      }
+
+      .section-title {
+        font-size: 19.5px;
+      }
+
+      .top-app-bar {
+        padding: 8px 12px;
+      }
+
+      .app-title {
+        font-size: 13.5px;
+      }
+
+      .reading-passage {
+        padding: 16px;
+        font-size: 16px;
+      }
+
+      .matching-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .trick-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .visual-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .topic-buckets-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .btn {
+        width: 100%;
+        min-height: 48px;
+      }
+
+      .next-step-bar {
+        align-items: stretch;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .top-app-bar {
+        padding: 8px 12px;
+        gap: 8px;
+      }
+
+      .app-badge {
+        font-size: 10.5px;
+        padding: 3px 6px;
+      }
+
+      .app-title {
+        font-size: 13px;
+      }
+
+      .global-timer-badge {
+        font-size: 12px;
+        padding: 3px 8px;
+      }
+
+      .visual-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .option-card {
+        padding: 12px 14px;
+        font-size: 15px;
+      }
+
+      .option-letter {
+        width: 28px;
+        height: 28px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Athena Context Script -->
+  <script id="athena-context" type="application/json">
+  {
+    "title": "Unit 1 Reading: Identifying the Topic",
+    "subject": "English",
+    "grade": 10,
+    "objectives": [
+      "Identify paragraph topics",
+      "Recognize repeating words and word families",
+      "Distinguish main topic from specific details"
+    ],
+    "structure": [
+      { "id": "step-1", "title": "Warm-up" },
+      { "id": "step-2", "title": "Skill Activated" },
+      { "id": "step-3", "title": "Guided Steps" },
+      { "id": "step-4", "title": "Try It Yourself" },
+      { "id": "step-5", "title": "Skill Check" }
+    ],
+    "athenaGuidance": {
+      "moduleGoal": "Guide students to find paragraph topics by noticing recurring words and key concepts.",
+      "questions": [
+        { "id": "quick-guess", "question": "Which word best describes what this paragraph is about?", "answer": "B. School lunch", "keywords": ["lunch boxes", "rice", "food"] },
+        { "id": "round-1-cat-3", "question": "These words are all about...", "answer": "Cats' habits", "keywords": ["sleeping", "nap", "play", "rest"] },
+        { "id": "round-1-cat-4", "question": "So, the topic is...", "answer": "How cats spend the day", "keywords": ["sleeping", "nap", "play", "rest"] },
+        { "id": "round-2-family", "question": "What is the text about?", "answer": "B. How chores benefit children", "keywords": ["chores", "life skills", "responsibility", "character"] },
+        { "id": "sports-step-2", "question": "These words are all about...", "answer": "C. Running and endurance", "keywords": ["runners", "train", "marathons", "athletes", "clubs"] },
+        { "id": "sports-step-3", "question": "Whole article topic", "answer": "D. The rising popularity of running", "keywords": ["running", "marathons"] },
+        { "id": "photo-step-2", "question": "What is paragraph 2 about?", "answer": "A. Photography as a hobby", "keywords": ["photography", "cameras", "photo clubs", "photographers"] },
+        { "id": "apps-step", "question": "What is paragraph 2 about?", "answer": "C. Apps changing daily tasks", "keywords": ["food", "taxis", "languages", "single app"] },
+        { "id": "streetfood-step", "question": "Which title best fits this paragraph?", "answer": "B. Why Street Food Attracts Tourists", "keywords": ["street food", "tourists", "bloggers"] },
+        { "id": "skillcheck-1", "question": "Which topic is NOT discussed in this text?", "answer": "C. Government funding for community centers", "keywords": ["volunteering", "careers", "schools"] },
+        { "id": "skillcheck-2", "question": "What topic do they have in common?", "answer": "A. Making resources easier to access", "keywords": ["digital reading apps", "tablets", "accessible"] }
+      ],
+      "pedagogicalRule": "Do NOT reveal the answer directly. Ask guided questions pointing students to notice repeated words or common themes."
+    }
+  }
+  </script>
+
+  <!-- Top Sticky App Bar -->
+  <div class="top-app-bar">
+    <div class="app-title-area">
+      <span class="app-badge">Unit 1 Reading</span>
+      <span class="app-title">Identifying the Topic</span>
+    </div>
+    <div class="global-timer-badge" id="globalTimerBadge">
+      ⏱️ 45:00
+    </div>
+  </div>
+
+  <!-- Container -->
+  <div class="container">
+
+    <!-- Sequential Steps Navigation Bar -->
+    <div class="steps-nav" id="stepsNav">
+      <button class="step-nav-btn active" onclick="switchStep(1)">1. Warm-up</button>
+      <button class="step-nav-btn locked" id="btnNavStep2" disabled onclick="switchStep(2)">2. Skill Activated</button>
+      <button class="step-nav-btn locked" id="btnNavStep3" disabled onclick="switchStep(3)">3. Guided Steps</button>
+      <button class="step-nav-btn locked" id="btnNavStep4" disabled onclick="switchStep(4)">4. Try It Yourself</button>
+      <button class="step-nav-btn locked" id="btnNavStep5" disabled onclick="switchStep(5)">5. Skill Check</button>
+    </div>
+
+    <!-- ==========================================
+         STEP 1: WARM-UP
+    =========================================== -->
+    <div id="step-1-content" class="step-content">
+      <div class="card" id="step1-card1">
+        <div class="subcard-top-nav">
+          <button class="btn-subcard-turnback" id="btn-top-prev-1-1" onclick="prevSubCard(1)" disabled>‹ Quay lại</button>
+          <span class="subcard-progress">Visual Prediction</span>
+        </div>
+        <div class="section-header">
+          <div class="section-eyebrow">Part 1</div>
+        </div>
+        <div class="instruction-box">
+          <span class="instruction-text">Look at each picture. What is it about?</span>
+          <button class="translation-btn" onclick="toggleTranslation('t-warmup-1')">🌐 [Show Translation]</button>
+          <div class="translation-text" id="t-warmup-1">Nhìn vào từng bức tranh. Bức tranh nói về điều gì?</div>
+        </div>
+
+        <div class="visual-grid">
+          <!-- Card 1 -->
+          <div class="visual-card" id="vcard-1">
+            <img src="https://qkhah6829.id.vn/eng/L10R1/Cooking.webp" alt="Cooking" class="visual-img">
+            <div class="visual-options">
+              <button class="visual-opt-btn" onclick="checkVisualOpt(this, false, 1)">A. Sports</button>
+              <button class="visual-opt-btn" onclick="checkVisualOpt(this, false, 1)">B. Music</button>
+              <button class="visual-opt-btn" onclick="checkVisualOpt(this, true, 1)">C. Cooking</button>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="visual-card" id="vcard-2">
+            <img src="https://qkhah6829.id.vn/eng/L10R1/Sport.webp" alt="Sports" class="visual-img">
+            <div class="visual-options">
+              <button class="visual-opt-btn" onclick="checkVisualOpt(this, true, 2)">A. Sports</button>
+              <button class="visual-opt-btn" onclick="checkVisualOpt(this, false, 2)">B. Music</button>
+              <button class="visual-opt-btn" onclick="checkVisualOpt(this, false, 2)">C. Cooking</button>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="visual-card" id="vcard-3">
+            <img src="https://qkhah6829.id.vn/eng/L10R1/technology.webp" alt="Technology" class="visual-img">
+            <div class="visual-options">
+              <button class="visual-opt-btn" onclick="checkVisualOpt(this, false, 3)">A. Weather</button>
+              <button class="visual-opt-btn" onclick="checkVisualOpt(this, true, 3)">B. Technology</button>
+              <button class="visual-opt-btn" onclick="checkVisualOpt(this, false, 3)">C. Sports</button>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="visual-card" id="vcard-4">
+            <img src="https://qkhah6829.id.vn/eng/L10R1/weather.webp" alt="Weather" class="visual-img">
+            <div class="visual-options">
+              <button class="visual-opt-btn" onclick="checkVisualOpt(this, true, 4)">A. Weather</button>
+              <button class="visual-opt-btn" onclick="checkVisualOpt(this, false, 4)">B. Food</button>
+              <button class="visual-opt-btn" onclick="checkVisualOpt(this, false, 4)">C. Music</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="subcard-bottom-nav" style="justify-content: flex-end;">
+          <button class="btn-subcard-forward" id="btn-btm-next-1-1" onclick="nextSubCard(1)" disabled>Tiếp theo →</button>
+        </div>
+      </div>
+
+      <div class="card card-step-hidden" id="step1-card2">
+        <div class="subcard-top-nav">
+          <button class="btn-subcard-turnback" id="btn-top-prev-1-2" onclick="prevSubCard(1)">‹ Quay lại</button>
+          <span class="subcard-progress">Word Categorization</span>
+        </div>
+        <div class="section-header">
+          <div class="section-eyebrow">Part 2</div>
+        </div>
+        <div class="instruction-box">
+          <span class="instruction-text">Tap a word to select it, then tap its correct topic group.</span>
+          <button class="translation-btn" onclick="toggleTranslation('t-warmup-2')">🌐 [Show Translation]</button>
+          <div class="translation-text" id="t-warmup-2">Chạm vào từng từ và đưa vào đúng nhóm chủ đề.</div>
+        </div>
+
+        <div class="word-bank-area">
+          <div class="word-bank-title">Word Bank</div>
+          <div class="word-chips-container" id="warmupWordBank">
+            <!-- Shuffled words -->
+          </div>
+        </div>
+
+        <div class="topic-buckets-grid">
+          <div class="topic-bucket" onclick="placeWordInBucket('Food')" id="bucket-Food">
+            <div class="bucket-header">🍔 Group A (Food)</div>
+            <div class="bucket-slots" id="slots-Food"></div>
+          </div>
+          <div class="topic-bucket" onclick="placeWordInBucket('Sports')" id="bucket-Sports">
+            <div class="bucket-header">⚽ Group B (Sports)</div>
+            <div class="bucket-slots" id="slots-Sports"></div>
+          </div>
+          <div class="topic-bucket" onclick="placeWordInBucket('Weather')" id="bucket-Weather">
+            <div class="bucket-header">🌧️ Group C (Weather)</div>
+            <div class="bucket-slots" id="slots-Weather"></div>
+          </div>
+        </div>
+
+        <div class="feedback-box correct" id="warmupCompleteFeedback">
+          🎉 <strong>Nice!</strong> You just grouped words by topic — that's exactly what we'll practice today.
+          <br>
+          <button class="translation-btn" onclick="toggleTranslation('t-warmup-fb')">🌐 [Show Translation]</button>
+          <div class="translation-text" id="t-warmup-fb">Tuyệt! Bạn vừa phân loại từ theo chủ đề — đó chính xác là điều
+            chúng ta sẽ luyện tập hôm nay.</div>
+        </div>
+
+        <div class="subcard-bottom-nav">
+          <span class="step-lock-hint" id="hintLockStep1">🔒 Complete all 4 pictures & 9 word categorizations to unlock Step 2</span>
+          <button class="btn btn-primary" id="btnNextStep1" disabled onclick="proceedToStep(2)">Tiếp theo: Skill Activated →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         STEP 2: SKILL ACTIVATED
+    =========================================== -->
+    <div id="step-2-content" class="step-content hidden">
+
+      <!-- 2.1 Quick Guess -->
+      <div class="card" id="step2-card1">
+        <div class="subcard-top-nav">
+          <button class="btn-subcard-turnback" id="btn-top-prev-2-1" onclick="prevSubCard(2)" disabled>‹ Quay lại</button>
+          <span class="subcard-progress">Quick Guess</span>
+        </div>
+        <div class="section-header">
+          <div class="section-eyebrow">Part 2.1</div>
+        </div>
+        <div class="instruction-box">
+          <span class="instruction-text">Let's start with a quick guess — don't worry if you're not sure!</span>
+          <button class="translation-btn" onclick="toggleTranslation('t-qg-inst')">🌐 [Show Translation]</button>
+          <div class="translation-text" id="t-qg-inst">Hãy cùng đoán nhanh nhé — đừng lo nếu bạn chưa chắc chắn!</div>
+        </div>
+
+        <div class="reading-passage">
+          Many students bring lunch boxes to school. They eat rice, vegetables, and sometimes chicken. Some students
+          share their food with friends during break time.
+        </div>
+
+        <div class="instruction-box">
+          <span class="instruction-text">Which word best describes what this paragraph is about?</span>
+          <button class="translation-btn" onclick="toggleTranslation('t-qg-q')">🌐 [Show Translation]</button>
+          <div class="translation-text" id="t-qg-q">Từ nào mô tả đúng nhất nội dung của đoạn văn này?</div>
+        </div>
+
+        <div class="options-grid">
+          <div class="option-card" onclick="selectQuickGuess(this, 'A')">
+            <div class="option-letter">A</div>
+            <div>Friends</div>
+          </div>
+          <div class="option-card" onclick="selectQuickGuess(this, 'B')">
+            <div class="option-letter">B</div>
+            <div>School lunch</div>
+          </div>
+          <div class="option-card" onclick="selectQuickGuess(this, 'C')">
+            <div class="option-letter">C</div>
+            <div>Vegetables</div>
+          </div>
+        </div>
+
+        <div class="feedback-box hint" id="quickGuessNote">
+          💡 <strong>Let's find out if you're right after you learn this skill.</strong>
+          <br>
+          <button class="translation-btn" onclick="toggleTranslation('t-qg-note')">🌐 [Show Translation]</button>
+          <div class="translation-text" id="t-qg-note">Hãy cùng xem bạn có đúng không sau khi học xong kỹ năng này nhé.
+          </div>
+        </div>
+
+        <div class="subcard-bottom-nav" style="justify-content: flex-end;">
+          <button class="btn-subcard-forward" id="btn-btm-next-2-1" onclick="nextSubCard(2)" disabled>Tiếp theo →</button>
+        </div>
+      </div>
+
+      <!-- 2.2 Here's the Trick -->
+      <div class="card card-step-hidden" id="step2-card2">
+        <div class="subcard-top-nav">
+          <button class="btn-subcard-turnback" id="btn-top-prev-2-2" onclick="prevSubCard(2)">‹ Quay lại</button>
+          <span class="subcard-progress">Strategy Notice</span>
+        </div>
+        <div class="section-header">
+          <div class="section-eyebrow">Part 2.2</div>
+        </div>
+        <div class="instruction-box">
+          <span class="instruction-text">Now let's learn the trick to finding the topic quickly.</span>
+          <button class="translation-btn" onclick="toggleTranslation('t-trick-inst')">🌐 [Show Translation]</button>
+          <div class="translation-text" id="t-trick-inst">Bây giờ hãy cùng học bí quyết để tìm chủ đề thật nhanh.</div>
+        </div>
+
+        <div class="trick-cards-grid">
+          <div class="trick-card card-what">
+            <span class="trick-badge">💡 WHAT</span>
+            <div class="trick-title">What is the topic?</div>
+            <div class="trick-desc">
+              The topic is <strong>what a paragraph is about</strong> — usually just <strong>a word</strong> or
+              <strong>a short phrase</strong>.
+            </div>
+            <button class="translation-btn" onclick="toggleTranslation('t-what')">🌐 [Show Translation]</button>
+            <div class="translation-text" id="t-what">CHỦ ĐỀ là gì? — Chủ đề là điều mà đoạn văn nói đến — thường chỉ là
+              một từ hoặc một cụm từ ngắn.</div>
+          </div>
+
+          <div class="trick-card card-why">
+            <span class="trick-badge">🎯 WHY</span>
+            <div class="trick-title">WHY do we need to find it?</div>
+            <div class="trick-desc">
+              We identify the topic to <strong>quickly understand</strong> what a paragraph is generally talking about —
+              before going into details.
+            </div>
+            <button class="translation-btn" onclick="toggleTranslation('t-why')">🌐 [Show Translation]</button>
+            <div class="translation-text" id="t-why">TẠI SAO cần tìm? — Để nhanh chóng hiểu đoạn văn đang nói chung về
+              điều gì, trước khi đi vào chi tiết.</div>
+          </div>
+
+          <div class="trick-card card-how">
+            <span class="trick-badge">⚡ HOW (4 STEPS)</span>
+            <div class="trick-title">How do we find it? (4 Steps)</div>
+            <div class="trick-desc">
+              ① <strong>Read</strong> the paragraph once.<br>
+              ② <strong>Notice</strong> words that repeat or belong to the same group.<br>
+              ③ <strong>Ask:</strong> "What do these words have in common?"<br>
+              ④ <strong>Sum it up</strong> in one word or a short phrase.
+            </div>
+            <button class="translation-btn" onclick="toggleTranslation('t-how')">🌐 [Show Translation]</button>
+            <div class="translation-text" id="t-how">
+              ① Đọc đoạn văn một lượt.<br>
+              ② Chú ý các từ lặp lại hoặc cùng nhóm nghĩa.<br>
+              ③ Tự hỏi: "Những từ này có điểm gì chung?"<br>
+              ④ Tóm gọn lại thành một từ hoặc một cụm từ ngắn.
+            </div>
+          </div>
+        </div>
+
+        <div class="subcard-bottom-nav" style="justify-content: flex-end;">
+          <button class="btn-subcard-forward" id="btn-btm-next-2-2" onclick="nextSubCard(2)">Tiếp theo →</button>
+        </div>
+      </div>
+
+      <!-- 2.3 Watch & Learn -->
+      <div class="card card-step-hidden" id="step2-card3">
+        <div class="subcard-top-nav">
+          <button class="btn-subcard-turnback" id="btn-top-prev-2-3" onclick="prevSubCard(2)">‹ Quay lại</button>
+          <span class="subcard-progress">Demonstration</span>
+        </div>
+        <div class="section-header">
+          <div class="section-eyebrow">Part 2.3</div>
+        </div>
+        <div class="instruction-box">
+          <span class="instruction-text">You will see how I find the topic, step by step.</span>
+          <button class="translation-btn" onclick="toggleTranslation('t-wl-inst')">🌐 [Show Translation]</button>
+          <div class="translation-text" id="t-wl-inst">Bạn sẽ xem mình tìm chủ đề như thế nào, từng bước một.</div>
+        </div>
+
+        <div class="karaoke-box">
+          <div class="karaoke-controls">
+            <span class="karaoke-step-badge" id="karaokeStepBadge">Step 1/4: Read Paragraph</span>
+            <button class="btn btn-primary" id="btnKaraokeAction" onclick="toggleKaraokeAudio()">▶ Play Audio</button>
+            <button class="btn btn-secondary" onclick="resetWatchAndLearn()">🔁 Start Over</button>
+            <span id="karaokeAudioTimer"
+              style="font-family:monospace; font-size:14px; opacity:0.85; margin-left:auto;">00:00 / 00:50</span>
+          </div>
+
+          <div class="karaoke-step-tabs" style="display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap;">
+            <button class="btn-step-tab active" id="stepTab1" onclick="jumpToKaraokeStep(1)">Step 1: Read Paragraph</button>
+            <button class="btn-step-tab" id="stepTab2" onclick="jumpToKaraokeStep(2)">Step 2: Notice Keywords</button>
+            <button class="btn-step-tab" id="stepTab3" onclick="jumpToKaraokeStep(3)">Step 3: Common Theme</button>
+            <button class="btn-step-tab" id="stepTab4" onclick="jumpToKaraokeStep(4)">Step 4: Topic Found</button>
+          </div>
+
+          <div
+            style="background:rgba(255,255,255,0.15); height:6px; border-radius:3px; margin-bottom:18px; cursor:pointer; overflow:hidden;"
+            id="karaokeProgressBg" onclick="seekKaraokeAudio(event)" title="Click to seek audio">
+            <div id="karaokeProgressBar"
+              style="background:var(--accent); height:100%; width:0%; transition:width 0.1s linear;"></div>
+          </div>
+
+          <div class="karaoke-text" id="karaokePassage">
+            <span class="karaoke-word" id="kw-1">It</span>
+            <span class="karaoke-word" id="kw-2">rained</span>
+            <span class="karaoke-word" id="kw-3">heavily</span>
+            <span class="karaoke-word" id="kw-4">all</span>
+            <span class="karaoke-word" id="kw-5">week.</span>
+            <span class="karaoke-word" id="kw-6">The</span>
+            <span class="karaoke-word" id="kw-7">streets</span>
+            <span class="karaoke-word" id="kw-8">were</span>
+            <span class="karaoke-word" id="kw-9">wet,</span>
+            <span class="karaoke-word" id="kw-10">and</span>
+            <span class="karaoke-word" id="kw-11">many</span>
+            <span class="karaoke-word" id="kw-12">people</span>
+            <span class="karaoke-word" id="kw-13">carried</span>
+            <span class="karaoke-word" id="kw-14">umbrellas.</span>
+            <span class="karaoke-word" id="kw-15">Schools</span>
+            <span class="karaoke-word" id="kw-16">closed</span>
+            <span class="karaoke-word" id="kw-17">early</span>
+            <span class="karaoke-word" id="kw-18">because</span>
+            <span class="karaoke-word" id="kw-19">of</span>
+            <span class="karaoke-word" id="kw-20">the</span>
+            <span class="karaoke-word" id="kw-21">storm.</span>
+          </div>
+
+          <div class="karaoke-step-note" id="karaokeNote">
+            <div id="karaokeEnText">Click "▶ Play Audio" to start step-by-step demonstration.</div>
+            <button class="translation-btn" style="margin-top:8px;" onclick="toggleTranslation('t-karaoke-step')">🌐 [Show Translation]</button>
+            <div class="translation-text" id="t-karaoke-step">Bấm "▶ Play Audio" để bắt đầu minh họa từng bước.</div>
+          </div>
+        </div>
+
+        <div class="subcard-bottom-nav" style="justify-content: flex-end;">
+          <button class="btn-subcard-forward" id="btn-btm-next-2-3" onclick="nextSubCard(2)">Tiếp theo →</button>
+        </div>
+      </div>
+
+      <!-- 2.4 Your Turn: Cats -->
+      <div class="card card-step-hidden" id="step2-card4">
+        <div class="subcard-top-nav">
+          <button class="btn-subcard-turnback" id="btn-top-prev-2-4" onclick="prevSubCard(2)">‹ Quay lại</button>
+          <span class="subcard-progress">Practice Round 1</span>
+        </div>
+        <div class="section-header">
+          <div class="section-eyebrow">Part 2.4</div>
+        </div>
+
+        <div class="reading-passage">
+          Cats spend most of their day sleeping. They often nap in warm, sunny spots. When they are not sleeping, cats
+          like to play with toys or rest quietly in a corner.
+        </div>
+
+        <div class="instruction-box">
+          <span class="instruction-text">① Read the paragraph out loud.</span>
+          <button class="translation-btn" onclick="toggleTranslation('t-yt1-1')">🌐 [Show Translation]</button>
+          <div class="translation-text" id="t-yt1-1">① Đọc to đoạn văn.</div>
+        </div>
+
+        <div class="instruction-box">
+          <span class="instruction-text">② Tap the words that repeat or belong to the same group. When you're done, tap
+            'Check'.</span>
+          <button class="translation-btn" onclick="toggleTranslation('t-yt1-2')">🌐 [Show Translation]</button>
+          <div class="translation-text" id="t-yt1-2">② Chạm vào các từ lặp lại hoặc cùng nhóm nghĩa. Xong thì chạm
+            'Check'.</div>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <p style="font-weight:600; margin-bottom:8px;">Tap any word to select keywords:</p>
+          <div style="background:var(--cream); padding:14px; border-radius:8px; line-height:2.2;"
+            id="catsPassageContainer">
+            <span class="word-token" onclick="toggleWordToken(this)">Cats</span>
+            <span class="word-token" onclick="toggleWordToken(this)">spend</span>
+            <span class="word-token" onclick="toggleWordToken(this)">most</span>
+            <span class="word-token" onclick="toggleWordToken(this)">of</span>
+            <span class="word-token" onclick="toggleWordToken(this)">their</span>
+            <span class="word-token" onclick="toggleWordToken(this)">day</span>
+            <span class="word-token" data-target="true" onclick="toggleWordToken(this)">sleeping.</span>
+            <span class="word-token" onclick="toggleWordToken(this)">They</span>
+            <span class="word-token" onclick="toggleWordToken(this)">often</span>
+            <span class="word-token" data-target="true" onclick="toggleWordToken(this)">nap</span>
+            <span class="word-token" onclick="toggleWordToken(this)">in</span>
+            <span class="word-token" onclick="toggleWordToken(this)">warm,</span>
+            <span class="word-token" onclick="toggleWordToken(this)">sunny</span>
+            <span class="word-token" onclick="toggleWordToken(this)">spots.</span>
+            <span class="word-token" onclick="toggleWordToken(this)">When</span>
+            <span class="word-token" onclick="toggleWordToken(this)">they</span>
+            <span class="word-token" onclick="toggleWordToken(this)">are</span>
+            <span class="word-token" onclick="toggleWordToken(this)">not</span>
+            <span class="word-token" data-target="true" onclick="toggleWordToken(this)">sleeping,</span>
+            <span class="word-token" onclick="toggleWordToken(this)">cats</span>
+            <span class="word-token" onclick="toggleWordToken(this)">like</span>
+            <span class="word-token" onclick="toggleWordToken(this)">to</span>
+            <span class="word-token" data-target="true" onclick="toggleWordToken(this)">play</span>
+            <span class="word-token" onclick="toggleWordToken(this)">with</span>
+            <span class="word-token" onclick="toggleWordToken(this)">toys</span>
+            <span class="word-token" onclick="toggleWordToken(this)">or</span>
+            <span class="word-token" data-target="true" onclick="toggleWordToken(this)">rest</span>
+            <span class="word-token" onclick="toggleWordToken(this)">quietly</span>
+            <span class="word-token" onclick="toggleWordToken(this)">in</span>
+            <span class="word-token" onclick="toggleWordToken(this)">a</span>
+            <span class="word-token" onclick="toggleWordToken(this)">corner.</span>
+          </div>
+          <button class="btn btn-secondary" style="margin-top:10px;" id="btnCheckCatsKw" onclick="checkCatsKeywords()"
+            disabled>Check Keywords</button>
+        </div>
+
+        <div class="feedback-box" id="catsKeywordsFeedback"></div>
+
+        <div id="catsStep3Block" class="card-step-hidden" style="margin-top:20px;">
+          <div class="instruction-box">
+            <span class="instruction-text">③ These words are all about...</span>
+            <button class="translation-btn" onclick="toggleTranslation('t-yt1-3')">🌐 [Show Translation]</button>
+            <div class="translation-text" id="t-yt1-3">③ Những từ này đều nói về...</div>
+          </div>
+          <div class="options-grid">
+            <div class="option-card" onclick="checkCatsStep3(this, true)">
+              <div class="option-letter">A</div>
+              <div>🐱 Cats' habits</div>
+            </div>
+            <div class="option-card" onclick="checkCatsStep3(this, false)">
+              <div class="option-letter">B</div>
+              <div>🧸 Fun toys</div>
+            </div>
+            <div class="option-card" onclick="checkCatsStep3(this, false)">
+              <div class="option-letter">C</div>
+              <div>☀️ Rainy weather</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="catsStep4Block" class="card-step-hidden" style="margin-top:20px;">
+          <div class="instruction-box">
+            <span class="instruction-text">④ So, the topic is...</span>
+            <button class="translation-btn" onclick="toggleTranslation('t-yt1-4')">🌐 [Show Translation]</button>
+            <div class="translation-text" id="t-yt1-4">④ Vậy, chủ đề là...</div>
+          </div>
+          <div class="options-grid">
+            <div class="option-card" onclick="checkCatsStep4(this, true)">
+              <div class="option-letter">A</div>
+              <div>🐱 How cats spend the day</div>
+            </div>
+            <div class="option-card" onclick="checkCatsStep4(this, false)">
+              <div class="option-letter">B</div>
+              <div>☀️ The weather this summer</div>
+            </div>
+            <div class="option-card" onclick="checkCatsStep4(this, false)">
+              <div class="option-letter">C</div>
+              <div>🧸 Best toys for young pets</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subcard-bottom-nav" style="justify-content: flex-end;">
+          <button class="btn-subcard-forward" id="btn-btm-next-2-4" onclick="nextSubCard(2)" disabled>Tiếp theo →</button>
+        </div>
+      </div>
+
+      <!-- Practice Round 2: Family -->
+      <div class="card card-step-hidden" id="step2-card5">
+        <div class="subcard-top-nav">
+          <button class="btn-subcard-turnback" id="btn-top-prev-2-5" onclick="prevSubCard(2)">‹ Quay lại</button>
+          <span class="subcard-progress">Practice Round 2</span>
+        </div>
+        <div class="section-header">
+          <div class="section-eyebrow">Part 2.5</div>
+        </div>
+        <div class="reading-passage">
+          Doing chores at home teaches children more than just how to clean. Simple tasks help build practical life
+          skills and a strong sense of responsibility. When family members work together, it can strengthen the bond
+          between them, creating memories that last for years. Children who grow up doing housework often show a lot of
+          gratitude toward their parents, since they understand how much effort a home really takes. Experts agree that
+          this is one benefit that goes far beyond having a clean house — it also helps shape a young person's
+          character.
+        </div>
+
+        <div class="instruction-box">
+          <span class="instruction-text">Now try this one on your own. What is the text about?</span>
+          <button class="translation-btn" onclick="toggleTranslation('t-r2-inst')">🌐 [Show Translation]</button>
+          <div class="translation-text" id="t-r2-inst">Bây giờ bạn tự làm bài này nhé. Đoạn văn nói về điều gì?</div>
+        </div>
+
+        <div class="options-grid">
+          <div class="option-card" onclick="checkFamilyRound(this, false)">
+            <div class="option-letter">A</div>
+            <div>Cleaning tips for teenagers</div>
+          </div>
+          <div class="option-card" onclick="checkFamilyRound(this, true)">
+            <div class="option-letter">B</div>
+            <div>How chores benefit children</div>
+          </div>
+          <div class="option-card" onclick="checkFamilyRound(this, false)">
+            <div class="option-letter">C</div>
+            <div>A family's daily schedule</div>
+          </div>
+          <div class="option-card" onclick="checkFamilyRound(this, false)">
+            <div class="option-letter">D</div>
+            <div>A guide to modern parenting</div>
+          </div>
+        </div>
+        <div class="feedback-box" id="familyFeedback"></div>
+
+        <div class="subcard-bottom-nav" style="justify-content: flex-end;">
+          <button class="btn-subcard-forward" id="btn-btm-next-2-5" onclick="nextSubCard(2)" disabled>Tiếp theo →</button>
+        </div>
+      </div>
+
+      <!-- Practice Round 3: Topic Matching -->
+      <div class="card card-step-hidden" id="step2-card6">
+        <div class="subcard-top-nav">
+          <button class="btn-subcard-turnback" id="btn-top-prev-2-6" onclick="prevSubCard(2)">‹ Quay lại</button>
+          <span class="subcard-progress">Practice Round 3</span>
+        </div>
+        <div class="section-header">
+          <div class="section-eyebrow">Part 2.6</div>
+        </div>
+        <div class="instruction-box">
+          <span class="instruction-text">Match each short text with the correct topic.</span>
+          <button class="translation-btn" onclick="toggleTranslation('t-r3-inst')">🌐 [Show Translation]</button>
+          <div class="translation-text" id="t-r3-inst">Nối mỗi đoạn văn ngắn với đúng chủ đề.</div>
+        </div>
+
+        <div class="matching-container">
+          <div class="matching-column" id="matchTextsCol">
+            <div class="matching-card" onclick="selectMatchText(this, 'Music')" data-target="Music">
+              Thousands of people stood in the stadium, swaying and clapping as bright lights flashed across the
+              stage.
+            </div>
+            <div class="matching-card" onclick="selectMatchText(this, 'Health')" data-target="Health">
+              Experts say drinking enough fluids every day helps the body stay energized and keeps the mind
+              sharp.
+            </div>
+            <div class="matching-card" onclick="selectMatchText(this, 'Museums')" data-target="Museums">
+              Visitors walked slowly past ancient bones standing taller than the ceiling, taking photos of the
+              massive skeleton.
+            </div>
+          </div>
+
+          <div class="matching-column" id="matchTopicsCol">
+            <div class="matching-card" onclick="selectMatchTopic(this, 'Music')" data-topic="Music">🎵 Music</div>
+            <div class="matching-card" onclick="selectMatchTopic(this, 'Health')" data-topic="Health">💧 Health</div>
+            <div class="matching-card" onclick="selectMatchTopic(this, 'Museums')" data-topic="Museums">🦴 Museums</div>
+          </div>
+        </div>
+        <div class="feedback-box correct" id="matchingCompleteFeedback">
+          🎉 All 3 texts matched to their topics!
+        </div>
+
+        <div class="subcard-bottom-nav">
+          <span class="step-lock-hint" id="hintLockStep2">🔒 Complete Quick Guess, Cats, Family, and Topic Matching to
+            unlock Step 3</span>
+          <button class="btn btn-primary" id="btnNextStep2" disabled onclick="proceedToStep(3)">Tiếp theo: Guided Steps →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         STEP 3: GUIDED STEPS
+    =========================================== -->
+    <div id="step-3-content" class="step-content hidden">
+
+      <!-- 3.1 Sports Passage -->
+      <div class="card" id="step3-card1">
+        <div class="subcard-top-nav">
+          <button class="btn-subcard-turnback" id="btn-top-prev-3-1" onclick="prevSubCard(3)" disabled>‹ Quay lại</button>
+          <span class="subcard-progress">Passage 1</span>
+        </div>
+        <div class="section-header">
+          <div class="section-eyebrow">Part 3.1</div>
+        </div>
+        <div class="reading-passage" id="sportsPassageContainer" style="line-height:2.2;">
+          <span class="word-token" onclick="toggleWordToken(this)">Every</span>
+          <span class="word-token" onclick="toggleWordToken(this)">morning,</span>
+          <span class="word-token" onclick="toggleWordToken(this)">thousands</span>
+          <span class="word-token" onclick="toggleWordToken(this)">of</span>
+          <span class="word-token" data-target="true" onclick="toggleWordToken(this)">runners</span>
+          <span class="word-token" onclick="toggleWordToken(this)">lace</span>
+          <span class="word-token" onclick="toggleWordToken(this)">up</span>
+          <span class="word-token" onclick="toggleWordToken(this)">their</span>
+          <span class="word-token" onclick="toggleWordToken(this)">shoes</span>
+          <span class="word-token" onclick="toggleWordToken(this)">before</span>
+          <span class="word-token" onclick="toggleWordToken(this)">the</span>
+          <span class="word-token" onclick="toggleWordToken(this)">sun</span>
+          <span class="word-token" onclick="toggleWordToken(this)">rises.</span>
+          <span class="word-token" onclick="toggleWordToken(this)">Some</span>
+          <span class="word-token" data-target="true" onclick="toggleWordToken(this)">train</span>
+          <span class="word-token" onclick="toggleWordToken(this)">for</span>
+          <span class="word-token" data-target="true" onclick="toggleWordToken(this)">marathons,</span>
+          <span class="word-token" onclick="toggleWordToken(this)">while</span>
+          <span class="word-token" onclick="toggleWordToken(this)">others</span>
+          <span class="word-token" onclick="toggleWordToken(this)">simply</span>
+          <span class="word-token" onclick="toggleWordToken(this)">enjoy</span>
+          <span class="word-token" onclick="toggleWordToken(this)">the</span>
+          <span class="word-token" onclick="toggleWordToken(this)">fresh</span>
+          <span class="word-token" onclick="toggleWordToken(this)">air.</span>
+          <span class="word-token" onclick="toggleWordToken(this)">Coaches</span>
+          <span class="word-token" onclick="toggleWordToken(this)">say</span>
+          <span class="word-token" onclick="toggleWordToken(this)">that</span>
+          <span class="word-token" onclick="toggleWordToken(this)">regular</span>
+          <span class="word-token" data-target="true" onclick="toggleWordToken(this)">training</span>
+          <span class="word-token" onclick="toggleWordToken(this)">builds</span>
+          <span class="word-token" onclick="toggleWordToken(this)">not</span>
+          <span class="word-token" onclick="toggleWordToken(this)">only</span>
+          <span class="word-token" onclick="toggleWordToken(this)">strong</span>
+          <span class="word-token" onclick="toggleWordToken(this)">legs</span>
+          <span class="word-token" onclick="toggleWordToken(this)">but</span>
+          <span class="word-token" onclick="toggleWordToken(this)">also</span>
+          <span class="word-token" onclick="toggleWordToken(this)">mental</span>
+          <span class="word-token" onclick="toggleWordToken(this)">discipline.</span>
+          <span class="word-token" onclick="toggleWordToken(this)">Many</span>
+          <span class="word-token" onclick="toggleWordToken(this)">amateur</span>
+          <span class="word-token" data-target="true" onclick="toggleWordToken(this)">athletes</span>
+          <span class="word-token" onclick="toggleWordToken(this)">now</span>
+          <span class="word-token" onclick="toggleWordToken(this)">join</span>
+          <span class="word-token" onclick="toggleWordToken(this)">local</span>
+          <span class="word-token" data-target="true" onclick="toggleWordToken(this)">clubs</span>
+          <span class="word-token" onclick="toggleWordToken(this)">to</span>
+          <span class="word-token" onclick="toggleWordToken(this)">stay</span>
+          <span class="word-token" onclick="toggleWordToken(this)">motivated</span>
+          <span class="word-token" onclick="toggleWordToken(this)">and</span>
+          <span class="word-token" onclick="toggleWordToken(this)">meet</span>
+          <span class="word-token" onclick="toggleWordToken(this)">new</span>
+          <span class="word-token" onclick="toggleWordToken(this)">friends.</span>
+        </div>
+
+        <div class="instruction-box">
+          <span class="instruction-text">Step 1: Tap all the words in the paragraph that repeat or belong to the same
+            group.</span>
+          <button class="translation-btn" onclick="toggleTranslation('t-s31-1')">🌐 [Show Translation]</button>
+          <div class="translation-text" id="t-s31-1">Chạm vào tất cả các từ trong đoạn văn lặp lại hoặc cùng nhóm nghĩa.
+          </div>
+        </div>
+
+        <button class="btn btn-secondary" id="btnCheckSportsKw" onclick="checkSportsStep1Keywords()" disabled>Check
+          Keywords</button>
+        <div class="feedback-box" id="sportsKwFeedback"></div>
+
+        <div id="sportsStep2Block" class="card-step-hidden" style="margin-top: 24px;">
+          <div class="instruction-box">
+            <span class="instruction-text">Step 2: These words are all about...</span>
+            <button class="translation-btn" onclick="toggleTranslation('t-s31-2')">🌐 [Show Translation]</button>
+            <div class="translation-text" id="t-s31-2">Những từ này đều nói về...</div>
+          </div>
+          <div class="options-grid">
+            <div class="option-card" onclick="checkSportsStep2(this, false)">
+              <div class="option-letter">A</div>
+              <div>Physical fitness in general</div>
+            </div>
+            <div class="option-card" onclick="checkSportsStep2(this, false)">
+              <div class="option-letter">B</div>
+              <div>Team sports and competitions</div>
+            </div>
+            <div class="option-card" onclick="checkSportsStep2(this, true)">
+              <div class="option-letter">C</div>
+              <div>Running and endurance</div>
+            </div>
+            <div class="option-card" onclick="checkSportsStep2(this, false)">
+              <div class="option-letter">D</div>
+              <div>Outdoor hobbies and nature</div>
+            </div>
+          </div>
+          <div class="feedback-box hint" id="sportsStep2AutoHint">
+            💡 <strong>Hint:</strong> Look at <em>runners, train, marathons, clubs</em> — these all point to one
+            specific activity, not just any exercise.
+          </div>
+        </div>
+
+        <div id="sportsStep3Block" class="card-step-hidden" style="margin-top: 24px;">
+          <div class="instruction-box">
+            <span class="instruction-text">Step 3: If this paragraph were part of a longer article, which topic would
+              the whole article most likely be about?</span>
+            <button class="translation-btn" onclick="toggleTranslation('t-s31-3')">🌐 [Show Translation]</button>
+            <div class="translation-text" id="t-s31-3">Nếu đoạn văn này là một phần của một bài viết dài hơn, chủ đề của
+              cả bài viết đó có thể là gì?</div>
+          </div>
+          <div class="options-grid">
+            <div class="option-card" onclick="checkSportsStep3(this, false)">
+              <div class="option-letter">A</div>
+              <div>Healthy habits for busy teenagers</div>
+            </div>
+            <div class="option-card" onclick="checkSportsStep3(this, false)">
+              <div class="option-letter">B</div>
+              <div>Becoming a professional team athlete</div>
+            </div>
+            <div class="option-card" onclick="checkSportsStep3(this, false)">
+              <div class="option-letter">C</div>
+              <div>Different kinds of exercise equipment</div>
+            </div>
+            <div class="option-card" onclick="checkSportsStep3(this, true)">
+              <div class="option-letter">D</div>
+              <div>The rising popularity of running</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subcard-bottom-nav" style="justify-content: flex-end;">
+          <button class="btn-subcard-forward" id="btn-btm-next-3-1" onclick="nextSubCard(3)" disabled>Tiếp theo →</button>
+        </div>
+      </div>
+
+      <!-- 3.2 Article Photography -->
+      <div class="card card-step-hidden" id="step3-card2">
+        <div class="subcard-top-nav">
+          <button class="btn-subcard-turnback" id="btn-top-prev-3-2" onclick="prevSubCard(3)">‹ Quay lại</button>
+          <span class="subcard-progress">Passage 2</span>
+        </div>
+        <div class="section-header">
+          <div class="section-eyebrow">Part 3.2</div>
+        </div>
+
+        <div class="reading-passage">
+          <div class="paragraph-block">
+            <span class="para-tag">[1]</span> Teenagers today have more hobbies to choose from than ever before,
+            thanks to social media, cheaper equipment, and more free time after school. From sports to music to art,
+            young people are finding creative ways to spend their free time and express themselves. Parents and teachers
+            have both noticed that students with a regular hobby tend to feel less stressed about exams and schoolwork,
+            and some schools now encourage students to join at least one club each semester.
+          </div>
+          <div class="paragraph-block" id="photoPassageContainer" style="line-height:2.2;">
+            <span class="para-tag">[2]</span>
+            <span class="word-token" onclick="toggleWordToken(this)">More</span>
+            <span class="word-token" onclick="toggleWordToken(this)">and</span>
+            <span class="word-token" onclick="toggleWordToken(this)">more</span>
+            <span class="word-token" onclick="toggleWordToken(this)">teenagers</span>
+            <span class="word-token" onclick="toggleWordToken(this)">are</span>
+            <span class="word-token" onclick="toggleWordToken(this)">picking</span>
+            <span class="word-token" onclick="toggleWordToken(this)">up</span>
+            <span class="word-token" data-target="true" onclick="toggleWordToken(this)">photography</span>
+            <span class="word-token" onclick="toggleWordToken(this)">as</span>
+            <span class="word-token" onclick="toggleWordToken(this)">a</span>
+            <span class="word-token" onclick="toggleWordToken(this)">hobby.</span>
+            <span class="word-token" onclick="toggleWordToken(this)">They</span>
+            <span class="word-token" onclick="toggleWordToken(this)">use</span>
+            <span class="word-token" onclick="toggleWordToken(this)">their</span>
+            <span class="word-token" onclick="toggleWordToken(this)">phone</span>
+            <span class="word-token" data-target="true" onclick="toggleWordToken(this)">cameras</span>
+            <span class="word-token" onclick="toggleWordToken(this)">to</span>
+            <span class="word-token" onclick="toggleWordToken(this)">capture</span>
+            <span class="word-token" onclick="toggleWordToken(this)">sunsets,</span>
+            <span class="word-token" onclick="toggleWordToken(this)">street</span>
+            <span class="word-token" onclick="toggleWordToken(this)">scenes,</span>
+            <span class="word-token" onclick="toggleWordToken(this)">and</span>
+            <span class="word-token" onclick="toggleWordToken(this)">moments</span>
+            <span class="word-token" onclick="toggleWordToken(this)">with</span>
+            <span class="word-token" onclick="toggleWordToken(this)">friends.</span>
+            <span class="word-token" onclick="toggleWordToken(this)">Many</span>
+            <span class="word-token" onclick="toggleWordToken(this)">join</span>
+            <span class="word-token" onclick="toggleWordToken(this)">online</span>
+            <span class="word-token" data-target="true" onclick="toggleWordToken(this)">photo</span>
+            <span class="word-token" data-target="true" onclick="toggleWordToken(this)">clubs</span>
+            <span class="word-token" onclick="toggleWordToken(this)">to</span>
+            <span class="word-token" onclick="toggleWordToken(this)">share</span>
+            <span class="word-token" onclick="toggleWordToken(this)">their</span>
+            <span class="word-token" onclick="toggleWordToken(this)">pictures</span>
+            <span class="word-token" onclick="toggleWordToken(this)">and</span>
+            <span class="word-token" onclick="toggleWordToken(this)">get</span>
+            <span class="word-token" onclick="toggleWordToken(this)">feedback</span>
+            <span class="word-token" onclick="toggleWordToken(this)">from</span>
+            <span class="word-token" onclick="toggleWordToken(this)">other</span>
+            <span class="word-token" onclick="toggleWordToken(this)">young</span>
+            <span class="word-token" data-target="true" onclick="toggleWordToken(this)">photographers.</span>
+            <span class="word-token" onclick="toggleWordToken(this)">Some</span>
+            <span class="word-token" onclick="toggleWordToken(this)">students</span>
+            <span class="word-token" onclick="toggleWordToken(this)">have</span>
+            <span class="word-token" onclick="toggleWordToken(this)">even</span>
+            <span class="word-token" onclick="toggleWordToken(this)">started</span>
+            <span class="word-token" onclick="toggleWordToken(this)">small</span>
+            <span class="word-token" onclick="toggleWordToken(this)">accounts</span>
+            <span class="word-token" onclick="toggleWordToken(this)">on</span>
+            <span class="word-token" onclick="toggleWordToken(this)">social</span>
+            <span class="word-token" onclick="toggleWordToken(this)">media</span>
+            <span class="word-token" onclick="toggleWordToken(this)">where</span>
+            <span class="word-token" onclick="toggleWordToken(this)">they</span>
+            <span class="word-token" onclick="toggleWordToken(this)">post</span>
+            <span class="word-token" onclick="toggleWordToken(this)">their</span>
+            <span class="word-token" onclick="toggleWordToken(this)">best</span>
+            <span class="word-token" onclick="toggleWordToken(this)">shots</span>
+            <span class="word-token" onclick="toggleWordToken(this)">every</span>
+            <span class="word-token" onclick="toggleWordToken(this)">week,</span>
+            <span class="word-token" onclick="toggleWordToken(this)">slowly</span>
+            <span class="word-token" onclick="toggleWordToken(this)">building</span>
+            <span class="word-token" onclick="toggleWordToken(this)">a</span>
+            <span class="word-token" onclick="toggleWordToken(this)">following</span>
+            <span class="word-token" onclick="toggleWordToken(this)">of</span>
+            <span class="word-token" onclick="toggleWordToken(this)">people</span>
+            <span class="word-token" onclick="toggleWordToken(this)">who</span>
+            <span class="word-token" onclick="toggleWordToken(this)">enjoy</span>
+            <span class="word-token" onclick="toggleWordToken(this)">their</span>
+            <span class="word-token" onclick="toggleWordToken(this)">style.</span>
+          </div>
+          <div class="paragraph-block">
+            <span class="para-tag">[3]</span> Cooking is another hobby gaining popularity among teens. Many learn
+            recipes from social media videos and enjoy preparing simple dishes for their families on weekends. A few
+            schools have started after-school cooking clubs, where students can practice new recipes together and share
+            tips. Some teens say cooking helps them relax after a long week of studying, while others enjoy the sense of
+            achievement that comes from serving a meal they made completely from scratch, without any help from their
+            parents.
+          </div>
+        </div>
+
+        <div class="instruction-box">
+          <span class="instruction-text">Step 1: Tap the words in paragraph 2 that repeat or belong to the same
+            group.</span>
+          <button class="translation-btn" onclick="toggleTranslation('t-s32-1')">🌐 [Show Translation]</button>
+          <div class="translation-text" id="t-s32-1">Chạm vào các từ trong đoạn 2 lặp lại hoặc cùng nhóm nghĩa.</div>
+        </div>
+        <button class="btn btn-secondary" id="btnCheckPhotoKw" onclick="checkPhotoKeywords()" disabled>Check
+          Keywords</button>
+        <div class="feedback-box" id="photoKwFeedback"></div>
+
+        <div id="photoStep2Block" class="card-step-hidden" style="margin-top: 24px;">
+          <div class="instruction-box">
+            <span class="instruction-text">Step 2: What is paragraph 2 about?</span>
+            <button class="translation-btn" onclick="toggleTranslation('t-s32-2')">🌐 [Show Translation]</button>
+            <div class="translation-text" id="t-s32-2">Đoạn 2 nói về điều gì?</div>
+          </div>
+          <div class="options-grid">
+            <div class="option-card" onclick="checkPhotoStep2(this, true)">
+              <div class="option-letter">A</div>
+              <div>Photography as a hobby</div>
+            </div>
+            <div class="option-card" onclick="checkPhotoStep2(this, false)">
+              <div class="option-letter">B</div>
+              <div>Joining online photo clubs</div>
+            </div>
+            <div class="option-card" onclick="checkPhotoStep2(this, false)">
+              <div class="option-letter">C</div>
+              <div>Taking sunset street photos</div>
+            </div>
+            <div class="option-card" onclick="checkPhotoStep2(this, false)">
+              <div class="option-letter">D</div>
+              <div>Buying new phone cameras</div>
+            </div>
+          </div>
+          <div class="feedback-box hint" id="photoAutoHint">
+            💡 <strong>Hint:</strong> These options each mention only ONE small detail from paragraph 2. Which idea
+            connects cameras, photo clubs, AND social media posts together?
+          </div>
+        </div>
+
+        <div class="subcard-bottom-nav">
+          <span class="step-lock-hint" id="hintLockStep3">🔒 Complete all Sports and Photography questions correctly to
+            unlock Step 4</span>
+          <button class="btn btn-primary" id="btnNextStep3" disabled onclick="proceedToStep(4)">Tiếp theo: Try It Yourself →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         STEP 4: TRY IT YOURSELF
+    =========================================== -->
+    <div id="step-4-content" class="step-content hidden">
+
+      <!-- 4.1 Article Apps -->
+      <div class="card" id="step4-card1">
+        <div class="subcard-top-nav">
+          <button class="btn-subcard-turnback" id="btn-top-prev-4-1" onclick="prevSubCard(4)" disabled>‹ Quay lại</button>
+          <span class="subcard-progress">Article Apps</span>
+        </div>
+        <div class="section-header">
+          <div class="section-eyebrow">Part 4.1</div>
+        </div>
+
+        <div class="reading-passage">
+          <div class="paragraph-block">
+            <span class="para-tag">[1]</span> Technology has changed the way people spend their free time and
+            manage everyday tasks, especially over the last decade. From streaming music to playing online games,
+            digital devices are now part of daily entertainment for people of all ages, including grandparents who once
+            avoided using smartphones altogether. Many families now own multiple devices, and some parents even set
+            screen-time rules to make sure homework still gets done first before any screen time is allowed each
+            evening.
+          </div>
+          <div class="paragraph-block">
+            <span class="para-tag">[2]</span> New apps are changing the way people order food, book taxis, and even
+            learn languages. Developers release updates almost every week, adding new features based on user feedback
+            from thousands of daily users around the world. Some experts believe that within a few years, most daily
+            tasks will be managed through a single smartphone app, reducing the need to switch between different
+            websites or services throughout the day.
+          </div>
+          <div class="paragraph-block">
+            <span class="para-tag">[3]</span> Social media has also changed how people communicate with friends and
+            family. Many teenagers now prefer sending quick messages or short videos instead of making phone calls, and
+            some rarely make voice calls at all anymore. Parents from older generations sometimes find this shift
+            difficult to understand, since they grew up relying mainly on face-to-face conversations and landline phones
+            to stay in touch with loved ones, coordinate daily plans, and handle family emergencies quickly.
+          </div>
+        </div>
+
+        <div class="instruction-box">
+          <span class="instruction-text">What is paragraph 2 about?</span>
+          <button class="translation-btn" onclick="toggleTranslation('t-s41')">🌐 [Show Translation]</button>
+          <div class="translation-text" id="t-s41">Đoạn 2 nói về điều gì?</div>
+        </div>
+
+        <div class="options-grid">
+          <div class="option-card" onclick="checkAppsQuestion(this, false)">
+            <div class="option-letter">A</div>
+            <div>Booking taxi rides quickly</div>
+          </div>
+          <div class="option-card" onclick="checkAppsQuestion(this, false)">
+            <div class="option-letter">B</div>
+            <div>Getting weekly app updates</div>
+          </div>
+          <div class="option-card" onclick="checkAppsQuestion(this, true)">
+            <div class="option-letter">C</div>
+            <div>Apps changing daily tasks</div>
+          </div>
+          <div class="option-card" onclick="checkAppsQuestion(this, false)">
+            <div class="option-letter">D</div>
+            <div>Learning new languages online</div>
+          </div>
+        </div>
+
+        <button class="btn btn-hint" onclick="toggleHint('hint-apps')">💡 Need a hint?</button>
+        <div class="feedback-box hint" id="hint-apps">
+          💡 These options each mention only ONE small detail from paragraph 2. Which idea connects ordering food,
+          booking taxis, AND learning languages together?
+        </div>
+
+        <div class="subcard-bottom-nav" style="justify-content: flex-end;">
+          <button class="btn-subcard-forward" id="btn-btm-next-4-1" onclick="nextSubCard(4)" disabled>Tiếp theo →</button>
+        </div>
+      </div>
+
+      <!-- 4.2 Street Food -->
+      <div class="card card-step-hidden" id="step4-card2">
+        <div class="subcard-top-nav">
+          <button class="btn-subcard-turnback" id="btn-top-prev-4-2" onclick="prevSubCard(4)">‹ Quay lại</button>
+          <span class="subcard-progress">Short Paragraph</span>
+        </div>
+        <div class="section-header">
+          <div class="section-eyebrow">Part 4.2</div>
+        </div>
+
+        <div class="reading-passage">
+          Street food stalls are becoming popular tourist attractions in many cities. Visitors often follow food
+          bloggers to find the tastiest noodle soups or grilled snacks. Chefs at these stalls usually learn their
+          recipes from family members, passing down cooking secrets for generations.
+        </div>
+
+        <div class="instruction-box">
+          <span class="instruction-text">Which title best fits this paragraph?</span>
+          <button class="translation-btn" onclick="toggleTranslation('t-s42')">🌐 [Show Translation]</button>
+          <div class="translation-text" id="t-s42">Tiêu đề nào phù hợp nhất với đoạn văn này?</div>
+        </div>
+
+        <div class="options-grid">
+          <div class="option-card" onclick="checkStreetFoodQuestion(this, false)">
+            <div class="option-letter">A</div>
+            <div>How to Cook the Perfect Noodle Soup</div>
+          </div>
+          <div class="option-card" onclick="checkStreetFoodQuestion(this, true)">
+            <div class="option-letter">B</div>
+            <div>Why Street Food Attracts Tourists</div>
+          </div>
+          <div class="option-card" onclick="checkStreetFoodQuestion(this, false)">
+            <div class="option-letter">C</div>
+            <div>Family Recipes Passed Down for Generations</div>
+          </div>
+          <div class="option-card" onclick="checkStreetFoodQuestion(this, false)">
+            <div class="option-letter">D</div>
+            <div>The Most Popular Food Bloggers Today</div>
+          </div>
+        </div>
+
+        <button class="btn btn-hint" onclick="toggleHint('hint-streetfood')">💡 Need a hint?</button>
+        <div class="feedback-box hint" id="hint-streetfood">
+          💡 A good title covers the WHOLE paragraph, not just one sentence. Which idea ties street food, tourists, AND
+          family recipes together?
+        </div>
+
+        <div class="subcard-bottom-nav">
+          <span class="step-lock-hint" id="hintLockStep4">🔒 Complete both Article Apps and Street Food questions
+            correctly to unlock Step 5</span>
+          <button class="btn btn-primary" id="btnNextStep4" disabled onclick="proceedToStep(5)">Tiếp theo: Skill Check →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         STEP 5: SKILL CHECK
+    =========================================== -->
+    <div id="step-5-content" class="step-content hidden">
+
+      <!-- Gate Overlay -->
+      <div class="gate-overlay" id="skillcheckGate">
+        <div class="section-eyebrow">Step 5 · Final Challenge</div>
+        <div class="section-title" style="margin-bottom: 12px;">Skill Check (Independent)</div>
+        <p style="color:var(--ink-2); max-width:540px; margin:0 auto 16px; line-height:1.55;">
+          This is the final challenge — no more hints this time. Just you and your skills! You will have 3 minutes to
+          complete both questions once you click Ready.
+        </p>
+        <div class="skillcheck-timer-big" id="skillcheckTimerBig">03:00</div>
+        <button class="btn btn-primary" style="font-size:18px; padding:12px 36px;" onclick="startSkillCheck()">[ Ready
+          ]</button>
+      </div>
+
+      <!-- Blurred Content -->
+      <div class="blur-content" id="skillcheckContent">
+
+        <!-- 5.1 Article Volunteering -->
+        <div class="card card-step-hidden" id="step5-card1">
+          <div class="subcard-top-nav">
+            <button class="btn-subcard-turnback" id="btn-top-prev-5-1" onclick="prevSubCard(5)" disabled>‹ Quay lại</button>
+            <span class="subcard-progress">Article</span>
+          </div>
+          <div class="section-header">
+            <div class="section-eyebrow">Part 5.1</div>
+          </div>
+
+          <div class="reading-passage">
+            <div class="paragraph-block">
+              Volunteering has become increasingly popular among high school students across the country. Many teens now
+              spend their weekends helping at local shelters, planting trees in public parks, or teaching younger
+              children basic reading and writing skills. Schools often encourage this kind of activity because it
+              teaches responsibility, teamwork, and empathy for others in the community. Teachers say that students who
+              volunteer regularly tend to manage their time better and communicate more confidently with adults outside
+              their family.
+            </div>
+            <div class="paragraph-block">
+              Beyond building good habits, volunteering also looks impressive on university applications, especially for
+              students applying to competitive programs abroad. Some students even discover future career interests
+              through their volunteer work. For example, a student who enjoys helping younger children with homework
+              might later decide to become a teacher, while another who spends time at an animal shelter might consider
+              a career in veterinary science. Universities increasingly value applicants who can show real commitment to
+              their community, not just good grades.
+            </div>
+            <div class="paragraph-block">
+              Community centers have reported a steady rise in teenage volunteers over the past three years, showing
+              that this trend continues to grow rather than fade away. Many organizations now offer flexible
+              volunteering schedules, allowing students to fit their community service around exams and extracurricular
+              activities. Parents, too, have noticed positive changes in their children's attitudes toward helping
+              others after they begin volunteering regularly, and some now volunteer alongside their children on
+              weekends.
+            </div>
+          </div>
+
+          <div class="instruction-box">
+            <span class="instruction-text">Which topic is NOT discussed in this text?</span>
+            <button class="translation-btn" onclick="toggleTranslation('t-sc1')">🌐 [Show Translation]</button>
+            <div class="translation-text" id="t-sc1">Chủ đề nào KHÔNG được nhắc đến trong bài này?</div>
+          </div>
+
+          <div class="options-grid">
+            <div class="option-card" onclick="selectSkillCheck1(this, false, 'A')">
+              <div class="option-letter">A</div>
+              <div>Teenagers volunteering in their communities</div>
+            </div>
+            <div class="option-card" onclick="selectSkillCheck1(this, false, 'B')">
+              <div class="option-letter">B</div>
+              <div>How volunteering can influence career choices</div>
+            </div>
+            <div class="option-card" onclick="selectSkillCheck1(this, true, 'C')">
+              <div class="option-letter">C</div>
+              <div>Government funding for community centers</div>
+            </div>
+            <div class="option-card" onclick="selectSkillCheck1(this, false, 'D')">
+              <div class="option-letter">D</div>
+              <div>Why schools encourage students to volunteer</div>
+            </div>
+          </div>
+
+          <div class="subcard-bottom-nav" style="justify-content: flex-end;">
+            <button class="btn-subcard-forward" id="btn-btm-next-5-1" onclick="nextSubCard(5)" disabled>Tiếp theo →</button>
+          </div>
+        </div>
+
+        <!-- 5.3 Topic across multiple texts -->
+        <div class="card card-step-hidden" id="step5-card2">
+          <div class="subcard-top-nav">
+            <button class="btn-subcard-turnback" id="btn-top-prev-5-2" onclick="prevSubCard(5)">‹ Quay lại</button>
+            <span class="subcard-progress">Topic Across Texts</span>
+          </div>
+          <div class="section-header">
+            <div class="section-eyebrow">Part 5.2</div>
+          </div>
+
+          <div class="reading-passage">
+            <div class="paragraph-block">
+              Public libraries across the country are introducing digital reading apps,
+              allowing members to borrow e-books using just their library card number. Officials say this makes reading
+              more accessible for people who live far from a physical library branch.
+            </div>
+            <div class="paragraph-block">
+              Many rural schools have started using tablet-based lessons, letting students
+              access textbooks and homework assignments without needing to travel to a resource center. Teachers report
+              that students who once struggled to get materials on time are now keeping up with the class.
+            </div>
+          </div>
+
+          <div class="instruction-box">
+            <span class="instruction-text">Read both texts. What topic do they have in common?</span>
+            <button class="translation-btn" onclick="toggleTranslation('t-sc2')">🌐 [Show Translation]</button>
+            <div class="translation-text" id="t-sc2">Đọc cả hai đoạn văn. Chúng có chủ đề chung nào?</div>
+          </div>
+
+          <div class="options-grid">
+            <div class="option-card" onclick="selectSkillCheck2(this, true, 'A')">
+              <div class="option-letter">A</div>
+              <div>Making resources easier to access</div>
+            </div>
+            <div class="option-card" onclick="selectSkillCheck2(this, false, 'B')">
+              <div class="option-letter">B</div>
+              <div>The history of public libraries</div>
+            </div>
+            <div class="option-card" onclick="selectSkillCheck2(this, false, 'C')">
+              <div class="option-letter">C</div>
+              <div>Problems with rural school funding</div>
+            </div>
+            <div class="option-card" onclick="selectSkillCheck2(this, false, 'D')">
+              <div class="option-letter">D</div>
+              <div>How students prefer printed books</div>
+            </div>
+          </div>
+
+          <div class="subcard-bottom-nav" style="justify-content: flex-end;">
+            <button class="btn btn-primary" id="btnFinishSkillCheck" disabled onclick="finishSkillCheck()">Hoàn thành →</button>
+          </div>
+        </div>
+
+        <!-- 5.4 Summary & Results Table -->
+        <div class="card hidden" id="skillcheckResultsCard" style="margin-top:24px;">
+          <div class="section-header">
+            <div class="section-eyebrow">Results & Summary</div>
+            <div class="section-title">Great effort! Let's see how you did.</div>
+          </div>
+
+          <div class="results-table-wrapper">
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th>Question</th>
+                  <th>Result</th>
+                  <th>Keywords</th>
+                  <th>Correct Answer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1 — Volunteering</td>
+                  <td id="scResult1">--</td>
+                  <td>responsibility, career, community centers, schools</td>
+                  <td>Government funding for community centers</td>
+                </tr>
+                <tr>
+                  <td>2 — Multiple texts</td>
+                  <td id="scResult2">--</td>
+                  <td>digital apps, tablets, access, resources</td>
+                  <td>Making resources easier to access</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="feedback-box correct visible" style="margin-top:20px;">
+            🎉 <strong>Amazing work!</strong> You've completed 'Identifying the Topic' — from simple pictures to
+            comparing multiple texts. You're ready for the next skill!
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div> <!-- End Container -->
+
+  <!-- 45-Minute Lockout Overlay -->
+  <div class="lockout-overlay hidden" id="globalLockoutOverlay">
+    <div class="lockout-card">
+      <h2>⏰ Time's up!</h2>
+      <p style="margin-top:8px; color:var(--ink-faint);">You have reached the 45-minute total limit for this lesson session.</p>
+      <div class="lockout-timer" id="lockoutCooldownTimer">05:00</div>
+      <p style="font-size:14px; color:var(--ink-3);" id="lockoutNote">Please wait for the cooldown timer before restarting.
+      </p>
+      <button class="btn btn-primary hidden" id="btnRestartUnit" style="margin-top:16px;"
+        onclick="restartEntireUnit()">Start Unit 1 Again</button>
+    </div>
+  </div>
+
+  <!-- JavaScript Application Logic -->
+  <script>
+    /* =========================================================
+       1. LMS SAFE ACCESSOR API
+    ========================================================= */
+    window.LMS = window.LMS || function () {
+      return {
+        progress: function (p) { console.log('[LMS] progress:', p); },
+        event: function (name, payload) { console.log('[LMS] event:', name, payload); },
+        state: function (s) { console.log('[LMS] state saved:', s); },
+        complete: function (res) { console.log('[LMS] complete fired:', res); },
+        resize: function (r) { console.log('[LMS] resize:', r); }
+      };
+    };
+
+    var hasCompletedLMS = false;
+
+    function reportHeight() {
+      var h = document.documentElement.scrollHeight || document.body.scrollHeight;
+      LMS().resize({ height: h });
+    }
+    window.addEventListener('resize', reportHeight);
+    window.addEventListener('load', reportHeight);
+
+    /* =========================================================
+       2. GLOBAL STATE, TIMERS & STRICT PROGRESSION TRACKING
+    ========================================================= */
+    var globalTimeSeconds = 45 * 60; // 45:00
+    var globalTimerInterval = null;
+    var currentStep = 1;
+    var unlockedStep = 1; // Highest step unlocked via strict completion
+
+    // Strict Completion Status Trackers
+    var stepCompletion = {
+      step1: { visualCardsCorrect: new Set(), categorizationDone: false },
+      step2: { quickGuess: false, catsKwDone: false, catsStep3: false, catsStep4: false, familyDone: false, matchingDone: false },
+      step3: { sportsKw: false, sportsStep2: false, sportsStep3: false, photoKw: false, photoStep2: false },
+      step4: { appsQ: false, streetFoodQ: false }
+    };
+
+    function startGlobalTimer() {
+      if (globalTimerInterval) return;
+      globalTimerInterval = setInterval(function () {
+        globalTimeSeconds--;
+        if (globalTimeSeconds <= 0) {
+          globalTimeSeconds = 0;
+          clearInterval(globalTimerInterval);
+          triggerGlobalLockout();
+        }
+        updateGlobalTimerBadge();
+      }, 1000);
+    }
+
+    function updateGlobalTimerBadge() {
+      var m = Math.floor(globalTimeSeconds / 60);
+      var s = globalTimeSeconds % 60;
+      var str = (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+      var badge = document.getElementById('globalTimerBadge');
+      badge.innerHTML = '⏱️ ' + str;
+
+      if (globalTimeSeconds <= 5 * 60) {
+        badge.classList.add('warning');
+      }
+    }
+
+    function triggerGlobalLockout() {
+      document.getElementById('globalLockoutOverlay').classList.remove('hidden');
+      var cooldown = 5 * 60; // 5 mins
+      var coolTimer = setInterval(function () {
+        cooldown--;
+        var cm = Math.floor(cooldown / 60);
+        var cs = cooldown % 60;
+        document.getElementById('lockoutCooldownTimer').innerHTML = (cm < 10 ? '0' + cm : cm) + ':' + (cs < 10 ? '0' + cs : cs);
+        if (cooldown <= 0) {
+          clearInterval(coolTimer);
+          document.getElementById('lockoutNote').innerHTML = "Cooldown finished. You can restart the unit now.";
+          document.getElementById('btnRestartUnit').classList.remove('hidden');
+        }
+      }, 1000);
+    }
+
+    function restartEntireUnit() {
+      location.reload();
+    }
+
+    /* Sequential & Strict Progression Management */
+    var stepTitles = [
+      "1. Warm-up",
+      "2. Skill Activated",
+      "3. Guided Steps",
+      "4. Try It Yourself",
+      "5. Skill Check"
+    ];
+
+    function checkStepCompletionStatus() {
+      // Step 1 Check
+      var s1 = stepCompletion.step1;
+      var isStep1Complete = (s1.visualCardsCorrect.size === 4) && s1.categorizationDone;
+      var btnNext1 = document.getElementById('btnNextStep1');
+      var hint1 = document.getElementById('hintLockStep1');
+      if (isStep1Complete) {
+        if (btnNext1) btnNext1.disabled = false;
+        if (hint1) hint1.style.display = 'none';
+        unlockStep(2);
+      }
+
+      // Step 2 Check
+      var s2 = stepCompletion.step2;
+      var isStep2Complete = s2.matchingDone || (s2.catsStep4 && s2.familyDone);
+      var btnNext2 = document.getElementById('btnNextStep2');
+      var hint2 = document.getElementById('hintLockStep2');
+      if (isStep2Complete) {
+        if (btnNext2) btnNext2.disabled = false;
+        if (hint2) hint2.style.display = 'none';
+        unlockStep(3);
+      }
+
+      // Step 3 Check
+      var s3 = stepCompletion.step3;
+      var isStep3Complete = (s3.sportsStep3 && s3.photoStep2) || (s3.sportsStep3 && s3.photoKw);
+      var btnNext3 = document.getElementById('btnNextStep3');
+      var hint3 = document.getElementById('hintLockStep3');
+      if (isStep3Complete) {
+        if (btnNext3) btnNext3.disabled = false;
+        if (hint3) hint3.style.display = 'none';
+        unlockStep(4);
+      }
+
+      // Step 4 Check
+      var s4 = stepCompletion.step4;
+      var isStep4Complete = s4.appsQ && s4.streetFoodQ;
+      var btnNext4 = document.getElementById('btnNextStep4');
+      var hint4 = document.getElementById('hintLockStep4');
+      if (isStep4Complete) {
+        if (btnNext4) btnNext4.disabled = false;
+        if (hint4) hint4.style.display = 'none';
+        unlockStep(5);
+      }
+    }
+
+    function unlockStep(targetStep) {
+      if (targetStep > unlockedStep) {
+        unlockedStep = targetStep;
+      }
+      updateStepNavUI();
+    }
+
+    function updateStepNavUI() {
+      for (var s = 1; s <= 5; s++) {
+        var btn = document.getElementById(s === 1 ? 'stepsNav' : 'btnNavStep' + s);
+        if (s === 1) btn = document.querySelector('#stepsNav .step-nav-btn:first-child');
+
+        if (!btn) continue;
+
+        btn.classList.remove('active', 'completed', 'locked');
+
+        if (s === currentStep) {
+          btn.classList.add('active');
+          btn.innerHTML = stepTitles[s - 1];
+        } else if (s <= unlockedStep) {
+          btn.classList.add('completed');
+          btn.removeAttribute('disabled');
+          btn.innerHTML = stepTitles[s - 1] + ' ✓';
+        } else {
+          btn.classList.add('locked');
+          btn.setAttribute('disabled', 'true');
+          btn.innerHTML = stepTitles[s - 1] + ' 🔒';
+        }
+      }
+    }
+
+    /* =========================================================
+       SUBCARD STEP-BY-STEP SINGLE-CARD NAVIGATION ENGINE
+    ========================================================= */
+    var subCardState = {
+      1: { current: 1, maxUnlocked: 1, total: 2 },
+      2: { current: 1, maxUnlocked: 1, total: 6 },
+      3: { current: 1, maxUnlocked: 1, total: 2 },
+      4: { current: 1, maxUnlocked: 1, total: 2 },
+      5: { current: 1, maxUnlocked: 1, total: 2 }
+    };
+
+    function showSubCard(stepNum, subIndex, autoScroll) {
+      var state = subCardState[stepNum];
+      if (!state) return;
+      if (subIndex < 1 || subIndex > state.total) return;
+      if (subIndex > state.maxUnlocked) return; // locked card
+
+      if (typeof karaokeAudio !== 'undefined' && karaokeAudio && !karaokeAudio.paused) {
+        karaokeAudio.pause();
+      }
+
+      state.current = subIndex;
+
+      // Auto unlock Card 2.3 when on Card 2.2
+      if (stepNum === 2 && subIndex === 2 && state.maxUnlocked < 3) {
+        state.maxUnlocked = 3;
+      }
+
+      // Hide all sub-cards in this step, show strictly ONLY subIndex
+      for (var i = 1; i <= state.total; i++) {
+        var cardEl = document.getElementById('step' + stepNum + '-card' + i);
+        if (cardEl) {
+          if (i === subIndex) {
+            cardEl.style.display = 'block';
+            cardEl.classList.remove('card-step-hidden');
+            cardEl.classList.add('card-step-visible');
+          } else {
+            cardEl.style.display = 'none';
+            cardEl.classList.add('card-step-hidden');
+            cardEl.classList.remove('card-step-visible');
+          }
+        }
+      }
+
+      updateSubCardNavUI(stepNum);
+
+      if (autoScroll !== false) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      reportHeight();
+    }
+
+    function unlockSubCard(stepNum, subIndex, autoTransition) {
+      var state = subCardState[stepNum];
+      if (!state) return;
+      if (subIndex > state.maxUnlocked) {
+        state.maxUnlocked = subIndex;
+      }
+      updateSubCardNavUI(stepNum);
+      if (autoTransition) {
+        setTimeout(function () {
+          showSubCard(stepNum, subIndex, true);
+        }, 350);
+      }
+    }
+
+    function prevSubCard(stepNum) {
+      var state = subCardState[stepNum];
+      if (state && state.current > 1) {
+        showSubCard(stepNum, state.current - 1, true);
+      }
+    }
+
+    function nextSubCard(stepNum) {
+      var state = subCardState[stepNum];
+      if (state && state.current < state.maxUnlocked) {
+        showSubCard(stepNum, state.current + 1, true);
+      }
+    }
+
+    function updateSubCardNavUI(stepNum) {
+      var state = subCardState[stepNum];
+      if (!state) return;
+
+      for (var i = 1; i <= state.total; i++) {
+        // Top turnback button
+        var topPrevBtn = document.getElementById('btn-top-prev-' + stepNum + '-' + i);
+        if (topPrevBtn) topPrevBtn.disabled = (i === 1);
+
+        // Top forward button
+        var topNextBtn = document.getElementById('btn-top-next-' + stepNum + '-' + i);
+        if (topNextBtn) {
+          topNextBtn.disabled = (state.maxUnlocked <= i);
+        }
+
+        // Bottom turnback button
+        var btmPrevBtn = document.getElementById('btn-btm-prev-' + stepNum + '-' + i);
+        if (btmPrevBtn) btmPrevBtn.disabled = (i === 1);
+
+        // Bottom forward button
+        var btmNextBtn = document.getElementById('btn-btm-next-' + stepNum + '-' + i);
+        if (btmNextBtn) {
+          if (i === state.total) {
+            btmNextBtn.style.display = 'none'; // last card of step uses step-level next button
+          } else {
+            btmNextBtn.style.display = 'inline-flex';
+            btmNextBtn.disabled = (state.maxUnlocked <= i);
+          }
+        }
+      }
+    }
+
+    function proceedToStep(nextStepNum) {
+      if (nextStepNum > unlockedStep) {
+        unlockStep(nextStepNum);
+      }
+      switchStep(nextStepNum);
+    }
+
+    function switchStep(stepNum) {
+      if (stepNum > unlockedStep) return; // Strict lock prevention
+
+      currentStep = stepNum;
+      var contents = document.querySelectorAll('.step-content');
+      contents.forEach(function (c) { c.classList.add('hidden'); });
+
+      document.getElementById('step-' + stepNum + '-content').classList.remove('hidden');
+      updateStepNavUI();
+
+      // Show strictly current active subcard for this step
+      showSubCard(stepNum, subCardState[stepNum].current, false);
+
+      LMS().progress({ done: stepNum, total: 5 });
+      LMS().state({ step: stepNum, unlockedStep: unlockedStep });
+      reportHeight();
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleTranslation(id) {
+      var el = document.getElementById(id);
+      if (el) el.classList.toggle('visible');
+      reportHeight();
+    }
+
+    function toggleHint(id) {
+      var el = document.getElementById(id);
+      if (el) el.classList.toggle('visible');
+      reportHeight();
+    }
+
+    /* Helper: Fisher-Yates True Shuffle */
+    function shuffleArray(arr) {
+      var array = arr.slice();
+      for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+      return array;
+    }
+
+    /* Helper: Freeze Options Grid once correct answer selected */
+    function freezeOptionsGrid(containerEl) {
+      if (!containerEl) return;
+      var cards = containerEl.querySelectorAll('.option-card, .visual-opt-btn, .word-token');
+      cards.forEach(function (c) {
+        c.style.pointerEvents = 'none';
+      });
+    }
+
+    /* Helper: Reveal Subcard Step by Step */
+    function revealSubCard(cardId) {
+      var match = cardId.match(/step(\d+)-card(\d+)/);
+      if (match) {
+        var stepNum = parseInt(match[1], 10);
+        var subIndex = parseInt(match[2], 10);
+        unlockSubCard(stepNum, subIndex, false);
+      }
+    }
+
+    /* =========================================================
+       3. STEP 1: WARM-UP LOGIC
+    ========================================================= */
+    function checkVisualOpt(btn, isCorrect, cardId) {
+      var parent = btn.parentElement;
+      var btns = parent.querySelectorAll('.visual-opt-btn');
+
+      if (isCorrect) {
+        btns.forEach(function (b) { b.classList.remove('wrong'); });
+        btn.classList.add('correct');
+        btns.forEach(function (b) { b.style.pointerEvents = 'none'; }); // Lock state on correct
+        stepCompletion.step1.visualCardsCorrect.add(cardId);
+        LMS().event('answered', { question: 'visual-predict-' + cardId, correct: true });
+
+        if (stepCompletion.step1.visualCardsCorrect.size === 4) {
+          revealSubCard('step1-card2');
+        }
+      } else {
+        btn.classList.add('wrong');
+        stepCompletion.step1.visualCardsCorrect.delete(cardId);
+        LMS().event('answered', { question: 'visual-predict-' + cardId, correct: false });
+      }
+      checkStepCompletionStatus();
+    }
+
+    /* Step 1 Part 2 Categorization - Non-predictable array definition */
+    var warmupWords = [
+      { id: 'w1', text: 'pizza', topic: 'Food' },
+      { id: 'w2', text: 'umbrella', topic: 'Weather' },
+      { id: 'w3', text: 'basketball', topic: 'Sports' },
+      { id: 'w4', text: 'storm', topic: 'Weather' },
+      { id: 'w5', text: 'burger', topic: 'Food' },
+      { id: 'w6', text: 'tennis', topic: 'Sports' },
+      { id: 'w7', text: 'rain', topic: 'Weather' },
+      { id: 'w8', text: 'noodles', topic: 'Food' },
+      { id: 'w9', text: 'football', topic: 'Sports' }
+    ];
+
+    var selectedWordId = null;
+    var placedCount = 0;
+
+    function initWarmupWords() {
+      var container = document.getElementById('warmupWordBank');
+      container.innerHTML = '';
+      var shuffled = shuffleArray(warmupWords);
+      shuffled.forEach(function (w) {
+        var chip = document.createElement('div');
+        chip.className = 'word-chip';
+        chip.id = 'chip-' + w.id;
+        chip.innerText = w.text;
+        chip.onclick = function () { selectWarmupChip(w.id); };
+        container.appendChild(chip);
+      });
+    }
+
+    function selectWarmupChip(id) {
+      selectedWordId = id;
+      document.querySelectorAll('.word-chip').forEach(function (c) { c.classList.remove('selected'); });
+      var chip = document.getElementById('chip-' + id);
+      if (chip) chip.classList.add('selected');
+    }
+
+    function placeWordInBucket(bucketTopic) {
+      if (!selectedWordId) return;
+      var wordObj = warmupWords.find(function (w) { return w.id === selectedWordId; });
+      if (!wordObj) return;
+
+      var chip = document.getElementById('chip-' + selectedWordId);
+
+      if (wordObj.topic === bucketTopic) {
+        // Correct match
+        chip.classList.add('placed');
+        chip.classList.remove('selected');
+
+        var slotContainer = document.getElementById('slots-' + bucketTopic);
+        var placedChip = document.createElement('span');
+        placedChip.className = 'placed-chip';
+        placedChip.innerText = wordObj.text;
+        slotContainer.appendChild(placedChip);
+
+        placedCount++;
+        selectedWordId = null;
+
+        if (placedCount === warmupWords.length) {
+          document.getElementById('warmupCompleteFeedback').classList.add('visible');
+          stepCompletion.step1.categorizationDone = true;
+          checkStepCompletionStatus();
+        }
+      } else {
+        // Shake wrong
+        chip.style.animation = 'shake 0.3s';
+        setTimeout(function () { chip.style.animation = ''; }, 300);
+      }
+    }
+
+    /* =========================================================
+       4. STEP 2: SKILL ACTIVATED LOGIC
+    ========================================================= */
+    function selectQuickGuess(card, letter) {
+      var grid = card.parentElement;
+      grid.querySelectorAll('.option-card').forEach(function (c) { c.classList.remove('selected'); });
+      card.classList.add('selected');
+      document.getElementById('quickGuessNote').classList.add('visible');
+      stepCompletion.step2.quickGuess = true;
+      checkStepCompletionStatus();
+      LMS().event('answered', { question: 'quick-guess', option: letter });
+
+      revealSubCard('step2-card2');
+    }
+
+    /* 2.3 Watch & Learn Karaoke Narration (4-Step Sequential Demonstration synchronized with audio) */
+    var karaokeAudio = new Audio('https://qkhah6829.id.vn/eng/L10R1/L10%20P2.3.wav');
+
+    var karaokeWordTimings = [
+      { id: 'kw-1', t: 3.70 },
+      { id: 'kw-2', t: 3.85, kw: true },
+      { id: 'kw-3', t: 4.15 },
+      { id: 'kw-4', t: 4.55 },
+      { id: 'kw-5', t: 4.75 },
+      { id: 'kw-6', t: 6.35 },
+      { id: 'kw-7', t: 6.60 },
+      { id: 'kw-8', t: 6.85 },
+      { id: 'kw-9', t: 7.00, kw: true },
+      { id: 'kw-10', t: 7.55 },
+      { id: 'kw-11', t: 8.05 },
+      { id: 'kw-12', t: 8.20 },
+      { id: 'kw-13', t: 8.45 },
+      { id: 'kw-14', t: 8.85, kw: true },
+      { id: 'kw-15', t: 10.60 },
+      { id: 'kw-16', t: 10.80 },
+      { id: 'kw-17', t: 11.10 },
+      { id: 'kw-18', t: 11.40 },
+      { id: 'kw-19', t: 11.75 },
+      { id: 'kw-20', t: 11.90 },
+      { id: 'kw-21', t: 12.15, kw: true }
+    ];
+
+    var karaokeStepTimes = {
+      1: 0.0,
+      2: 13.5,
+      3: 27.5,
+      4: 35.5
+    };
+
+    function toggleKaraokeAudio() {
+      if (karaokeAudio.paused) {
+        karaokeAudio.play().catch(function (e) {
+          console.warn("Audio play error:", e);
+        });
+      } else {
+        karaokeAudio.pause();
+      }
+    }
+
+    function jumpToKaraokeStep(stepNum) {
+      if (karaokeStepTimes[stepNum] !== undefined) {
+        karaokeAudio.currentTime = karaokeStepTimes[stepNum];
+        if (karaokeAudio.paused) {
+          karaokeAudio.play().catch(function (e) { });
+        }
+      }
+    }
+
+    function seekKaraokeAudio(e) {
+      var bg = document.getElementById('karaokeProgressBg');
+      if (!bg) return;
+      var duration = karaokeAudio.duration || 50;
+      var rect = bg.getBoundingClientRect();
+      var pct = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      karaokeAudio.currentTime = pct * duration;
+    }
+
+    function resetWatchAndLearn() {
+      karaokeAudio.pause();
+      karaokeAudio.currentTime = 0;
+      updateKaraokeUI(0);
+    }
+
+    karaokeAudio.addEventListener('play', function () {
+      var btn = document.getElementById('btnKaraokeAction');
+      if (btn) btn.innerHTML = '⏸ Pause Audio';
+    });
+
+    karaokeAudio.addEventListener('pause', function () {
+      var btn = document.getElementById('btnKaraokeAction');
+      if (btn) btn.innerHTML = '▶ Play Audio';
+    });
+
+    karaokeAudio.addEventListener('ended', function () {
+      var btn = document.getElementById('btnKaraokeAction');
+      if (btn) btn.innerHTML = '🔁 Replay Audio';
+      unlockSubCard(2, 4, false);
+    });
+
+    karaokeAudio.addEventListener('timeupdate', function () {
+      updateKaraokeUI(karaokeAudio.currentTime);
+    });
+
+    function formatSec(s) {
+      var m = Math.floor(s / 60);
+      var sec = Math.floor(s % 60);
+      return (m < 10 ? '0' + m : m) + ':' + (sec < 10 ? '0' + sec : sec);
+    }
+
+    function updateKaraokeUI(t) {
+      var duration = karaokeAudio.duration || 50;
+
+      // Timer & Progress Bar
+      var timerEl = document.getElementById('karaokeAudioTimer');
+      if (timerEl) {
+        timerEl.innerText = formatSec(t) + ' / ' + formatSec(duration);
+      }
+      var pBar = document.getElementById('karaokeProgressBar');
+      if (pBar) {
+        pBar.style.width = ((t / duration) * 100).toFixed(1) + '%';
+      }
+
+      // Step tab active state & Badge
+      var currentStep = 1;
+      if (t >= 35.5) currentStep = 4;
+      else if (t >= 27.5) currentStep = 3;
+      else if (t >= 13.5) currentStep = 2;
+
+      for (var s = 1; s <= 4; s++) {
+        var tab = document.getElementById('stepTab' + s);
+        if (tab) {
+          if (s === currentStep) tab.classList.add('active');
+          else tab.classList.remove('active');
+        }
+      }
+
+      var badge = document.getElementById('karaokeStepBadge');
+      var badgeTexts = {
+        1: 'Step 1/4: Read Paragraph',
+        2: 'Step 2/4: Notice Keywords',
+        3: 'Step 3/4: Find Common Theme',
+        4: 'Step 4/4: Topic Found! 🎉'
+      };
+      if (badge) badge.innerText = badgeTexts[currentStep];
+
+      // Reset word highlights
+      for (var w = 1; w <= 21; w++) {
+        var el = document.getElementById('kw-' + w);
+        if (el) el.className = 'karaoke-word';
+      }
+
+      var enEl = document.getElementById('karaokeEnText');
+      var viEl = document.getElementById('t-karaoke-step');
+
+      if (t < 13.5) {
+        // STEP 1: Read Paragraph
+        if (t < 3.5) {
+          if (enEl) enEl.innerHTML = "① First, read the whole paragraph.";
+          if (viEl) viEl.innerHTML = "① Đầu tiên, đọc toàn bộ đoạn văn.<br><span style='font-size:13px; color:rgba(255,255,255,0.85);'>(Bản dịch đoạn văn: Cả tuần trời mưa rất to. Đường phố ướt nhẹp và nhiều người mang theo ô. Các trường học đóng cửa sớm vì cơn bão.)</span>";
+        } else {
+          if (enEl) enEl.innerHTML = "① Reading paragraph...";
+          if (viEl) viEl.innerHTML = "① Đang đọc toàn bộ đoạn văn...";
+
+          var activeId = null;
+          for (var i = 0; i < karaokeWordTimings.length; i++) {
+            if (t >= karaokeWordTimings[i].t) {
+              activeId = karaokeWordTimings[i].id;
+            }
+          }
+          if (activeId) {
+            var activeEl = document.getElementById(activeId);
+            if (activeEl) activeEl.classList.add('active-speech');
+          }
+        }
+      } else if (t < 27.5) {
+        // STEP 2: Notice Keywords
+        if (t < 18.0) {
+          if (enEl) enEl.innerHTML = "② Now, look for the important words.";
+          if (viEl) viEl.innerHTML = "② Bây giờ, hãy tìm các từ quan trọng.";
+        } else if (t < 20.5) {
+          if (enEl) enEl.innerHTML = "② I notice these words:";
+          if (viEl) viEl.innerHTML = "② Mình chú ý các từ:";
+        } else if (t < 22.1) {
+          if (enEl) enEl.innerHTML = "② I notice these words: <strong style='color:var(--accent);'>rained</strong>...";
+          if (viEl) viEl.innerHTML = "② Mình chú ý các từ: <strong style='color:var(--accent);'>rained</strong>...";
+          setKwHighlight(['kw-2']);
+        } else if (t < 23.8) {
+          if (enEl) enEl.innerHTML = "② I notice these words: <strong style='color:var(--accent);'>rained</strong>... <strong style='color:var(--accent);'>wet</strong>...";
+          if (viEl) viEl.innerHTML = "② Mình chú ý các từ: <strong style='color:var(--accent);'>rained</strong>... <strong style='color:var(--accent);'>wet</strong>...";
+          setKwHighlight(['kw-2', 'kw-9']);
+        } else if (t < 25.7) {
+          if (enEl) enEl.innerHTML = "② I notice these words: <strong style='color:var(--accent);'>rained</strong>... <strong style='color:var(--accent);'>wet</strong>... <strong style='color:var(--accent);'>umbrellas</strong>...";
+          if (viEl) viEl.innerHTML = "② Mình chú ý các từ: <strong style='color:var(--accent);'>rained</strong>... <strong style='color:var(--accent);'>wet</strong>... <strong style='color:var(--accent);'>umbrellas</strong>...";
+          setKwHighlight(['kw-2', 'kw-9', 'kw-14']);
+        } else {
+          if (enEl) enEl.innerHTML = "② I notice these words: <strong style='color:var(--accent);'>rained</strong>... <strong style='color:var(--accent);'>wet</strong>... <strong style='color:var(--accent);'>umbrellas</strong>... <strong style='color:var(--accent);'>storm</strong>.";
+          if (viEl) viEl.innerHTML = "② Mình chú ý các từ: <strong style='color:var(--accent);'>rained</strong>... <strong style='color:var(--accent);'>wet</strong>... <strong style='color:var(--accent);'>umbrellas</strong>... <strong style='color:var(--accent);'>storm</strong>.";
+          setKwHighlight(['kw-2', 'kw-9', 'kw-14', 'kw-21']);
+        }
+      } else if (t < 35.5) {
+        // STEP 3: Common Theme
+        setKwHighlight(['kw-2', 'kw-9', 'kw-14', 'kw-21']);
+        if (t < 31.0) {
+          if (enEl) enEl.innerHTML = "③ What do these words have in common?";
+          if (viEl) viEl.innerHTML = "③ Những từ này có điểm gì chung?";
+        } else {
+          if (enEl) enEl.innerHTML = "③ These words are all about... <strong style='color:var(--accent-deep); font-size:17px;'>bad weather! 🌧️</strong>";
+          if (viEl) viEl.innerHTML = "③ Những từ này đều nói về... <strong style='color:var(--accent-deep); font-size:17px;'>thời tiết xấu! 🌧️</strong>";
+        }
+      } else {
+        // STEP 4: Determine Topic
+        setKwHighlight(['kw-2', 'kw-9', 'kw-14', 'kw-21']);
+        if (t < 40.0) {
+          if (enEl) enEl.innerHTML = "④ So, what is the paragraph mainly about?";
+          if (viEl) viEl.innerHTML = "④ Vậy, đoạn văn chủ yếu nói về điều gì?";
+        } else if (t < 45.0) {
+          if (enEl) enEl.innerHTML = "④ The topic is heavy rain — <strong style='color:var(--jade-deep); font-size:17px;'>a rainstorm</strong>.";
+          if (viEl) viEl.innerHTML = "④ Chủ đề là mưa lớn — <strong style='color:var(--jade-deep); font-size:17px;'>một cơn bão</strong>.";
+        } else {
+          if (enEl) enEl.innerHTML = "④ Exactly! <strong style='color:var(--accent-deep); font-size:17px;'>The paragraph is about a rainstorm. 🎉</strong>";
+          if (viEl) viEl.innerHTML = "④ Chính xác! <strong style='color:var(--accent-deep); font-size:17px;'>Đoạn văn nói về một cơn mưa bão. 🎉</strong>";
+          unlockSubCard(2, 4, false);
+        }
+      }
+    }
+
+    function setKwHighlight(ids) {
+      ids.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.className = 'karaoke-word active-keyword';
+      });
+    }
+
+    /* Generic Universal Token Toggle for Any Word */
+    function toggleWordToken(token) {
+      if (token.classList.contains('correct-highlight') || token.style.pointerEvents === 'none') {
+        return; // Locked correct state cannot be toggled
+      }
+      token.classList.toggle('selected');
+      updateKeywordCheckButtonState(token);
+    }
+
+    function updateKeywordCheckButtonState(token) {
+      var passage = token.closest('#catsPassageContainer, #sportsPassageContainer, #photoPassageContainer');
+      if (!passage) return;
+
+      var btnId = null;
+      if (passage.id === 'catsPassageContainer') btnId = 'btnCheckCatsKw';
+      else if (passage.id === 'sportsPassageContainer') btnId = 'btnCheckSportsKw';
+      else if (passage.id === 'photoPassageContainer') btnId = 'btnCheckPhotoKw';
+
+      if (!btnId) return;
+
+      var btn = document.getElementById(btnId);
+      if (!btn || btn.innerHTML.includes('✓ Keywords Revealed')) return; // Already completed/locked
+
+      var selectedTokens = passage.querySelectorAll('.word-token.selected');
+      btn.disabled = (selectedTokens.length === 0);
+    }
+
+    /* 2.4 Your Turn - Cats Keywords (Single check & direct answer reveal) */
+    function checkCatsKeywords() {
+      var container = document.getElementById('catsPassageContainer');
+      var tokens = container.querySelectorAll('.word-token');
+      var fb = document.getElementById('catsKeywordsFeedback');
+      fb.classList.add('visible');
+
+      tokens.forEach(function (t) {
+        t.style.pointerEvents = 'none';
+        if (t.getAttribute('data-target') === 'true') {
+          t.classList.add('correct-highlight');
+        } else if (t.classList.contains('selected')) {
+          t.classList.remove('selected');
+        }
+      });
+
+      fb.className = 'feedback-box correct visible';
+      fb.innerHTML = 'These words — <strong style="color: var(--accent);">sleeping, nap, play, rest</strong> — are all things cats do."';
+
+      var btn = document.getElementById('btnCheckCatsKw');
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '✓ Keywords Revealed';
+      }
+      var block3 = document.getElementById('catsStep3Block');
+      if (block3) {
+        block3.classList.remove('card-step-hidden');
+        block3.classList.add('card-step-visible');
+      }
+      stepCompletion.step2.catsKwDone = true;
+      checkStepCompletionStatus();
+    }
+
+    function checkCatsStep3(card, isCorrect) {
+      var grid = card.parentElement;
+      grid.querySelectorAll('.option-card').forEach(function (c) { c.classList.remove('correct', 'wrong'); });
+      if (isCorrect) {
+        card.classList.add('correct');
+        freezeOptionsGrid(grid);
+        stepCompletion.step2.catsStep3 = true;
+        var block4 = document.getElementById('catsStep4Block');
+        if (block4) {
+          block4.classList.remove('card-step-hidden');
+          block4.classList.add('card-step-visible');
+        }
+      } else {
+        card.classList.add('wrong');
+        stepCompletion.step2.catsStep3 = false;
+      }
+      checkStepCompletionStatus();
+    }
+
+    function checkCatsStep4(card, isCorrect) {
+      var grid = card.parentElement;
+      grid.querySelectorAll('.option-card').forEach(function (c) { c.classList.remove('correct', 'wrong'); });
+      if (isCorrect) {
+        card.classList.add('correct');
+        freezeOptionsGrid(grid);
+        stepCompletion.step2.catsStep4 = true;
+        revealSubCard('step2-card5');
+      } else {
+        card.classList.add('wrong');
+        stepCompletion.step2.catsStep4 = false;
+      }
+      checkStepCompletionStatus();
+    }
+
+    /* Your Turn Round 2 Family */
+    function checkFamilyRound(card, isCorrect) {
+      var grid = card.parentElement;
+      grid.querySelectorAll('.option-card').forEach(function (c) { c.classList.remove('correct', 'wrong'); });
+      var fb = document.getElementById('familyFeedback');
+      fb.classList.add('visible');
+      if (isCorrect) {
+        card.classList.add('correct');
+        freezeOptionsGrid(grid);
+        fb.className = 'feedback-box correct visible';
+        fb.innerHTML = '🎉 <strong>Great!</strong> You\'re getting faster at spotting the topic.';
+        stepCompletion.step2.familyDone = true;
+        revealSubCard('step2-card6');
+      } else {
+        card.classList.add('wrong');
+        fb.className = 'feedback-box wrong visible';
+        fb.innerHTML = '❌ <strong>Not quite</strong> — try applying the 4 steps you just learned.';
+        stepCompletion.step2.familyDone = false;
+      }
+      checkStepCompletionStatus();
+    }
+
+    /* Your Turn Round 3 Topic Matching */
+    var selectedMatchCard = null;
+    var matchedPairsCount = 0;
+
+    function selectMatchText(card, targetTopic) {
+      document.querySelectorAll('#matchTextsCol .matching-card').forEach(function (c) { c.classList.remove('selected'); });
+      card.classList.add('selected');
+      selectedMatchCard = { card: card, topic: targetTopic };
+    }
+
+    function selectMatchTopic(card, topicName) {
+      if (!selectedMatchCard) return;
+      if (selectedMatchCard.topic === topicName) {
+        // Correct
+        selectedMatchCard.card.classList.add('matched');
+        selectedMatchCard.card.classList.remove('selected');
+        card.classList.add('matched');
+
+        matchedPairsCount++;
+        selectedMatchCard = null;
+
+        if (matchedPairsCount === 3) {
+          document.getElementById('matchingCompleteFeedback').classList.add('visible');
+          stepCompletion.step2.matchingDone = true;
+          var btnNext2 = document.getElementById('btnNextStep2');
+          var hint2 = document.getElementById('hintLockStep2');
+          if (btnNext2) btnNext2.disabled = false;
+          if (hint2) hint2.style.display = 'none';
+          unlockStep(3);
+          checkStepCompletionStatus();
+        }
+      } else {
+        // Wrong
+        card.classList.add('wrong');
+        setTimeout(function () { card.classList.remove('wrong'); }, 300);
+      }
+    }
+
+    /* =========================================================
+       5. STEP 3: GUIDED STEPS LOGIC
+    ========================================================= */
+    function checkSportsStep1Keywords() {
+      var container = document.getElementById('sportsPassageContainer');
+      var tokens = container.querySelectorAll('.word-token');
+      var fb = document.getElementById('sportsKwFeedback');
+      fb.classList.add('visible');
+
+      tokens.forEach(function (t) {
+        t.style.pointerEvents = 'none';
+        if (t.getAttribute('data-target') === 'true') {
+          t.classList.add('correct-highlight');
+        } else if (t.classList.contains('selected')) {
+          t.classList.remove('selected');
+        }
+      });
+
+      fb.className = 'feedback-box correct visible';
+      fb.innerHTML = '🎉 <strong>Target Keywords Highlighted:</strong> <em>runners, train, marathons, training, athletes, clubs</em>!';
+
+      var btn = document.getElementById('btnCheckSportsKw');
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '✓ Keywords Revealed';
+      }
+      var block2 = document.getElementById('sportsStep2Block');
+      if (block2) {
+        block2.classList.remove('card-step-hidden');
+        block2.classList.add('card-step-visible');
+      }
+      stepCompletion.step3.sportsKw = true;
+      checkStepCompletionStatus();
+    }
+
+    var sportsStep2Attempts = 0;
+    function checkSportsStep2(card, isCorrect) {
+      var grid = card.parentElement;
+      grid.querySelectorAll('.option-card').forEach(function (c) { c.classList.remove('correct', 'wrong'); });
+      if (isCorrect) {
+        card.classList.add('correct');
+        freezeOptionsGrid(grid);
+        stepCompletion.step3.sportsStep2 = true;
+        var block3 = document.getElementById('sportsStep3Block');
+        if (block3) {
+          block3.classList.remove('card-step-hidden');
+          block3.classList.add('card-step-visible');
+        }
+      } else {
+        card.classList.add('wrong');
+        stepCompletion.step3.sportsStep2 = false;
+        sportsStep2Attempts++;
+        if (sportsStep2Attempts >= 2) {
+          document.getElementById('sportsStep2AutoHint').classList.add('visible');
+        }
+      }
+      checkStepCompletionStatus();
+    }
+
+    function checkSportsStep3(card, isCorrect) {
+      var grid = card.parentElement;
+      grid.querySelectorAll('.option-card').forEach(function (c) { c.classList.remove('correct', 'wrong'); });
+      if (isCorrect) {
+        card.classList.add('correct');
+        freezeOptionsGrid(grid);
+        stepCompletion.step3.sportsStep3 = true;
+        revealSubCard('step3-card2');
+      } else {
+        card.classList.add('wrong');
+        stepCompletion.step3.sportsStep3 = false;
+      }
+      checkStepCompletionStatus();
+    }
+
+    /* Photography Guided Step */
+    function checkPhotoKeywords() {
+      var container = document.getElementById('photoPassageContainer');
+      var tokens = container.querySelectorAll('.word-token');
+      var fb = document.getElementById('photoKwFeedback');
+      fb.classList.add('visible');
+
+      tokens.forEach(function (t) {
+        t.style.pointerEvents = 'none';
+        if (t.getAttribute('data-target') === 'true') {
+          t.classList.add('correct-highlight');
+        } else if (t.classList.contains('selected')) {
+          t.classList.remove('selected');
+        }
+      });
+
+      fb.className = 'feedback-box correct visible';
+      fb.innerHTML = '🎉 <strong>Target Keywords Highlighted:</strong> <em>photography, cameras, photo, clubs, photographers</em>!';
+
+      var btn = document.getElementById('btnCheckPhotoKw');
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML = '✓ Keywords Revealed';
+      }
+      var block2 = document.getElementById('photoStep2Block');
+      if (block2) {
+        block2.classList.remove('card-step-hidden');
+        block2.classList.add('card-step-visible');
+      }
+      stepCompletion.step3.photoKw = true;
+      checkStepCompletionStatus();
+    }
+
+    var photoStep2Attempts = 0;
+    function checkPhotoStep2(card, isCorrect) {
+      var grid = card.parentElement;
+      grid.querySelectorAll('.option-card').forEach(function (c) { c.classList.remove('correct', 'wrong'); });
+      if (isCorrect) {
+        card.classList.add('correct');
+        freezeOptionsGrid(grid);
+        stepCompletion.step3.photoStep2 = true;
+      } else {
+        card.classList.add('wrong');
+        stepCompletion.step3.photoStep2 = false;
+        photoStep2Attempts++;
+        if (photoStep2Attempts >= 2) {
+          document.getElementById('photoAutoHint').classList.add('visible');
+        }
+      }
+      checkStepCompletionStatus();
+    }
+
+    /* =========================================================
+       6. STEP 4: TRY IT YOURSELF LOGIC
+    ========================================================= */
+    function checkAppsQuestion(card, isCorrect) {
+      var grid = card.parentElement;
+      grid.querySelectorAll('.option-card').forEach(function (c) { c.classList.remove('correct', 'wrong'); });
+      if (isCorrect) {
+        card.classList.add('correct');
+        freezeOptionsGrid(grid);
+        stepCompletion.step4.appsQ = true;
+        revealSubCard('step4-card2');
+      } else {
+        card.classList.add('wrong');
+        stepCompletion.step4.appsQ = false;
+      }
+      checkStepCompletionStatus();
+    }
+
+    function checkStreetFoodQuestion(card, isCorrect) {
+      var grid = card.parentElement;
+      grid.querySelectorAll('.option-card').forEach(function (c) { c.classList.remove('correct', 'wrong'); });
+      if (isCorrect) {
+        card.classList.add('correct');
+        freezeOptionsGrid(grid);
+        stepCompletion.step4.streetFoodQ = true;
+      } else {
+        card.classList.add('wrong');
+        stepCompletion.step4.streetFoodQ = false;
+      }
+      checkStepCompletionStatus();
+    }
+
+    /* =========================================================
+       7. STEP 5: SKILL CHECK LOGIC & TIMER
+    ========================================================= */
+    var skillcheckTimeSeconds = 3 * 60; // 3:00
+    var skillcheckTimerInterval = null;
+    var scAnswer1 = null;
+    var scAnswer2 = null;
+
+    function startSkillCheck() {
+      document.getElementById('skillcheckGate').classList.add('hidden');
+      document.getElementById('skillcheckContent').classList.add('unblurred');
+      revealSubCard('step5-card1');
+
+      skillcheckTimerInterval = setInterval(function () {
+        skillcheckTimeSeconds--;
+        var m = Math.floor(skillcheckTimeSeconds / 60);
+        var s = skillcheckTimeSeconds % 60;
+        var timerStr = (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+
+        var timerEl = document.getElementById('skillcheckTimerBig');
+        if (timerEl) {
+          timerEl.innerHTML = timerStr;
+          if (skillcheckTimeSeconds <= 30) timerEl.classList.add('danger');
+        }
+
+        if (skillcheckTimeSeconds <= 0) {
+          clearInterval(skillcheckTimerInterval);
+          finishSkillCheck();
+        }
+      }, 1000);
+    }
+
+    function checkSkillCheckReady() {
+      if (scAnswer1 !== null && scAnswer2 !== null) {
+        document.getElementById('btnFinishSkillCheck').disabled = false;
+      }
+    }
+
+    function selectSkillCheck1(card, isCorrect, letter) {
+      card.parentElement.querySelectorAll('.option-card').forEach(function (c) { c.classList.remove('selected'); });
+      card.classList.add('selected');
+      scAnswer1 = { isCorrect: isCorrect, letter: letter };
+      checkSkillCheckReady();
+      revealSubCard('step5-card2');
+    }
+
+    function selectSkillCheck2(card, isCorrect, letter) {
+      card.parentElement.querySelectorAll('.option-card').forEach(function (c) { c.classList.remove('selected'); });
+      card.classList.add('selected');
+      scAnswer2 = { isCorrect: isCorrect, letter: letter };
+      checkSkillCheckReady();
+    }
+
+    function finishSkillCheck() {
+      if (skillcheckTimerInterval) clearInterval(skillcheckTimerInterval);
+
+      var scCard = document.getElementById('skillcheckResultsCard');
+      scCard.classList.remove('hidden');
+
+      var r1El = document.getElementById('scResult1');
+      var r2El = document.getElementById('scResult2');
+
+      var is1Correct = scAnswer1 ? scAnswer1.isCorrect : false;
+      var is2Correct = scAnswer2 ? scAnswer2.isCorrect : false;
+
+      r1El.innerHTML = is1Correct ? '✅ Correct' : '❌ Incorrect';
+      r2El.innerHTML = is2Correct ? '✅ Correct' : '❌ Incorrect';
+
+      if (!hasCompletedLMS) {
+        hasCompletedLMS = true;
+        var totalScore = (is1Correct ? 1 : 0) + (is2Correct ? 1 : 0);
+        LMS().complete({
+          summary: 'Unit 1 Reading A1 Completed',
+          score: totalScore,
+          max: 2,
+          items: [
+            { id: 'volunteering-q1', correct: is1Correct },
+            { id: 'multiple-texts-q2', correct: is2Correct }
+          ]
+        });
+      }
+
+      reportHeight();
+    }
+
+    /* Initialize on load */
+    window.addEventListener('DOMContentLoaded', function () {
+      startGlobalTimer();
+      initWarmupWords();
+      updateStepNavUI();
+      checkStepCompletionStatus();
+
+      // Initialize subcard visibility (strictly 1 card visible per step)
+      for (var s = 1; s <= 5; s++) {
+        showSubCard(s, 1, false);
+      }
+
+      reportHeight();
+    });
+  </script>
+</body>
+
+</html>

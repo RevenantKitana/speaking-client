@@ -1,0 +1,2480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1 · Family Routines — Speaking (Lesson)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Azure Speech SDK -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk@latest/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle.js"></script>
+
+  <script type="application/json" id="athena-context">
+{
+  "title": "Unit 1 · Family Routines — Speaking (Lesson)",
+  "subject": "Tiếng Anh",
+  "grade": "10",
+  "objectives": [
+    "Identify and understand opinions on children doing housework from a video conversation.",
+    "Learn and use functional language for stating opinions, agreeing, and disagreeing.",
+    "Practice sentence structures for giving reasons (Should / Shouldn't do housework).",
+    "Shadow sentences with natural pronunciation and intonation."
+  ],
+  "structure": [
+    { "id": "sec-ee", "title": "Daily Conversation & Comprehension" },
+    { "id": "sec-fl", "title": "Functional Language — Useful Expressions" },
+    { "id": "sec-task", "title": "Task — Complete the conversation" },
+    { "id": "sec-ss", "title": "Sentence Structure — Reasons" },
+    { "id": "sec-sh", "title": "Shadowing & Pronunciation" }
+  ],
+  "athenaGuidance": "(a) Bài học Speaking Unit 1 lớp 10 hướng dẫn học sinh nêu ý kiến về việc trẻ em làm việc nhà (Family Routines & Housework), bày tỏ sự đồng thuận/phản đối và đưa ra lý do chứng minh. (b) Cấu trúc Stating Opinion: I think (that)..., In my opinion,..., I believe (that)...; Agreeing: I agree (with you), That's right; Disagreeing: I don't think so, I don't agree. Comprehension Q1: Whether children should do housework; Q2: Minh and Lan. Task: g1=In my opinion, g2=I don't think so, g3=I agree with. (c) Quy tắc sư phạm: Hướng dẫn học sinh chú ý ngữ điệu tự nhiên, phân biệt mức độ đồng ý/phản đối, không cung cấp đáp án trực tiếp."
+}
+</script>
+
+  <style>
+    :root {
+      --cream: #FAF7F0;
+      --cream-2: #F0EADD;
+      --cream-3: #E7DECC;
+      --paper-line: #E5DECF;
+      --paper-line-2: #D6CCB6;
+      --ink: #1A1A1A;
+      --ink-2: #514C44;
+      --ink-3: #7C756A;
+      --ink-faint: #ABA396;
+      --jade: #3CA57A;
+      --jade-deep: #2D8B6F;
+      --jade-dark: #14432F;
+      --jade-text: #1B5E48;
+      --jade-soft: #A9D0BE;
+      --jade-pale: #DCEAE1;
+      --sage: #A8C9B8;
+      --sage-deep: #7CA792;
+      --sage-text: #46685A;
+      --sage-pale: #E1ECE4;
+      --accent: #E8A24A;
+      --accent-deep: #CE8A33;
+      --accent-text: #8A551A;
+      --accent-pale: #F7E7CD;
+      --correct: #2D8B6F;
+      --correct-bg: #DCEAE1;
+      --wrong: #C15F3C;
+      --wrong-bg: #F3E2D6;
+      --warning: #C58A2E;
+      --warning-bg: #F5E7CB;
+      --info: #4E7F92;
+      --info-bg: #DCE7EB;
+      --white: #FFFFFF;
+      --radius-lg: 22px;
+      --radius: 14px;
+      --radius-sm: 10px;
+      --shadow: 0 10px 30px rgba(43, 43, 40, 0.10);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 16px;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-weight: 800;
+      color: var(--jade-dark);
+    }
+
+    p {
+      margin: 0 0 10px;
+    }
+
+    button,
+    select,
+    input {
+      font-family: inherit;
+    }
+
+    .wrap {
+      width: min(1060px, calc(100% - 32px));
+      margin: auto;
+    }
+
+    /* Top Header */
+    .hero-header {
+      background: var(--jade-deep);
+      color: #fff;
+      padding: 56px 0 68px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      padding: 6px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #fff;
+      letter-spacing: .06em;
+    }
+
+    .hero-header h1 {
+      color: #fff;
+      font-size: clamp(28px, 5.2vw, 44px);
+      line-height: 1.2;
+      margin: 16px 0 12px;
+    }
+
+    .hero-header p {
+      max-width: 780px;
+      margin: auto;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--cream);
+      line-height: 1.6;
+    }
+
+    .hero-vi {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.72);
+      margin-top: 4px;
+    }
+
+    .tag-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .head-tag {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      padding: 8px 16px;
+      font-size: 14.5px;
+      font-weight: 600;
+    }
+
+    main {
+      padding: 40px 0 60px;
+    }
+
+    .section-head {
+      margin-bottom: 24px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      display: inline-flex;
+      background: var(--sage-pale);
+      color: var(--sage-text);
+      border: 1px solid var(--sage);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      font-size: 26px;
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+
+    .lead {
+      color: var(--ink-2);
+      font-size: 16px;
+      margin: 6px 0 0;
+      line-height: 1.5;
+    }
+
+    .vi-sub {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-3);
+      text-transform: none;
+      letter-spacing: normal;
+      margin-top: 2px;
+    }
+
+    /* Hook Banner */
+    .hook-banner {
+      background: var(--jade-deep);
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      box-shadow: 0 16px 40px rgba(20, 67, 47, 0.14);
+      margin-bottom: 32px;
+    }
+
+    .hb-content {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .hb-content .bell {
+      font-size: 24px;
+    }
+
+    .hb-btn {
+      background: var(--accent);
+      color: #fff;
+      border: 0;
+      border-radius: 999px;
+      padding: 8px 18px;
+      font-weight: 800;
+      font-size: 13.5px;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .card,
+    section.card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      margin-bottom: 32px;
+      border: 1px solid var(--paper-line);
+    }
+
+    h3.sub-h {
+      font-size: 17px;
+      color: var(--jade-text);
+      margin: 24px 0 12px;
+    }
+
+    /* Guide / Banner Box */
+    .guide-box {
+      background: var(--jade-pale);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .guide-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--jade-deep);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex: 0 0 auto;
+    }
+
+    .guide-text {
+      font-size: 15px;
+      color: var(--jade-text);
+      line-height: 1.6;
+    }
+
+    .guide-box.done {
+      background: var(--accent-pale);
+      margin-top: 22px;
+      margin-bottom: 0;
+    }
+
+    .guide-box.done .guide-icon {
+      background: var(--accent-deep);
+    }
+
+    .guide-box.done .guide-text {
+      color: var(--accent-text);
+      font-weight: 600;
+    }
+
+    /* Comprehension Cards (MCQ) */
+    .comp-card {
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+
+    .comp-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .comp-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--jade-deep);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+
+    .mcq-q {
+      font-weight: 700;
+      font-size: 16.5px;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    .mcq-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .mcq-option {
+      text-align: left;
+      background: var(--white);
+      border: 2px solid var(--paper-line);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-size: 15.5px;
+      color: var(--ink);
+      cursor: pointer;
+      min-height: 46px;
+      transition: border-color .15s, background .15s;
+      font-family: inherit;
+    }
+
+    .mcq-option:hover:not(.disabled) {
+      border-color: var(--sage-deep);
+      background: var(--cream-2);
+    }
+
+    .mcq-option.correct {
+      background: var(--correct-bg);
+      border-color: var(--correct);
+      color: var(--jade-text);
+      font-weight: 700;
+    }
+
+    .mcq-option.wrong {
+      background: var(--wrong-bg);
+      border-color: var(--wrong);
+      color: var(--wrong);
+      font-weight: 700;
+    }
+
+    .mcq-option.disabled {
+      cursor: default;
+    }
+
+    .mcq-feedback {
+      display: none;
+      margin-top: 12px;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+
+    .mcq-feedback.correct {
+      background: var(--correct-bg);
+      color: var(--jade-text);
+      border: 1px solid var(--correct);
+    }
+
+    .mcq-feedback.wrong {
+      background: var(--wrong-bg);
+      color: var(--wrong);
+      border: 1px solid var(--wrong);
+    }
+
+    /* 2-tier vocabulary reveal styles */
+    .kw-core {
+      font-weight: 800;
+      color: var(--jade-dark);
+      background: var(--jade-pale);
+      padding: 1px 5px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .reveal-support {
+      border-bottom: 2px dotted var(--accent-deep);
+      cursor: pointer;
+      color: var(--ink);
+      font-weight: 600;
+      padding-bottom: 1px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .reveal-support:hover {
+      background: var(--accent-pale);
+      border-radius: 3px;
+    }
+
+    /* Vocab Popup Tooltip */
+    .vocab-popup {
+      position: absolute;
+      z-index: 1000;
+      background: var(--white);
+      border: 2px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+      width: max-content;
+      max-width: min(300px, calc(100vw - 32px));
+      font-size: 14px;
+      display: none;
+      pointer-events: auto;
+    }
+
+    .vocab-popup.show {
+      display: block;
+      animation: popupFade .15s ease-out;
+    }
+
+    .vocab-popup-word {
+      font-weight: 800;
+      color: var(--accent-text);
+      font-size: 15px;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .vocab-popup-en {
+      color: var(--ink);
+      margin-bottom: 4px;
+      font-style: italic;
+    }
+
+    .vocab-popup-vi {
+      color: var(--jade-text);
+      font-weight: 600;
+      font-size: 13.5px;
+    }
+
+    .vocab-popup-close {
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-size: 16px;
+      color: var(--ink-3);
+      padding: 0 4px;
+    }
+
+    @keyframes popupFade {
+      from {
+        opacity: 0;
+        transform: translateY(6px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    /* Vietnamese Translation Toggle (Component 4.19) */
+    .vi-toggle-btn {
+      background: none;
+      border: none;
+      color: var(--jade-text);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      padding: 3px 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+
+    .vi-toggle-btn:hover {
+      text-decoration: underline;
+    }
+
+    .vi-content {
+      display: none;
+      background: var(--cream-2);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 14px;
+      color: var(--ink-2);
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+
+    .vi-content.show {
+      display: block;
+    }
+
+    /* Functional Language Blocks */
+    .fl-block {
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      margin-bottom: 20px;
+      border: 1px solid transparent;
+    }
+
+    .fl-block.opinion {
+      background: var(--accent-pale);
+      border-color: var(--accent);
+    }
+
+    .fl-block.agree {
+      background: var(--jade-pale);
+      border-color: var(--jade-soft);
+    }
+
+    .fl-block.disagree {
+      background: var(--wrong-bg);
+      border-color: var(--wrong);
+    }
+
+    .fl-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .func-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 16px;
+      flex: 0 0 auto;
+    }
+
+    .func-icon.opinion {
+      background: var(--accent-deep);
+    }
+
+    .func-icon.agree {
+      background: var(--jade-deep);
+    }
+
+    .func-icon.disagree {
+      background: var(--wrong);
+    }
+
+    .fl-head h3.sub-h {
+      margin: 0;
+      font-size: 17px;
+    }
+
+    table.func-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    table.func-table th {
+      background: var(--cream-2);
+      color: var(--jade-dark);
+      font-size: 14px;
+      font-weight: 700;
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 1.5px solid var(--paper-line);
+    }
+
+    table.func-table td {
+      border-bottom: 1px solid var(--paper-line);
+      padding: 11px 14px;
+      font-size: 15.5px;
+      vertical-align: top;
+    }
+
+    table.func-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .audio-btn {
+      background: var(--accent);
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      flex: 0 0 auto;
+      color: var(--white);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 14px;
+      transition: transform .12s;
+    }
+
+    .audio-btn:active {
+      transform: scale(.92);
+    }
+
+    .audio-btn:hover {
+      background: var(--accent-deep);
+    }
+
+    .ex-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Tip Box / Toggle */
+    .toggle-btn {
+      background: var(--white);
+      border: 1.5px solid var(--sage-deep);
+      color: var(--sage-text);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      min-height: 38px;
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .toggle-btn:hover {
+      background: var(--sage-pale);
+    }
+
+    .tip-box {
+      background: var(--white);
+      border-left: 4px solid var(--accent-deep);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 12px 16px;
+      font-size: 14.5px;
+      color: var(--accent-text);
+      margin: 12px 0 6px;
+      line-height: 1.6;
+      display: none;
+    }
+
+    .tip-box.show {
+      display: block;
+    }
+
+    .tip-box.warn {
+      border-left-color: var(--warning);
+      color: var(--ink-2);
+    }
+
+    /* Task Gap-Fill Box */
+    .task-box {
+      background: var(--cream-2);
+      border-radius: var(--radius);
+      padding: 20px;
+      border: 1px solid var(--paper-line);
+      margin-bottom: 16px;
+    }
+
+    .dialogue-flow {
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+      font-size: 16px;
+      line-height: 2.2;
+      border: 1px solid var(--paper-line);
+      margin-bottom: 14px;
+    }
+
+    .gap-select {
+      border: 2px solid var(--paper-line-2);
+      border-radius: var(--radius-sm);
+      padding: 6px 10px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: inherit;
+      background: var(--white);
+      min-height: 38px;
+      margin: 0 4px;
+      color: var(--jade-dark);
+    }
+
+    .check-btn {
+      background: var(--jade-deep);
+      color: var(--white);
+      border: none;
+      border-radius: 999px;
+      padding: 12px 24px;
+      font-weight: 700;
+      font-size: 14.5px;
+      min-height: 44px;
+      cursor: pointer;
+    }
+
+    .check-btn:hover {
+      background: var(--jade-dark);
+    }
+
+    .task-feedback {
+      display: none;
+      margin-top: 14px;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+
+    .task-feedback.correct {
+      background: var(--correct-bg);
+      color: var(--jade-text);
+      border: 1px solid var(--correct);
+    }
+
+    .task-feedback.wrong {
+      background: var(--wrong-bg);
+      color: var(--wrong);
+      border: 1px solid var(--wrong);
+    }
+
+    /* Shadowing Section */
+    .shadow-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .shadow-item {
+      background: var(--cream);
+      border: 1.5px solid var(--paper-line);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+    }
+
+    .shadow-top {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .shadow-info {
+      flex: 1;
+    }
+
+    .shadow-func {
+      font-size: 12.5px;
+      font-weight: 800;
+      color: var(--jade-text);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+      letter-spacing: 0.03em;
+    }
+
+    .shadow-sentence {
+      font-size: 16.5px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    .shadow-tip {
+      font-size: 13.5px;
+      color: var(--ink-2);
+      font-style: italic;
+      margin-top: 4px;
+    }
+
+    .shadow-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .mic-btn {
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      transition: transform .12s;
+      flex: 0 0 auto;
+    }
+
+    .mic-btn.stop {
+      background: var(--wrong);
+    }
+
+    .mic-status {
+      font-size: 13.5px;
+      color: var(--ink-2);
+    }
+
+    .shadow-playback {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .shadow-playback.show {
+      display: flex;
+    }
+
+    .shadow-playback audio {
+      height: 36px;
+      max-width: 220px;
+    }
+
+    .chip-btn {
+      background: var(--jade-deep);
+      color: var(--white);
+      border: none;
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      min-height: 36px;
+    }
+
+    .chip-btn.ghost {
+      background: var(--white);
+      border: 1.5px solid var(--sage-deep);
+      color: var(--ink-2);
+    }
+
+    .shadow-feedback {
+      display: none;
+      margin-top: 8px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      background: var(--white);
+      color: var(--jade-text);
+      border: 1px dashed var(--jade-soft);
+    }
+
+    /* Speech Assessment Engine UI Styles */
+    .shadow-feedback.active {
+      display: block;
+      padding: 14px 16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--paper-line);
+      background: var(--cream);
+    }
+
+    .sa-loading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--jade-deep);
+      font-size: 14.5px;
+      font-weight: 600;
+    }
+
+    .sa-spinner {
+      width: 18px;
+      height: 18px;
+      border: 2.5px solid var(--jade-pale);
+      border-top-color: var(--jade-deep);
+      border-radius: 50%;
+      animation: saSpin 0.8s linear infinite;
+    }
+
+    @keyframes saSpin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .sa-error-box {
+      background: var(--wrong-bg);
+      border: 1px solid var(--wrong);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      color: var(--wrong);
+      font-size: 14px;
+    }
+
+    .sa-error-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sa-retry-btn {
+      margin-top: 8px;
+      background: var(--wrong);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 12.5px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .sa-result-card {
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      border: 1px solid var(--paper-line);
+    }
+
+    .sa-overall-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--paper-line);
+    }
+
+    .sa-score-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .sa-score-badge.high {
+      background: var(--correct);
+    }
+
+    .sa-score-badge.mid {
+      background: var(--accent);
+    }
+
+    .sa-score-badge.low {
+      background: var(--wrong);
+    }
+
+    .sa-scores-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .sa-score-item {
+      background: var(--cream);
+      border-radius: 8px;
+      padding: 8px 10px;
+      text-align: center;
+    }
+
+    .sa-score-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ink-3);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .sa-score-val {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--jade-dark);
+      margin-top: 2px;
+    }
+
+    .sa-words-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink-3);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .sa-words-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .sa-word {
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 3px;
+    }
+
+    .sa-word.good {
+      background: #E2F4E9;
+      color: #1B5E48;
+    }
+
+    .sa-word.warning {
+      background: #FFF3D6;
+      color: #8A551A;
+    }
+
+    .sa-word.bad {
+      background: #FDE8E8;
+      color: #C15F3C;
+    }
+
+    .sa-word-score {
+      font-size: 10px;
+      opacity: 0.75;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 18px 50px;
+      color: var(--ink-3);
+      font-size: 13px;
+    }
+
+    /* Responsive adjustments (matching L10 reference) */
+    @media (max-width: 768px) {
+      section.card {
+        padding: 18px 14px;
+      }
+
+      .hero-header {
+        padding: 40px 0 48px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .wrap {
+        width: min(100% - 22px, 1060px);
+      }
+
+      .check-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero-header">
+    <div class="wrap">
+      <span class="eyebrow">Unit 1 · Speaking</span>
+      <h1>Family Routines &amp; Housework</h1>
+      <p>Talking about daily routines and whether children should do housework<span class="hero-vi">Thảo luận về nề nếp
+          sinh hoạt gia đình và việc trẻ em có nên làm việc nhà hay không</span></p>
+      <div class="tag-row">
+        <span class="head-tag">🗣️ Daily Conversation</span>
+        <span class="head-tag">💬 Functional Expressions</span>
+        <span class="head-tag">⚖️ Should / Shouldn't Reasons</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- HOOK BANNER -->
+    <div class="hook-banner">
+      <div class="hb-content">
+        <span class="bell">🔔</span>
+        <span>You've received a new speaking challenge: <b>Family Routines &amp; Housework</b><span class="vi-sub-light"
+            style="display:block;font-size:13px;font-weight:500;color:rgba(255,255,255,0.75);margin-top:2px;">Thảo luận
+            và bảo vệ quan điểm về việc trẻ em làm việc nhà</span></span>
+      </div>
+      <button class="hb-btn" onclick="document.getElementById('sec-ee').scrollIntoView({behavior:'smooth'})">Start
+        Lesson ↓</button>
+    </div>
+
+    <!-- SECTION 1: DAILY CONVERSATION & VIDEO COMPREHENSION -->
+    <section id="sec-ee">
+      <div class="section-head">
+        <span class="tag">Section 1 · Video Comprehension</span>
+        <h2>Daily Conversation — Video Comprehension<span class="vi-sub">Hội thoại hàng ngày — Kiểm tra mức độ hiểu
+            bài</span></h2>
+        <p class="lead">You watched the conversation between Minh, Linh, and Lan. Answer the questions below to check
+          your comprehension.</p>
+      </div>
+
+      <div class="card">
+        <button class="vi-toggle-btn" onclick="toggleVi('vi-sec1')">Show translation</button>
+        <div class="vi-content" id="vi-sec1">
+          Bạn đã xem video hội thoại giữa Minh, Linh và Lan. Hãy trả lời 2 câu hỏi trắc nghiệm dưới đây để kiểm tra mức
+          độ
+          hiểu bài nhé.
+        </div>
+
+        <!-- Question 1 -->
+        <div class="comp-card" id="q1Card">
+          <div class="comp-header">
+            <span class="comp-num">1</span>
+            <div class="mcq-q">What are the three friends talking about?</div>
+          </div>
+          <div class="mcq-options" id="q1Options">
+            <!-- Dynamically rendered with shuffle -->
+          </div>
+          <div class="mcq-feedback" id="fb-q1"></div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="comp-card" id="q2Card">
+          <div class="comp-header">
+            <span class="comp-num">2</span>
+            <div class="mcq-q">Look at the video again. Who agrees that children should do housework?</div>
+          </div>
+          <div class="mcq-options" id="q2Options">
+            <!-- Dynamically rendered with shuffle -->
+          </div>
+          <div class="mcq-feedback" id="fb-q2"></div>
+        </div>
+
+        <div class="guide-box done" id="guide-ee-done" style="display:none;">
+          <div class="guide-icon">✅</div>
+          <div class="guide-text">Tuyệt vời! Bây giờ chúng ta sẽ cùng xem lại cách Minh, Linh và Lan đã dùng các cụm từ
+            để
+            nêu ý kiến, đồng ý và không đồng ý nhé.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: FUNCTIONAL LANGUAGE -->
+    <section id="sec-fl">
+      <div class="section-head">
+        <span class="tag">Section 2 · Useful Expressions</span>
+        <h2>Functional Language — Useful Expressions<span class="vi-sub">Các mẫu câu nêu ý kiến, đồng ý và không đồng
+            ý</span></h2>
+        <p class="lead">Here are the essential expressions used in the video to state opinions, agree, and disagree with
+          others.</p>
+      </div>
+
+      <div class="card">
+        <div class="fl-block opinion">
+          <div class="fl-head">
+            <div class="func-icon opinion">💬</div>
+            <h3 class="sub-h">1. Stating Opinion (Nêu ý kiến)</h3>
+          </div>
+          <table class="func-table">
+            <tr>
+              <th>Pattern</th>
+              <th>Example</th>
+            </tr>
+            <tr>
+              <td><b>I think (that)...</b></td>
+              <td>
+                <div class="ex-row">
+                  <button class="audio-btn" onclick="speak('I think housework is important for children.')">🔊</button>
+                  <span>I think <strong class="kw-core" data-word="housework">housework</strong> is important for
+                    children.</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><b>In my opinion,...</b></td>
+              <td>
+                <div class="ex-row">
+                  <button class="audio-btn" onclick="speak('In my opinion, kids should help at home.')">🔊</button>
+                  <span>In my opinion, kids should help at home.</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><b>I believe (that)...</b></td>
+              <td>
+                <div class="ex-row">
+                  <button class="audio-btn" onclick="speak('I believe simple chores are easy to manage.')">🔊</button>
+                  <span>I believe simple <strong class="kw-core" data-word="chores">chores</strong> are easy to
+                    manage.</span>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <button class="toggle-btn" onclick="toggleTip('tip-op')">💡 Xem thêm lưu ý</button>
+          <div class="tip-box" id="tip-op">Cả 3 cấu trúc trên đều có thể thay thế nhau tự nhiên khi bạn muốn mở đầu một
+            ý
+            kiến cá nhân.</div>
+        </div>
+
+        <div class="fl-block agree">
+          <div class="fl-head">
+            <div class="func-icon agree">👍</div>
+            <h3 class="sub-h">2. Agreeing (Đồng ý)</h3>
+          </div>
+          <table class="func-table">
+            <tr>
+              <th>Pattern</th>
+              <th>Example</th>
+            </tr>
+            <tr>
+              <td><b>I agree (with you).</b></td>
+              <td>
+                <div class="ex-row">
+                  <button class="audio-btn" onclick="speak('I agree with you, chores are useful.')">🔊</button>
+                  <span>I agree with you, <strong class="kw-core" data-word="chores">chores</strong> are useful.</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><b>That's right.</b></td>
+              <td>
+                <div class="ex-row">
+                  <button class="audio-btn" onclick="speak('That\'s right, everyone should help a little.')">🔊</button>
+                  <span>That's right, everyone should help a little.</span>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <button class="toggle-btn" onclick="toggleTip('tip-ag')">💡 Xem thêm lưu ý</button>
+          <div class="tip-box" id="tip-ag">"That's right" hợp khi xác nhận lại điều vừa nghe; "I agree with you" dùng
+            khi
+            chia sẻ cùng quan điểm.</div>
+        </div>
+
+        <div class="fl-block disagree">
+          <div class="fl-head">
+            <div class="func-icon disagree">✋</div>
+            <h3 class="sub-h">3. Disagreeing (Không đồng ý)</h3>
+          </div>
+          <table class="func-table">
+            <tr>
+              <th>Pattern</th>
+              <th>Example</th>
+            </tr>
+            <tr>
+              <td><b>I don't think so.</b></td>
+              <td>
+                <div class="ex-row">
+                  <button class="audio-btn" onclick="speak('I don\'t think so, kids need more free time.')">🔊</button>
+                  <span>I don't think so, kids need more free time.</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><b>I don't agree.</b></td>
+              <td>
+                <div class="ex-row">
+                  <button class="audio-btn" onclick="speak('I don\'t agree, homework should come first.')">🔊</button>
+                  <span>I don't agree, homework should come first.</span>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <button class="toggle-btn" onclick="toggleTip('tip-dis')">⚠️ Xem thêm lưu ý</button>
+          <div class="tip-box warn" id="tip-dis">⚠️ Hai cấu trúc trên dùng để phản bác nhẹ nhàng và lịch sự trong giao
+            tiếp hàng ngày.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TASK COMPLETE CONVERSATION -->
+    <section id="sec-task">
+      <div class="section-head">
+        <span class="tag">Section 3 · Practice Task</span>
+        <h2>Complete the Conversation<span class="vi-sub">Hoàn thành đoạn hội thoại với các cụm từ thích hợp</span></h2>
+        <p class="lead">Choose the correct expression for each blank in the conversation below.</p>
+      </div>
+
+      <div class="card">
+        <button class="vi-toggle-btn" onclick="toggleVi('vi-task')">Show translation</button>
+        <div class="vi-content" id="vi-task">Chọn cách diễn đạt thích hợp cho 3 chỗ trống để hoàn thành đoạn hội thoại
+          giữa Lan, Minh và Linh.</div>
+
+        <div class="task-box">
+          <div class="dialogue-flow">
+            <p><b>Lan:</b> Hey, can I ask you guys something? Do you think kids should do <strong class="kw-core"
+                data-word="housework">housework</strong>?</p>
+            <p><b>Minh:</b>
+              <select class="gap-select" id="g1">
+                <option value="">— choose —</option>
+                <option value="op">In my opinion</option>
+                <option value="dis">I don't think so</option>
+                <option value="ag">I agree with</option>
+                <option value="tr">That's right</option>
+              </select>, kids should definitely help out at home.
+            </p>
+            <p><b>Linh:</b> Really?
+              <select class="gap-select" id="g2">
+                <option value="">— choose —</option>
+                <option value="op">In my opinion</option>
+                <option value="dis">I don't think so</option>
+                <option value="ag">I agree with</option>
+                <option value="tr">That's right</option>
+              </select>. We already have so much homework every day.
+            </p>
+            <p><b>Minh:</b> I think doing a few small <strong class="kw-core" data-word="chores">chores</strong> doesn't
+              take much time, though.</p>
+            <p><b>Lan:</b>
+              <select class="gap-select" id="g3">
+                <option value="">— choose —</option>
+                <option value="op">In my opinion</option>
+                <option value="dis">I don't think so</option>
+                <option value="ag">I agree with</option>
+                <option value="tr">That's right</option>
+              </select> Minh. It's good for kids to learn some basic skills early.
+            </p>
+            <p><b>Linh:</b> Hmm, maybe. But I still believe school should come first.</p>
+          </div>
+
+          <button class="check-btn" onclick="checkTask1()">✓ Check Answers</button>
+          <div class="task-feedback" id="fb-task1"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SENTENCE STRUCTURE -->
+    <section id="sec-ss">
+      <div class="section-head">
+        <span class="tag">Section 4 · Sentence Structure</span>
+        <h2>Expressing Reasons — Should vs. Shouldn't<span class="vi-sub">Cấu trúc đưa ra lý do — Nên / Không nên làm
+            việc nhà</span></h2>
+        <p class="lead">Giving an opinion is not enough — support your point of view with specific reasons.</p>
+      </div>
+
+      <div class="card">
+        <table class="func-table">
+          <tr>
+            <th style="width:50%;">Children should do housework because...</th>
+            <th>Children shouldn't do housework because...</th>
+          </tr>
+          <tr>
+            <td>
+              <div class="ex-row">
+                <button class="audio-btn"
+                  onclick="speak('It makes them feel proud of contributing something real to the family.', 0.75)">🔊</button>
+                <span>...it makes them feel proud of <span class="reveal-support"
+                    data-word="contributing">contributing</span> something real to the family.</span>
+              </div>
+            </td>
+            <td>
+              <div class="ex-row">
+                <button class="audio-btn"
+                  onclick="speak('Their schedules are already packed with classes and extracurricular activities.', 0.75)">🔊</button>
+                <span>...their schedules are already packed with classes and <span class="reveal-support"
+                    data-word="extracurricular">extracurricular</span> activities.</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="ex-row">
+                <button class="audio-btn"
+                  onclick="speak('It gives them practical experience that textbooks cannot teach.', 0.75)">🔊</button>
+                <span>...it gives them <span class="reveal-support" data-word="practical">practical</span> experience
+                  that
+                  textbooks can't teach.</span>
+              </div>
+            </td>
+            <td>
+              <div class="ex-row">
+                <button class="audio-btn"
+                  onclick="speak('Some tasks, like using cleaning chemicals, are not safe for young children.', 0.75)">🔊</button>
+                <span>...some tasks, like using cleaning <span class="reveal-support"
+                    data-word="chemicals">chemicals</span>, aren't safe for young children.</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="ex-row">
+                <button class="audio-btn"
+                  onclick="speak('It helps them understand how much effort it takes to run a home.', 0.75)">🔊</button>
+                <span>...it helps them understand how much effort it takes to run a home.</span>
+              </div>
+            </td>
+            <td>
+              <div class="ex-row">
+                <button class="audio-btn"
+                  onclick="speak('It can take time away from hobbies that help them grow in other ways.', 0.75)">🔊</button>
+                <span>...it can take time away from hobbies that help them grow in other ways.</span>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 5: SHADOWING -->
+    <section id="sec-sh">
+      <div class="section-head">
+        <span class="tag">Section 5 · Pronunciation &amp; Shadowing</span>
+        <h2>Shadowing &amp; Voice Practice<span class="vi-sub">Luyện nói nhắc lại với ngữ điệu tự nhiên</span></h2>
+        <p class="lead">Listen to each sentence, repeat with proper intonation, and record your voice to send to Athena.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="shadow-list">
+          <!-- Shadow 1 -->
+          <div class="shadow-item">
+            <div class="shadow-top">
+              <button class="audio-btn" onclick="speak('In my opinion, kids should help at home.', 0.75)">🔊</button>
+              <div class="shadow-info">
+                <div class="shadow-func">Stating Opinion</div>
+                <div class="shadow-sentence">"In my opinion, kids should help at home."</div>
+                <div class="shadow-tip">Stress "opinion" and "should"; keep your voice steady without rising at the end.
+                </div>
+              </div>
+            </div>
+            <div class="shadow-controls">
+              <button class="mic-btn" id="btnRec-sh1" onclick="startRecording('sh1')">🎙️</button>
+              <button class="mic-btn stop" id="btnStop-sh1" style="display:none;"
+                onclick="stopRecording('sh1')">⏹</button>
+              <span class="mic-status" id="status-sh1">Record your voice</span>
+            </div>
+            <div class="shadow-playback" id="playback-sh1">
+              <audio id="audio-sh1" controls></audio>
+              <button class="chip-btn ghost" onclick="reRecord('sh1')">↺ Record again</button>
+              <button class="chip-btn" onclick="submitShadowing('sh1')">✓ Send to Athena</button>
+            </div>
+            <div class="shadow-feedback" id="feedback-sh1"></div>
+          </div>
+
+          <!-- Shadow 2 -->
+          <div class="shadow-item">
+            <div class="shadow-top">
+              <button class="audio-btn"
+                onclick="speak('That\'s right, everyone should help a little.', 0.75)">🔊</button>
+              <div class="shadow-info">
+                <div class="shadow-func">Agreeing</div>
+                <div class="shadow-sentence">"That's right, everyone should help a little."</div>
+                <div class="shadow-tip">Warm and concise; do not drag out the word "right".</div>
+              </div>
+            </div>
+            <div class="shadow-controls">
+              <button class="mic-btn" id="btnRec-sh2" onclick="startRecording('sh2')">🎙️</button>
+              <button class="mic-btn stop" id="btnStop-sh2" style="display:none;"
+                onclick="stopRecording('sh2')">⏹</button>
+              <span class="mic-status" id="status-sh2">Record your voice</span>
+            </div>
+            <div class="shadow-playback" id="playback-sh2">
+              <audio id="audio-sh2" controls></audio>
+              <button class="chip-btn ghost" onclick="reRecord('sh2')">↺ Record again</button>
+              <button class="chip-btn" onclick="submitShadowing('sh2')">✓ Send to Athena</button>
+            </div>
+            <div class="shadow-feedback" id="feedback-sh2"></div>
+          </div>
+
+          <!-- Shadow 3 -->
+          <div class="shadow-item">
+            <div class="shadow-top">
+              <button class="audio-btn" onclick="speak('I don\'t agree, homework should come first.', 0.75)">🔊</button>
+              <div class="shadow-info">
+                <div class="shadow-func">Disagreeing</div>
+                <div class="shadow-sentence">"I don't agree, homework should come first."</div>
+                <div class="shadow-tip">Stress "don't agree" and "first"; firm and polite tone.</div>
+              </div>
+            </div>
+            <div class="shadow-controls">
+              <button class="mic-btn" id="btnRec-sh3" onclick="startRecording('sh3')">🎙️</button>
+              <button class="mic-btn stop" id="btnStop-sh3" style="display:none;"
+                onclick="stopRecording('sh3')">⏹</button>
+              <span class="mic-status" id="status-sh3">Record your voice</span>
+            </div>
+            <div class="shadow-playback" id="playback-sh3">
+              <audio id="audio-sh3" controls></audio>
+              <button class="chip-btn ghost" onclick="reRecord('sh3')">↺ Record again</button>
+              <button class="chip-btn" onclick="submitShadowing('sh3')">✓ Send to Athena</button>
+            </div>
+            <div class="shadow-feedback" id="feedback-sh3"></div>
+          </div>
+
+          <!-- Shadow 4 -->
+          <div class="shadow-item">
+            <div class="shadow-top">
+              <button class="audio-btn"
+                onclick="speak('It gives them practical experience that textbooks cannot teach.', 0.75)">🔊</button>
+              <div class="shadow-info">
+                <div class="shadow-func">Giving a Reason (Should)</div>
+                <div class="shadow-sentence">"It gives them practical experience that textbooks can't teach."</div>
+                <div class="shadow-tip">Emphasize "practical experience" and "can't teach"; slight pause before "that".
+                </div>
+              </div>
+            </div>
+            <div class="shadow-controls">
+              <button class="mic-btn" id="btnRec-sh4" onclick="startRecording('sh4')">🎙️</button>
+              <button class="mic-btn stop" id="btnStop-sh4" style="display:none;"
+                onclick="stopRecording('sh4')">⏹</button>
+              <span class="mic-status" id="status-sh4">Record your voice</span>
+            </div>
+            <div class="shadow-playback" id="playback-sh4">
+              <audio id="audio-sh4" controls></audio>
+              <button class="chip-btn ghost" onclick="reRecord('sh4')">↺ Record again</button>
+              <button class="chip-btn" onclick="submitShadowing('sh4')">✓ Send to Athena</button>
+            </div>
+            <div class="shadow-feedback" id="feedback-sh4"></div>
+          </div>
+        </div>
+
+        <div class="guide-box done">
+          <div class="guide-icon">🎉</div>
+          <div class="guide-text">Great job! You have completed the Lesson portion. You can now proceed to the Practice
+            &amp; Speaking section!</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vocab Popup Tooltip -->
+    <div class="vocab-popup" id="vocabPopup">
+      <div class="vocab-popup-word">
+        <span id="vpWord"></span>
+        <button class="vocab-popup-close" onclick="closeVocabPopup()" title="Close">×</button>
+      </div>
+      <div class="vocab-popup-en" id="vpEn"></div>
+      <div class="vocab-popup-vi" id="vpVi"></div>
+    </div>
+
+  </main>
+
+  <footer>Unit 1 · Family Routines — Speaking · Lesson.</footer>
+
+  <script>
+    /* Safe Accessor for LMS */
+    function LMS() {
+      return window.AiducationLMS || {
+        ready: function () { },
+        progress: function () { },
+        event: function () { },
+        state: function () { },
+        complete: function () { },
+        resize: function () { }
+      };
+    }
+
+    /* Resize handling for LMS iframe */
+    function reportHeight() {
+      LMS().resize({ height: document.documentElement.scrollHeight });
+    }
+    window.addEventListener('load', reportHeight);
+    const ro = new ResizeObserver(() => {
+      clearTimeout(window._rz);
+      window._rz = setTimeout(reportHeight, 100);
+    });
+    ro.observe(document.body);
+
+    function esc(s) {
+      return String(s)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    /* 2-tier vocabulary database */
+    const revealWords = {
+      'housework': { word: 'housework', en: 'work done in looking after a home, such as cleaning, cooking, or washing', vi: 'việc nhà' },
+      'chores': { word: 'chores', en: 'routine tasks or small jobs around the house', vi: 'việc vặt gia đình' },
+      'routines': { word: 'routines', en: 'a usual or fixed way of doing things regularly', vi: 'thói quen/nề nếp sinh hoạt' },
+      'extracurricular': { word: 'extracurricular', en: 'activities pursued in addition to normal school studies', vi: 'ngoại khoá' },
+      'practical': { word: 'practical', en: 'relating to actual experience and real situations rather than theory', vi: 'thực tế, thực tiễn' },
+      'contributing': { word: 'contributing', en: 'giving or adding something to help achieve a shared goal', vi: 'đóng góp, góp phần' },
+      'chemicals': { word: 'chemicals', en: 'substances produced by or used in a chemical process', vi: 'hoá chất' }
+    };
+
+    document.addEventListener('click', function (e) {
+      const target = e.target.closest('.reveal-support, .kw-core');
+      if (target && target.dataset.word) {
+        e.stopPropagation();
+        const key = target.dataset.word;
+        const data = revealWords[key];
+        if (data) showVocabPopup(target, data);
+      } else if (!e.target.closest('#vocabPopup')) {
+        closeVocabPopup();
+      }
+    });
+
+    function showVocabPopup(el, data) {
+      const popup = document.getElementById('vocabPopup');
+      document.getElementById('vpWord').textContent = data.word;
+      document.getElementById('vpEn').textContent = data.en;
+      document.getElementById('vpVi').textContent = data.vi;
+
+      popup.style.visibility = 'hidden';
+      popup.classList.add('show');
+
+      const rect = el.getBoundingClientRect();
+      const popupWidth = popup.offsetWidth || 280;
+
+      let top = rect.bottom + window.scrollY + 6;
+      let left = rect.left + window.scrollX;
+
+      const maxLeft = window.scrollX + document.documentElement.clientWidth - popupWidth - 16;
+      if (left > maxLeft) left = maxLeft;
+      const minLeft = window.scrollX + 16;
+      if (left < minLeft) left = minLeft;
+
+      popup.style.top = top + 'px';
+      popup.style.left = left + 'px';
+      popup.style.visibility = 'visible';
+    }
+
+    function closeVocabPopup() {
+      const popup = document.getElementById('vocabPopup');
+      if (popup) popup.classList.remove('show');
+    }
+
+    /* Shuffle helper (Fisher-Yates) */
+    function shuffle(arr) {
+      const a = arr.slice();
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    /* Text-to-Speech (Strictly en-GB) */
+    function speak(text, rate) {
+      if (!('speechSynthesis' in window)) return;
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-GB';
+      u.rate = rate || 0.75;
+      speechSynthesis.cancel();
+      speechSynthesis.speak(u);
+    }
+
+    function toggleTip(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('show');
+    }
+    function toggleVi(id) {
+      const el = document.getElementById(id);
+      el.classList.toggle('show');
+    }
+
+    /* ==========================================================
+       DAILY CONVERSATION MCQ (SHUFFLE & ANTI-GUESSING)
+       ========================================================== */
+    const compData = {
+      q1: {
+        options: [
+          { text: "Whether children should do housework", correct: true, explain: "✓ Chính xác! Cả 3 bạn đang thảo luận xem học sinh/trẻ em có nên làm việc nhà hay không." },
+          { text: "Whether children should study more at home", correct: false, explain: "Chưa đúng — Các bạn nhắc đến bài tập về nhà nhưng chủ đề trọng tâm là làm việc nhà." },
+          { text: "Whether children should have more free time", correct: false, explain: "Chưa đúng — Đây chỉ là một ý phụ Linh đưa ra khi giải thích lý do." },
+          { text: "Whether children should help their parents cook", correct: false, explain: "Chưa đúng — Việc nấu ăn chỉ là một phần nhỏ, chủ đề chung là housework." }
+        ]
+      },
+      q2: {
+        options: [
+          { text: "Minh and Lan", correct: true, explain: "✓ Chính xác! Minh mở đầu ủng hộ làm việc nhà, và Lan đồng tình với Minh ('I agree with Minh')." },
+          { text: "Linh and Lan", correct: false, explain: "Chưa đúng — Linh phản đối ('I don't think so') vì cho rằng bài tập về nhà đã quá nhiều." },
+          { text: "Only Minh", correct: false, explain: "Chưa đúng — Lan cũng đồng ý với Minh ('I agree with Minh')." },
+          { text: "Only Linh", correct: false, explain: "Chưa đúng — Linh là người phản đối việc làm việc nhà." }
+        ]
+      }
+    };
+
+    function renderCompMCQ(qId, containerId) {
+      const container = document.getElementById(containerId);
+      const shuffled = shuffle(compData[qId].options);
+      let html = '';
+      shuffled.forEach(opt => {
+        html += `<button class="mcq-option" data-correct="${opt.correct}" data-explain="${esc(opt.explain)}" onclick="checkCompMCQ(this, '${qId}')">${esc(opt.text)}</button>`;
+      });
+      container.innerHTML = html;
+    }
+
+    renderCompMCQ('q1', 'q1Options');
+    renderCompMCQ('q2', 'q2Options');
+
+    let q1Done = false, q2Done = false;
+
+    function checkCompMCQ(btn, qId) {
+      const container = document.getElementById(qId + 'Options');
+      if (container.dataset.answered) return;
+      container.dataset.answered = '1';
+
+      container.querySelectorAll('.mcq-option').forEach(b => b.classList.add('disabled'));
+      const isCorrect = btn.dataset.correct === 'true';
+      const fb = document.getElementById('fb-' + qId);
+
+      if (isCorrect) {
+        btn.classList.add('correct');
+        fb.className = 'mcq-feedback correct';
+      } else {
+        btn.classList.add('wrong');
+        container.querySelector('[data-correct="true"]').classList.add('correct');
+        fb.className = 'mcq-feedback wrong';
+      }
+      fb.textContent = btn.dataset.explain;
+      fb.style.display = 'block';
+
+      if (qId === 'q1') q1Done = true;
+      if (qId === 'q2') q2Done = true;
+
+      if (q1Done && q2Done) {
+        document.getElementById('guide-ee-done').style.display = 'flex';
+        LMS().progress({ done: 1, total: 3 });
+      }
+    }
+
+    /* ==========================================================
+       TASK 1: COMPLETE CONVERSATION
+       ========================================================== */
+    function checkTask1() {
+      const g1 = document.getElementById('g1').value;
+      const g2 = document.getElementById('g2').value;
+      const g3 = document.getElementById('g3').value;
+      const fb = document.getElementById('fb-task1');
+
+      if (!g1 || !g2 || !g3) {
+        fb.className = 'task-feedback wrong';
+        fb.textContent = 'Bạn hãy chọn đủ cách diễn đạt cho cả 3 chỗ trống nhé.';
+        fb.style.display = 'block';
+        return;
+      }
+
+      const correct = (g1 === 'op' && g2 === 'dis' && g3 === 'ag');
+      fb.className = 'task-feedback ' + (correct ? 'correct' : 'wrong');
+      fb.style.display = 'block';
+
+      if (correct) {
+        fb.textContent = '✓ Chính xác! (1) In my opinion (nêu ý kiến) · (2) I don\'t think so (phản đối) · (3) I agree with (đồng ý).';
+        LMS().progress({ done: 2, total: 3 });
+      } else {
+        fb.textContent = 'Chưa đúng hết — Đáp án đúng là: (1) In my opinion · (2) I don\'t think so · (3) I agree with Minh.';
+      }
+    }
+  </script>
+
+  <!-- =========================================================================
+       AZURE SPEECH ASSESSMENT MODULE (STANDALONE REUSABLE MODULE)
+       Sao chép toàn bộ khối <script id="azure-speech-module"> này sang bất kỳ trang HTML nào để tích hợp chấm phát âm Azure Speech.
+       ========================================================================= -->
+  <script id="azure-speech-module">
+    (function (global) {
+      'use strict';
+
+      /* ⚙️ CẤU HÌNH URL BACKEND LẤY TOKEN */
+      const SPEECH_TOKEN_ENDPOINT = 'https://speech-token-aiducation.onrender.com/api/speech-token';
+
+      /* Dynamic SDK Loader & Assurance */
+      function ensureSpeechSDKLoaded() {
+        if (typeof global.SpeechSDK !== 'undefined' || typeof SpeechSDK !== 'undefined') {
+          return Promise.resolve(global.SpeechSDK || SpeechSDK);
+        }
+        return new Promise((resolve, reject) => {
+          const cdnUrls = [
+            'https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk@latest/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle.js',
+            'https://unpkg.com/microsoft-cognitiveservices-speech-sdk@latest/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle.js'
+          ];
+          let idx = 0;
+          function tryNext() {
+            if (idx >= cdnUrls.length) {
+              const err = new Error('Không thể tải thư viện Azure Speech SDK từ CDN. Vui lòng kiểm tra kết nối mạng.');
+              err.code = 'SDK_ERROR';
+              return reject(err);
+            }
+            const script = document.createElement('script');
+            script.src = cdnUrls[idx++];
+            script.onload = () => {
+              const sdk = global.SpeechSDK || (typeof SpeechSDK !== 'undefined' ? SpeechSDK : null);
+              if (sdk) {
+                resolve(sdk);
+              } else {
+                tryNext();
+              }
+            };
+            script.onerror = () => tryNext();
+            document.head.appendChild(script);
+          }
+          tryNext();
+        });
+      }
+
+      /* 1. TokenManager */
+      const TokenManager = (function () {
+        let cachedToken = null;
+        let cachedRegion = null;
+        let expiresAt = 0; // Timestamp in ms
+
+        const getEndpoint = () => SPEECH_TOKEN_ENDPOINT;
+
+        return {
+          isValid() {
+            return cachedToken && cachedRegion && (Date.now() < (expiresAt - 30000));
+          },
+
+          async getToken() {
+            if (this.isValid()) {
+              return { token: cachedToken, region: cachedRegion };
+            }
+            return await this.refreshToken();
+          },
+
+          async refreshToken() {
+            try {
+              const res = await fetch(getEndpoint(), { method: 'GET' });
+              if (!res.ok) {
+                throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+              }
+              const data = await res.json();
+              if (!data.token || !data.region) {
+                throw new Error('Invalid token response structure from server');
+              }
+              cachedToken = data.token;
+              cachedRegion = data.region;
+              const expiresInMs = (data.expiresIn || 540) * 1000;
+              expiresAt = Date.now() + expiresInMs;
+
+              return { token: cachedToken, region: cachedRegion };
+            } catch (err) {
+              cachedToken = null;
+              cachedRegion = null;
+              expiresAt = 0;
+              const errorObj = new Error(`TokenManager failed: ${err.message}`);
+              errorObj.code = 'TOKEN_ERROR';
+              throw errorObj;
+            }
+          }
+        };
+      })();
+
+      /* 2. AudioAdapter */
+      const AudioAdapter = (function () {
+        async function audioBlobToAudioBuffer(blob) {
+          const arrayBuffer = await blob.arrayBuffer();
+          const audioCtx = new (global.AudioContext || global.webkitAudioContext)();
+          try {
+            const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
+            return audioBuffer;
+          } finally {
+            if (audioCtx.state !== 'closed') {
+              await audioCtx.close();
+            }
+          }
+        }
+
+        function audioBufferTo16kHzMonoWavBlob(audioBuffer) {
+          const targetSampleRate = 16000;
+          const numChannels = 1;
+          const numberOfFrames = Math.round(audioBuffer.duration * targetSampleRate);
+
+          const offlineCtx = new (global.OfflineAudioContext || global.webkitOfflineAudioContext)(
+            numChannels,
+            numberOfFrames,
+            targetSampleRate
+          );
+
+          const source = offlineCtx.createBufferSource();
+          source.buffer = audioBuffer;
+          source.connect(offlineCtx.destination);
+          source.start(0);
+
+          return offlineCtx.startRendering().then(renderedBuffer => {
+            const pcmData = renderedBuffer.getChannelData(0);
+            const buffer = new ArrayBuffer(44 + pcmData.length * 2);
+            const view = new DataView(buffer);
+
+            writeString(view, 0, 'RIFF');
+            view.setUint32(4, 36 + pcmData.length * 2, true);
+            writeString(view, 8, 'WAVE');
+
+            writeString(view, 12, 'fmt ');
+            view.setUint32(16, 16, true);
+            view.setUint16(20, 1, true);
+            view.setUint16(22, 1, true);
+            view.setUint32(24, targetSampleRate, true);
+            view.setUint32(28, targetSampleRate * 2, true);
+            view.setUint16(32, 2, true);
+            view.setUint16(34, 16, true);
+
+            writeString(view, 36, 'data');
+            view.setUint32(40, pcmData.length * 2, true);
+
+            let offset = 44;
+            for (let i = 0; i < pcmData.length; i++) {
+              let s = Math.max(-1, Math.min(1, pcmData[i]));
+              view.setInt16(offset, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
+              offset += 2;
+            }
+
+            return new Blob([buffer], { type: 'audio/wav' });
+          });
+        }
+
+        function writeString(view, offset, string) {
+          for (let i = 0; i < string.length; i++) {
+            view.setUint8(offset + i, string.charCodeAt(i));
+          }
+        }
+
+        return {
+          async toWavBlob(blob) {
+            try {
+              const audioBuffer = await audioBlobToAudioBuffer(blob);
+              return await audioBufferTo16kHzMonoWavBlob(audioBuffer);
+            } catch (err) {
+              const error = new Error(`Audio processing failed: ${err.message}`);
+              error.code = 'AUDIO_ERROR';
+              throw error;
+            }
+          },
+
+          async toSpeechInput(blob) {
+            const wavBlob = await this.toWavBlob(blob);
+            const SDK = await ensureSpeechSDKLoaded();
+
+            let wavFile;
+            try {
+              wavFile = new File([wavBlob], "input.wav", { type: "audio/wav" });
+            } catch (e) {
+              wavFile = wavBlob;
+            }
+            if (!wavFile.name) {
+              try {
+                Object.defineProperty(wavFile, 'name', { value: 'input.wav', writable: true });
+              } catch (err) {
+                wavFile.name = 'input.wav';
+              }
+            }
+
+            return SDK.AudioConfig.fromWavFileInput(wavFile);
+          }
+        };
+      })();
+
+      /* 3. ResultParser (Normalizer & Schema v1.0 Builder) */
+      const ResultParser = (function () {
+        return {
+          parse(speechResult, options = {}) {
+            if (!speechResult) {
+              throw new Error('Empty speech result');
+            }
+
+            const SDK = global.SpeechSDK || (typeof SpeechSDK !== 'undefined' ? SpeechSDK : null);
+            if (!SDK) {
+              throw new Error('Azure Speech SDK is not loaded');
+            }
+
+            const paResult = SDK.PronunciationAssessmentResult.fromResult(speechResult);
+
+            // Extract raw JSON response from Azure Speech Service
+            let rawJson = null;
+            if (speechResult.properties) {
+              const rawJsonStr = speechResult.properties.getProperty(SDK.PropertyId.SpeechServiceResponse_JsonResult);
+              if (rawJsonStr) {
+                try {
+                  rawJson = JSON.parse(rawJsonStr);
+                } catch (e) {
+                  console.warn('Could not parse SpeechServiceResponse_JsonResult', e);
+                }
+              }
+            }
+
+            const nBest = (rawJson && Array.isArray(rawJson.NBest) && rawJson.NBest.length > 0) ? rawJson.NBest[0] : null;
+
+            // Overall Scores (Prioritize raw NBest if present, fallback to paResult wrapper)
+            const pronScore = Math.round(nBest && typeof nBest.PronScore === 'number' ? nBest.PronScore : (paResult ? paResult.pronunciationScore || 0 : 0));
+            const accScore = Math.round(nBest && typeof nBest.AccuracyScore === 'number' ? nBest.AccuracyScore : (paResult ? paResult.accuracyScore || 0 : 0));
+            const fluScore = Math.round(nBest && typeof nBest.FluencyScore === 'number' ? nBest.FluencyScore : (paResult ? paResult.fluencyScore || 0 : 0));
+            const compScore = Math.round(nBest && typeof nBest.CompletenessScore === 'number' ? nBest.CompletenessScore : (paResult ? paResult.completenessScore || 0 : 0));
+            const prosScore = Math.round(nBest && typeof nBest.ProsodyScore === 'number' ? nBest.ProsodyScore : (paResult ? paResult.prosodyScore || pronScore : pronScore));
+
+            const recognizedText = speechResult.text || (nBest ? nBest.Display || nBest.Lexical || '' : '');
+            const referenceText = options.referenceText || '';
+
+            const words = [];
+            const rawWords = nBest && Array.isArray(nBest.Words) ? nBest.Words : null;
+
+            if (rawWords && rawWords.length > 0) {
+              rawWords.forEach(w => {
+                const pa = w.PronunciationAssessment || {};
+                const rawOffset = typeof w.Offset === 'number' ? w.Offset : null;
+                const rawDuration = typeof w.Duration === 'number' ? w.Duration : null;
+
+                const wordObj = {
+                  word: w.Word || '',
+                  accuracyScore: Math.round(pa.AccuracyScore || 0),
+                  errorType: pa.ErrorType || 'None',
+                  offset: rawOffset !== null ? parseFloat((rawOffset / 10000000).toFixed(3)) : null,
+                  duration: rawDuration !== null ? parseFloat((rawDuration / 10000000).toFixed(3)) : null,
+                  rawOffset: rawOffset,
+                  rawDuration: rawDuration,
+                  syllables: [],
+                  phonemes: []
+                };
+
+                if (Array.isArray(w.Syllables)) {
+                  wordObj.syllables = w.Syllables.map(s => {
+                    const sPa = s.PronunciationAssessment || {};
+                    const sOffset = typeof s.Offset === 'number' ? s.Offset : null;
+                    const sDuration = typeof s.Duration === 'number' ? s.Duration : null;
+                    return {
+                      syllable: s.Syllable || '',
+                      accuracyScore: Math.round(sPa.AccuracyScore || 0),
+                      offset: sOffset !== null ? parseFloat((sOffset / 10000000).toFixed(3)) : null,
+                      duration: sDuration !== null ? parseFloat((sDuration / 10000000).toFixed(3)) : null,
+                      rawOffset: sOffset,
+                      rawDuration: sDuration
+                    };
+                  });
+                }
+
+                if (Array.isArray(w.Phonemes)) {
+                  wordObj.phonemes = w.Phonemes.map(ph => {
+                    const phPa = ph.PronunciationAssessment || {};
+                    const phOffset = typeof ph.Offset === 'number' ? ph.Offset : null;
+                    const phDuration = typeof ph.Duration === 'number' ? ph.Duration : null;
+
+                    let nBestPhonemes = [];
+                    if (Array.isArray(phPa.NBestPhonemes)) {
+                      nBestPhonemes = phPa.NBestPhonemes.map(nb => ({
+                        phoneme: nb.Phoneme || '',
+                        score: Math.round(nb.Score || 0)
+                      }));
+                    }
+
+                    return {
+                      phoneme: ph.Phoneme || '',
+                      accuracyScore: Math.round(phPa.AccuracyScore || 0),
+                      offset: phOffset !== null ? parseFloat((phOffset / 10000000).toFixed(3)) : null,
+                      duration: phDuration !== null ? parseFloat((phDuration / 10000000).toFixed(3)) : null,
+                      rawOffset: phOffset,
+                      rawDuration: phDuration,
+                      nBestPhonemes: nBestPhonemes
+                    };
+                  });
+                }
+
+                words.push(wordObj);
+              });
+            } else if (paResult && paResult.words && Array.isArray(paResult.words)) {
+              paResult.words.forEach(w => {
+                words.push({
+                  word: w.word || '',
+                  accuracyScore: Math.round(w.accuracyScore || 0),
+                  errorType: w.errorType || 'None',
+                  offset: null,
+                  duration: null,
+                  rawOffset: null,
+                  rawDuration: null,
+                  syllables: [],
+                  phonemes: []
+                });
+              });
+            }
+
+            const assessmentResult = {
+              schemaVersion: "1.0",
+              referenceText: referenceText,
+              recognizedText: recognizedText,
+              overall: {
+                pronunciationScore: pronScore,
+                accuracyScore: accScore,
+                fluencyScore: fluScore,
+                completenessScore: compScore,
+                prosodyScore: prosScore
+              },
+              // Backward compatibility alias for existing UI renderer:
+              scores: {
+                pronunciation: pronScore,
+                accuracy: accScore,
+                fluency: fluScore,
+                completeness: compScore,
+                prosody: prosScore
+              },
+              words: words
+            };
+
+            if (options && options.includeRawResult) {
+              assessmentResult.raw = rawJson;
+            }
+
+            return assessmentResult;
+          }
+        };
+      })();
+
+      /* 4. SpeechAssessmentEngine */
+      const SpeechAssessmentEngine = (function () {
+        let currentState = 'IDLE';
+
+        return {
+          getState() {
+            return currentState;
+          },
+
+          async assess({ audio, referenceText, language = "en-US", includeRawResult = false }) {
+            if (!referenceText || typeof referenceText !== 'string' || !referenceText.trim()) {
+              const err = new Error('Reference text is required');
+              err.code = 'INVALID_REFERENCE';
+              currentState = 'ERROR';
+              throw err;
+            }
+            if (!audio) {
+              const err = new Error('Audio input is required');
+              err.code = 'AUDIO_ERROR';
+              currentState = 'ERROR';
+              throw err;
+            }
+
+            currentState = 'PREPARING';
+
+            let tokenInfo;
+            try {
+              tokenInfo = await TokenManager.getToken();
+            } catch (err) {
+              currentState = 'ERROR';
+              throw err;
+            }
+
+            let audioConfig;
+            try {
+              audioConfig = await AudioAdapter.toSpeechInput(audio);
+            } catch (err) {
+              currentState = 'ERROR';
+              throw err;
+            }
+
+            currentState = 'ASSESSING';
+
+            const SDK = await ensureSpeechSDKLoaded();
+
+            return new Promise((resolve, reject) => {
+              try {
+                const speechConfig = SDK.SpeechConfig.fromAuthorizationToken(tokenInfo.token, tokenInfo.region);
+                speechConfig.speechRecognitionLanguage = language;
+
+                const paConfig = new SDK.PronunciationAssessmentConfig(
+                  referenceText.trim(),
+                  SDK.PronunciationAssessmentGradingSystem.HundredMark,
+                  SDK.PronunciationAssessmentGranularity.Phoneme,
+                  true
+                );
+
+                if (typeof paConfig.enableProsodyAssessment === 'function') {
+                  paConfig.enableProsodyAssessment();
+                }
+
+                const recognizer = new SDK.SpeechRecognizer(speechConfig, audioConfig);
+                paConfig.applyTo(recognizer);
+
+                recognizer.recognizeOnceAsync(
+                  result => {
+                    try {
+                      recognizer.close();
+
+                      if (result.reason === SDK.ResultReason.RecognizedSpeech) {
+                        const parsed = ResultParser.parse(result, {
+                          referenceText: referenceText.trim(),
+                          includeRawResult: includeRawResult
+                        });
+                        currentState = 'SUCCESS';
+                        resolve(parsed);
+                      } else if (result.reason === SDK.ResultReason.NoMatch) {
+                        currentState = 'ERROR';
+                        const err = new Error('No speech detected or speech could not be recognized');
+                        err.code = 'NO_SPEECH';
+                        reject(err);
+                      } else if (result.reason === SDK.ResultReason.Canceled) {
+                        const cancellation = SDK.CancellationDetails.fromResult(result);
+                        currentState = 'ERROR';
+                        let errCode = 'SDK_ERROR';
+                        if (cancellation.reason === SDK.CancellationReason.Error) {
+                          if (cancellation.errorDetails && cancellation.errorDetails.includes('401')) {
+                            errCode = 'TOKEN_EXPIRED';
+                            TokenManager.refreshToken();
+                          } else if (cancellation.errorDetails && cancellation.errorDetails.toLowerCase().includes('network')) {
+                            errCode = 'NETWORK_ERROR';
+                          }
+                        }
+                        const err = new Error(cancellation.errorDetails || 'Recognition cancelled');
+                        err.code = errCode;
+                        reject(err);
+                      } else {
+                        currentState = 'ERROR';
+                        const err = new Error('Assessment failed with reason: ' + result.reason);
+                        err.code = 'ASSESSMENT_ERROR';
+                        reject(err);
+                      }
+                    } catch (parseErr) {
+                      currentState = 'ERROR';
+                      parseErr.code = parseErr.code || 'ASSESSMENT_ERROR';
+                      reject(parseErr);
+                    }
+                  },
+                  err => {
+                    try { recognizer.close(); } catch (e) { }
+                    currentState = 'ERROR';
+                    const errorObj = new Error(err || 'Azure Speech SDK recognition error');
+                    errorObj.code = 'SDK_ERROR';
+                    reject(errorObj);
+                  }
+                );
+
+              } catch (setupErr) {
+                currentState = 'ERROR';
+                setupErr.code = setupErr.code || 'SDK_ERROR';
+                reject(setupErr);
+              }
+            });
+          }
+        };
+      })();
+
+      // Export public APIs to window scope
+      global.AzureSpeechModule = {
+        TokenManager,
+        AudioAdapter,
+        ResultParser,
+        SpeechAssessmentEngine,
+        ensureSpeechSDKLoaded
+      };
+      global.SpeechAssessmentEngine = SpeechAssessmentEngine;
+      global.TokenManager = TokenManager;
+      global.AudioAdapter = AudioAdapter;
+      global.ResultParser = ResultParser;
+      global.ensureSpeechSDKLoaded = ensureSpeechSDKLoaded;
+
+    })(typeof window !== 'undefined' ? window : this);
+  </script>
+
+  <script>
+
+    /* ==========================================================
+       SHADOWING RECORDING & ENGINE INTEGRATION
+       ========================================================== */
+    let mediaRecorder, audioChunks = [];
+    const recordedBlobs = {};
+
+    async function startRecording(id) {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaRecorder = new MediaRecorder(stream);
+        audioChunks = [];
+        mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+        mediaRecorder.onstop = () => {
+          const blob = new Blob(audioChunks, { type: 'audio/webm' });
+          recordedBlobs[id] = blob;
+          document.getElementById('audio-' + id).src = URL.createObjectURL(blob);
+          document.getElementById('playback-' + id).classList.add('show');
+          stream.getTracks().forEach(t => t.stop());
+        };
+        mediaRecorder.start();
+        document.getElementById('btnRec-' + id).style.display = 'none';
+        document.getElementById('btnStop-' + id).style.display = 'inline-flex';
+        document.getElementById('status-' + id).textContent = '🔴 Đang ghi âm...';
+      } catch (err) {
+        alert('Không thể truy cập microphone. Vui lòng cấp quyền micro trên trình duyệt.');
+      }
+    }
+
+    function stopRecording(id) {
+      if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+        mediaRecorder.stop();
+      }
+      document.getElementById('btnStop-' + id).style.display = 'none';
+      document.getElementById('btnRec-' + id).style.display = 'inline-flex';
+      document.getElementById('status-' + id).textContent = '✅ Đã ghi xong — nghe lại hoặc gửi cho Athena.';
+    }
+
+    function reRecord(id) {
+      delete recordedBlobs[id];
+      document.getElementById('playback-' + id).classList.remove('show');
+      const fb = document.getElementById('feedback-' + id);
+      fb.className = 'shadow-feedback';
+      fb.style.display = 'none';
+      fb.innerHTML = '';
+      document.getElementById('status-' + id).textContent = 'Record your voice';
+    }
+
+    function cleanReferenceText(rawText) {
+      if (!rawText) return '';
+      return rawText
+        .trim()
+        .replace(/^["'“‘]+|["'”’]+$/g, '')
+        .replace(/[’]/g, "'")
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    async function submitShadowing(id) {
+      const fb = document.getElementById('feedback-' + id);
+      fb.className = 'shadow-feedback active';
+      fb.innerHTML = `
+        <div class="sa-loading">
+          <div class="sa-spinner"></div>
+          <span>Đang đối chiếu phát âm với cụm từ mẫu...</span>
+        </div>
+      `;
+
+      const audioBlob = recordedBlobs[id];
+      if (!audioBlob) {
+        renderError(fb, 'AUDIO_ERROR', 'Không tìm thấy file âm thanh đã thu. Vui lòng thử ghi âm lại.', id);
+        return;
+      }
+
+      const shadowItem = document.getElementById('playback-' + id).closest('.shadow-item');
+      const refElem = shadowItem ? shadowItem.querySelector('.shadow-sentence') : null;
+      let referenceText = refElem ? cleanReferenceText(refElem.textContent) : '';
+
+      try {
+        const result = await SpeechAssessmentEngine.assess({
+          audio: audioBlob,
+          referenceText: referenceText,
+          language: "en-US"
+        });
+
+        renderAssessmentResult(fb, result, id, referenceText);
+        LMS().event('shadowing_submitted', { id: id, score: result.scores.pronunciation });
+      } catch (err) {
+        console.error('Assessment Engine Error:', err);
+        renderError(fb, err.code || 'ASSESSMENT_ERROR', getErrorMessage(err), id);
+      }
+    }
+
+    function getErrorMessage(err) {
+      switch (err.code) {
+        case 'TOKEN_ERROR':
+        case 'TOKEN_EXPIRED':
+          return 'Không thể lấy Speech Token từ backend. Vui lòng kiểm tra endpoint /api/speech-token.';
+        case 'NETWORK_ERROR':
+          return 'Lỗi kết nối mạng khi gọi Azure Speech SDK.';
+        case 'AUDIO_ERROR':
+          return 'Định dạng âm thanh thu âm không hợp lệ.';
+        case 'NO_SPEECH':
+          return 'Không nhận diện được giọng nói trong bản thu. Vui lòng phát âm rõ hơn và đọc đúng câu mẫu.';
+        case 'INVALID_REFERENCE':
+          return 'Không tìm thấy câu mẫu tham chiếu.';
+        default:
+          return err.message || 'Đã xảy ra lỗi trong quá trình đánh giá phát âm.';
+      }
+    }
+
+    function renderError(container, code, message, id) {
+      container.className = 'shadow-feedback active';
+      container.innerHTML = `
+        <div class="sa-error-box">
+          <div class="sa-error-title">⚠️ Lỗi đánh giá phát âm (${code})</div>
+          <div>${message}</div>
+          <button class="sa-retry-btn" onclick="submitShadowing('${id}')">↺ Thử lại (Retry)</button>
+        </div>
+      `;
+    }
+
+    function renderAssessmentResult(container, result, id, referenceText) {
+      const pronScore = result.scores.pronunciation;
+      let badgeClass = 'high';
+      if (pronScore < 60) badgeClass = 'low';
+      else if (pronScore < 80) badgeClass = 'mid';
+
+      let wordsHtml = '';
+      if (result.words && result.words.length > 0) {
+        wordsHtml = result.words.map(w => {
+          let wordClass = 'good';
+          let label = `${w.accuracyScore}`;
+          if (w.errorType === 'Omission') {
+            wordClass = 'bad';
+            label = 'Bỏ sót';
+          } else if (w.errorType === 'Insertion') {
+            wordClass = 'warning';
+            label = 'Thừa';
+          } else if (w.errorType === 'Mispronunciation' || w.accuracyScore < 60) {
+            wordClass = 'bad';
+          } else if (w.accuracyScore < 80) {
+            wordClass = 'warning';
+          }
+          return `<span class="sa-word ${wordClass}" title="Lỗi: ${w.errorType}">${esc(w.word)}<span class="sa-word-score">${label}</span></span>`;
+        }).join(' ');
+      } else {
+        wordsHtml = `<span>${esc(result.recognizedText || '')}</span>`;
+      }
+
+      container.className = 'shadow-feedback active';
+      container.innerHTML = `
+        <div class="sa-result-card">
+          <div class="sa-overall-row">
+            <div>
+              <strong style="color:var(--jade-dark);font-size:15px;">Kết quả phát âm (Pronunciation Assessment)</strong>
+              <div style="font-size:13px;color:var(--ink-2);margin-top:4px;">
+                <b>Mẫu yêu cầu:</b> "<i>${esc(referenceText)}</i>"
+              </div>
+              <div style="font-size:13px;color:var(--ink-2);margin-top:2px;">
+                <b>Nói thực tế:</b> "<i>${esc(result.recognizedText)}</i>"
+              </div>
+            </div>
+            <div class="sa-score-badge ${badgeClass}">${pronScore} <span style="font-size:12px;font-weight:600;">/ 100</span></div>
+          </div>
+
+          <div class="sa-scores-grid">
+            <div class="sa-score-item">
+              <div class="sa-score-label">Accuracy (Chính xác)</div>
+              <div class="sa-score-val">${result.scores.accuracy}</div>
+            </div>
+            <div class="sa-score-item">
+              <div class="sa-score-label">Fluency (Trôi chảy)</div>
+              <div class="sa-score-val">${result.scores.fluency}</div>
+            </div>
+            <div class="sa-score-item">
+              <div class="sa-score-label">Completeness (Đầy đủ)</div>
+              <div class="sa-score-val">${result.scores.completeness}</div>
+            </div>
+            <div class="sa-score-item">
+              <div class="sa-score-label">Prosody (Ngữ điệu)</div>
+              <div class="sa-score-val">${result.scores.prosody}</div>
+            </div>
+          </div>
+
+          <div style="margin-top:10px;">
+            <div class="sa-words-title">Chi tiết từng từ (Word breakdown &amp; Lỗi từ):</div>
+            <div class="sa-words-wrap">${wordsHtml}</div>
+          </div>
+        </div>
+      `;
+    }
+  </script>
+</body>
+
+</html>
